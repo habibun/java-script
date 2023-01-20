@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    //Adjacent sibling selectors let you select a tag that appears directly after another tag
+    $('h2 + div');
+
+
+
+    //to find <img> tags that have the alt attribute set, you write this
+    $('img[alt]');
+
+    //[attribute] selects elements that have the specified attribute assigned in the HTML
+    $('a[href]');
+
+    //[attribute=value] selects elements that have a particular attribute with a specific value
+    $('input[type=text]');
+
+    //[attribute^=value] matches elements with an attribute that begins with a specific value
+    $('a[href^=http://]');
+
+    //Or you could use this selector to identify mailto: links like this
+    $('a[href^=mailto:]');
+
+    //[attribute$=value] matches elements whose attribute ends with a specific value
+    $('a[href$=.pdf]');
+
+    //• [attribute*=value] matches elements whose attribute contains a specific value anywhere in the attribute
+    $('a[href*=missingmanuals.com]');
+
+
+    //to select <p> tags that are the children of the <body> tag
+    $('body > p');
+
+
+
+    //Descendent selectors provide a way to target a tag inside another tag
+    $('#navBar a');
+</script>
+</body>
+</html>

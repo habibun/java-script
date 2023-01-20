@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../../missingManual/javaScript/livingExamples/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../missingManual/javaScript/livingExamples/chapter09/validation/jquery.validate.js"></script>
+    <style>
+        label.error {
+            color: #F00;
+            font-weight: bold;
+        }
+        input.error, select.error {
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <input name="email" type="text" class="required error">
+    <label for="email" generated="true" class="error">
+        This field is required.</label>
+
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

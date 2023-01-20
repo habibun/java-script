@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     *you can also turn on a regular expression’s global search property to search for more than one match in a string
+     *
+     */
+    //var urlRegex = /((\bhttps?:\/\/)|(\bwww\.))\S*/g
+
+    //You could rewrite the code from page 131 using a global search, like this:
+    // create a variable containing a string with a URL
+    var text='there are a lot of great web sites like www.missingmanuals.com and http://www.oreilly.com';
+    // create a regular expression with global search
+    var urlRegex = /((\bhttps?:\/\/)|(\bwww\.))\S*/g
+    // find a match for the regular expression in the string
+    var url = text.match(urlRegex);
+    alert(url[0]);
+    alert(url[1]); // http://www.oreilly.com
+
+</script>
+</body>
+</html>

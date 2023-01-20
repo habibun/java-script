@@ -1,0 +1,5 @@
+the javascript variable have only two scopes:
+
+1.Global Variables: A global variable has global scope which means it is defined everywhere in your JavaScript code.
+
+2.Local Variables: A local variable will be visible only within a function where it is defined. Function parameters are always local to that function.

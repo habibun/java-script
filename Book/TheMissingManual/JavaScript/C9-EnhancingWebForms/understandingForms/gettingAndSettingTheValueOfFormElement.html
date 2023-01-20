@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<script>
+    //say you have a field for collecting a user's email address with an ID of email.
+    // You can find the content of that field like this:
+    var fieldValue = $('#email').val();
+
+    //You can set the value of a field simply by passing a value to the val( ) function
+    var unitCost = 9.95;
+    var amount = $('#quantity').val(); //get value
+    var total = amount * unitCost;
+    total = total.toFixed(2);
+    $('#total').val(total); //set value using val method
+
+</script>
+</body>
+</html>

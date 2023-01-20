@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Break Statement</title>
+    <script>
+        /**
+         * The break statement terminates the current loop, switch, or label statement and transfers program control to the statement following the terminated statement.
+         */
+
+        function testBreak(x) {
+            var i = 0;
+
+            while (i < 6) {
+                if (i == 3) {
+                    break;
+                }
+                i += 1;
+            }
+
+            return i * x;
+        }
+        testBreak(10);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

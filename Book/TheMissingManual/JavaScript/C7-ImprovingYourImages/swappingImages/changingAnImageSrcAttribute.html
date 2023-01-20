@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<img id="photo" src="../../usedFiles/brightDayMini.jpg">
+
+<script>
+    //using javascript
+    var photo = document.getElementById('photo');
+    photo.src = '../../usedFiles/greenBirdFlight.jpg';
+
+    //using jquery you can achieve the same effect like this.
+    $('#photo').attr('src', '../../usedFiles/greenBirdFlightMini.jpg');
+
+    //the Web browser displays the image at the dimensions set in the file
+    var newPhoto = new Image();
+    newPhoto.src = '../../usedFiles/brightDay.jpg';
+    var photo = document.getElementById('photo');
+    photo.src = newPhoto.src;
+    photo.width = newPhoto.width;
+    photo.height = newPhoto.height;
+
+    //In jQuery, the code would look like this:
+    var newPhoto = new Image();
+    newPhoto.src = '../../usedFiles/brightDay.jpg';
+    var photo = $('#photo');
+    photo.attr('src', 'newPhoto.src');
+    photo.attr('width', newPhoto.width);
+    photo.attr('height', 'newPhoto.height');
+
+    //The jQuery attr( ) function can set multiple HTML attributes at once
+    var newPhoto = new Image();
+    newPhoto.src = '../../usedFiles/brightDay.jpg';
+    $('#photo').attr({
+        src: newPhoto.src,
+        width: newPhoto.width,
+        height: newPhoto.height
+    });
+</script>
+</body>
+</html>

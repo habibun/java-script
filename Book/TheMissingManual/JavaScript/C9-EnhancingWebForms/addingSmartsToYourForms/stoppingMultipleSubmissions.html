@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<form action="process.php" method="post" name="signup" id="signup">
+    <div>
+        <label for="username" class="label">Name</label>
+        <input name="username" type="text" id="username" size="36">
+    </div>
+    <div>
+        <label for="password" class="label">Password</label>
+        <input name="password" type="text" id="password" size="36">
+    </div>
+    <div>
+        <input type="submit" name="submit" id="submit" value="Submit">
+    </div>
+</form>
+
+<script>
+    $(document).ready(function() {
+    /*
+     * prevent same information being submitted twice
+     * */
+        $('#submit').submit(function( ) {
+            $('#submit').attr('disabled',true);
+        });
+
+    /*If the page has only a single form, you don’t even need to
+    * use IDs for the tags:
+    **/
+        $('form').submit(function() {
+            $('input[type=submit]').attr('disabled', true);
+        });
+
+        /*In addition, you can change the message on the submit
+         button by changing the button’s value
+         */
+        $('#submit').submit(function( ) {
+            var subButton = $(this).find(':submit');
+            subButton.attr('disabled',true);
+            subButton.val('...sending information');
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--step 1: Link to the necessary external JavaScript files.-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.cluetip.js"></script>
+    <!--step 2: Add another <script> tag and the $(document).ready( ) function:-->
+    <script type="text/javascript">
+        $(document).ready(function( ) {
+        }); // end ready
+    </script>
+    <!--step 3: Apply the cluetip( ) function to the HTML tags you’ve added the title attribute to.-->
+    $('.tip').cluetip( );
+    <!--4. Pass an object literal (page 188) to the cluetip( ) function with the splitTitle
+keyword and the character you’re using to separate the title from the message.
+-->
+    $('.tip').cluetip({
+    splitTitle: '|'
+    });
+</head>
+<body>
+<a href="http://www.chia-vet.com/" class="tip" title="Chia-Vet.com|Every Chia pet needs a Chia vet">Chia-Vet</a>
+
+</body>
+</html>

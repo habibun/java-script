@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--To add a caption to a photo-->
+<a href="images/potato.jpg" title="A handsome potato"></a>
+<!--attach css file-->
+<link href="css/lightbox.css" rel="stylesheet" type="text/css">
+
+//attach javascript file
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.lightbox.js"></script>
+
+<!--Getting lightBox to work requires just a single line of JavaScript-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#gallery a').lightBox();
+    });
+    //to select a single image
+    $('#soloImage').lightBox();
+</script>
+</body>
+</html>

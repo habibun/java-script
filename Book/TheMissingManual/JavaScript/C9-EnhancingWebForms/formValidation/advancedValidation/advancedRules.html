@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../../../missingManual/javaScript/livingExamples/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../../missingManual/javaScript/livingExamples/chapter09/validation/jquery.validate.js"></script>
+</head>
+<body>
+<form action="process.php" method="post" id="signup">
+    <div>
+        <label for="name">Name</label>
+        <input name="name" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input name="password" type="password" id="password">
+    </div>
+    <div>
+        <label for="confirm_password">Confirm password</label>
+        <input name="confirm_password" type="password" id="confirm_password">
+    </div>
+    <div>
+        <label for="email">E-mail Address</label>
+        <input name="email" type="text">
+    </div>
+    <div>
+        <label for="birthday">Date of birth</label>
+        <input name="birthday" type="date">
+    </div>
+    <div>
+        <input type="submit" name="submit" value="Submit">
+    </div>
+</form>
+<script>
+    /*The basic structure of that object looks like this:
+     rules: {
+        fieldname : 'validationType'
+     }*/
+
+    /*to make the name field
+     mandatory you apply the validate( ) function to the form as described on the previous page,
+     and then pass the rules object to the function like this:
+     */
+    $(document).ready(function() {
+        $('#signup').validate({
+            rules: {
+                name: 'required',
+                email: {
+                    required: true,
+                    email: true
+                },
+                /*birthday: 'date'
+                (To ensure that a date is entered into the field -- only date validation)
+                */
+                birthday:{
+                    required: true,
+                    date: true
+                },
+                /*Both fields are required, and the password must be at least 8 characters but no
+                 more than 16. And finally, you want to make sure the “confirm password” field
+                 matches the other password field
+                 */
+                password:{
+                    required: true,
+                    rangelength: [8,16]
+                },
+                confirm_password:{
+                    equalTo: '#password'
+                }
+            }
+        }); // end validate( )
+    });
+
+</script>
+</body>
+</html>

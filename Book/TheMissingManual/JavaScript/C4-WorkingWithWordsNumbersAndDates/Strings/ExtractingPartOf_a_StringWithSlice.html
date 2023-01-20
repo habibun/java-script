@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+# to eliminate a portion of string(the first letter is at position 0):
+<br>
+<script>
+    var url = 'http://www.sawmac.com';
+    var domain = url.slice(7); // www.sawmac.com
+    document.write(domain);
+</script>
+<br>
+<br>
+
+# You can also extract a specific number of characters within a string by supplying a second argument to the slice( ) method:
+<br>
+<script>
+    //it’s actually the position of the last letter + 1
+    var test = 'this is a test';
+    var result = test.slice(0, 6);
+    document.write(result);
+</script>
+<br>
+<br>
+
+#If you want, say, to extract a string that includes all of the letters from the 6th letter from the end of the string all the way to the end, you leave off the second argument
+<br>
+<script>
+    var quote = 'To be, or not to be.';
+    var re = quote.slice(-6);
+    document.write(re);
+</script>
+<br>
+<br>
+
+# You can also specify negative numbers, for example:
+<br>
+<script>
+    var negative = quote.slice(-6, -1);
+    document.write(negative);
+</script>
+</body>
+</html>

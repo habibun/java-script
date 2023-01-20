@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#username').focus();
+        });
+
+        $(document).ready(function () {
+            $('#signup :text:first').focus();
+        });
+
+        /* disabling and enabling field */
+        $(document).ready(function () {
+            $(':input').prop('disabled', true);
+        });
+
+        /*Hiding and Showing Form Options*/
+        $('#single').click(function () {
+            $('#spouseSSN').hide();
+        });
+        $('#married').click(function () {
+            $('#spouseSSN').show();
+        });
+
+        /* stopping multiple submission */
+        $('#formID').submit(function () {
+            $('#submit').prop('disabled', true);
+        });
+
+        /*If the page has only a single form*/
+        $('form').submit(function () {
+            $('input[type=submit]').prop('disabled', true);
+        });
+
+        /* stop multiple submission and change the message on the submit button */
+        $('#formID').submit(function () {
+            var subButton = $(this).find(':submit');
+            subButton.prop('disabled', true);
+            subButton.val('...sending information');
+        });
+
+    </script>
+</head>
+<body>
+<form id="signup">
+    <label for="username">Username: </label>
+    <input name="username" id="username"><br>
+
+    <label for="password">Password: </label>
+    <input name="username" id="password"><br>
+
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

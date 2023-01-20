@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>indexOf</title>
+    <script>
+        /**
+         * The indexOf() method searches the array for the specified item, and returns its position.
+         */
+
+        //Search an array for the item "Apple":
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        var a = fruits.indexOf("Apple");
+        console.log(a);     //2
+
+        //Search an array for the item "Apple", starting the search at position 4:
+        var fruits = ["Banana", "Orange", "Apple", "Mango", "Banana", "Orange", "Apple"];
+        var a = fruits.indexOf("Apple", 4);
+        console.log(a);     //6
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //Multiplication (the * symbol) and division (the / symbol) take precedence over addition (+) and subtraction (-)
+    var result = 4 + 5 * 10;
+    document.write(result);    //result = 54
+
+    document.write('<br>');
+
+    //To make sure that the math works out the way you want it, use parentheses to group operations
+    var finalResult = (4 + 5) * 10;
+    document.write(finalResult);
+    //Any math that’s performed inside parentheses happens first
+
+    document.write('<br>');
+
+    //If you do want the multiplication to occur first, it would be clearer to write that code like this
+    var result2 = 4 + (5*10);
+    document.write(result2);
+</script>
+</body>
+</html>

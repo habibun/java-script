@@ -1,0 +1,5 @@
+Miscellaneous Operator
+The Conditional Operator (? :)
+There is an oprator called conditional operator. This first evaluates an expression for a true or false value and then execute one of the two given statements depending upon the result of the evaluation. The conditioanl operator has this syntax: 
+Operator    Description                         Example
+? :         Conditional Expression              If Condition is true ? Then value X : Otherwise value Y

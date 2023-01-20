@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Method</title>
+    <script>
+        /**
+         * The open() method opens a new browser window.
+         */
+
+        //Open "www.w3schools.com" in a new browser window:
+        window.open("http://www.w3schools.com");
+
+        //Open an about:blank page in a new window:
+        var myWindow = window.open("", "", "width=200,height=100");
+
+        //Open a new window called "MsgWindow", and write some text into it:
+        var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+        myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+
+        //Replace the current window with a new window:
+        var myWindow = window.open("", "_self");
+        myWindow.document.write("<p>I replaced the current window.</p>");
+
+        //Open a new window and control its appearance:
+        window.open("http://www.w3schools.com", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+
+        //Open multiple windows:
+        window.open("http://www.google.com/");
+        window.open("http://www.w3schools.com/");
+
+        //Open a new window. Use close() to close the new window:
+        function openWin() {
+            myWindow = window.open("", "myWindow", "width=200,height=100");   // Opens a new window
+        }
+
+        function closeWin() {
+            myWindow.close();   // Closes the new window
+        }
+
+        //Open a new window. Use the name property to return the name of the new window:
+        var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+        myWindow.document.write("<p>This window's name is: " + myWindow.name + "</p>");
+
+        //Using the opener property to return a reference to the window that created the new window:
+        var myWindow = window.open("", "myWindow", "width=200,height=100");   // Opens a new window
+        myWindow.document.write("<p>This is 'myWindow'</p>");   // Text in the new window
+        myWindow.opener.document.write("<p>This is the source window!</p>");  // Text in the window that created the new window
+    </script>
+</head>
+<body>
+
+</body>
+</html>

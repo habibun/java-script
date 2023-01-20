@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+function setup(x){
+    var i = 0;
+    return function()
+    {
+        return x[i++];
+    }
+}
+var next = setup(['a','b','c']);
+var result = next();
+var result = next();
+var result = next();
+document.write(result);
+
+</script>
+</body>
+</html>

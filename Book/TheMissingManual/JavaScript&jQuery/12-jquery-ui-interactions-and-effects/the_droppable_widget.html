@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        $(document).ready(function () {
+            $('.product').draggable();
+            $('#cart').droppable({
+                accept: '.photo',
+                disabled: true,
+                hoverClass: 'openTrashcan',
+                scope: 'calendar',
+                tolerance: 'intersect',
+
+                activeClass: 'highlight',
+                drop: function (event, ui) {
+                    alert('Product added');
+                }
+            });
+            /* the drop event */
+            $('#trashcan').droppable({
+                drop: function (event, ui) {
+                    // programming goes here
+                }
+            });
+
+            /* the ui helper property */
+            $('#trashcan').droppable({
+                drop: function (event, ui) {
+                    ui.helper.hide('explode');
+                }
+            });
+
+            /* THE ACTIVATE EVENT*/
+            $('#photoZone').droppable({
+                activate: function (event, ui) {
+                    $(this).append('<p id="dropMessage">Drop photo here</p>');
+                }
+            });
+
+            /* THE DEACTIVATE EVENT*/
+            $('#photoZone').droppable({
+                activate: function (event, ui) {
+                    $(this).append('<p id="dropMessage">Drop photo here</p>');
+                },
+                deactivate: function (event, ui) {
+                    $('#dropMessage').remove();
+                }
+            });
+
+            /*THE OVER EVENT*/
+            $('#trashcan').droppable({
+                over: function (event, ui) {
+                    $('#trashCanImage').attr('src', 'images/open-lid-can.png');
+                }
+            });
+
+            /* THE OUT EVENT */
+            $('#shoppingCart').droppable({
+                drop: function (event, ui) {
+                    // perform math to update sales total
+                },
+                out: function (event, ui) {
+                    // perform math to remove product cost from sales total
+                }
+            });
+
+            /* the out event */
+            $('#shoppingCart').droppable({
+                drop: function (event, ui) {
+                    // perform math to update sales total
+                },
+                out: function (event, ui) {
+                    // perform math to remove product cost from sales total
+                }
+            });
+
+
+        }); // end ready
+    </script>
+</head>
+<body>
+
+</body>
+</html>

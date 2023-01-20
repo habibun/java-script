@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Quis Nostrud</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<link href="complete_map.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.jmap.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#map').jmap('init', {
+    mapCenter:[37.808445, -122.410161],
+    mapShowjMapIcon: false,
+    mapZoom: 14,
+    mapEnableScaleControl: true,
+    mapControlSize: 'large'
+  });
+$('#map').jmap('addMarker', {
+  pointLatLng:[37.808445, -122.410161]
+});
+
+  $('#getDir').submit(function(){
+    $('#directions').empty();
+    $('#map').jmap("searchDirections", {
+      toAddress: 'Fisherman\'s Wharf, San Francisco, CA',
+      fromAddress: $('#from').val(),
+      directionsPanel:"directions"
+    });	
+   return false;
+   });
+
+}); // end ready()
+</script>
+</head>
+<body id="twoCol">
+<div id="container">
+  <div id="banner"><img src="../images/banner.png" alt="JavaScript: The Missing Manual" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  
+  <div id="contentWrap">
+  <div id="main">
+  <h1>Google Maps  </h1>
+  <div id="map"></div>
+  <div id="getDirections">
+    <form name="directions" id="getDir"  method="post" action="">
+      <p>
+       Directions to: <strong>Fisherman&#8217;s Wharf, San Francisco</strong></p>
+      <p>
+        <label for="from" class="mapLabel">From: </label>
+        <input name="from" type="text" id="from" size="40">
+</p>
+      <p>
+        <input type="submit" name="submit" id="submit" value="Get Directions">
+      </p>
+    </form>
+  </div>
+  <div id="directions"></div>
+</div>
+  
+  <div id="sidebar">
+    <h2>Script 12.2</h2>
+</div>
+  </div>
+ 
+<div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+
+</body>
+</html>

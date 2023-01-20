@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*For example, say you
+     have a form with an ID of login. If you wanted to create a query string for that
+     form, you can do so like this:
+     */
+    var formData = $('#login').serialize( );
+
+    /*For example, say you want
+     to send the contents of the login form to a page named login.php. You can do so
+     like this:
+     */
+    var formData = $('#login').serialize( );
+    $.get('login.php',formData,loginResults);
+
+
+</script>
+</body>
+</html>

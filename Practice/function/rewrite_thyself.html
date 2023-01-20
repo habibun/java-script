@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+/*function a() {
+  alert('A!');  
+  a = function(){
+      alert('B!');  
+  }; 
+} */
+
+
+
+var a = function() {
+  function someSetup(){
+      var setup = 'done';  
+  }  
+  function actualWork() {
+      alert('Worky-worky');  
+  }  
+  someSetup();  
+  return actualWork; }(); 
+
+var result = a();
+document.write(result);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var amount = 99.99;
+        amount = amount * 2;
+        console.log(amount);
+        console.log(typeof (amount));
+
+        //convert amount to a string and
+        //add "$" on the begining
+        amount = "$" + String(amount);
+        console.log(amount);
+        console.log(typeof (amount));
+
+
+        /**
+         * constants
+         */
+        var TAX_RATE = 0.08;
+        var amount = 99.99;
+        amount = amount * 2;
+        amount = amount + (amount * TAX_RATE);
+        console.log(amount);
+        console.log(amount.toFixed(2));
+
+
+        /**
+         * declare a constants using es6
+         */
+        //as of es6
+        const TAX_RATE = 0.08;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

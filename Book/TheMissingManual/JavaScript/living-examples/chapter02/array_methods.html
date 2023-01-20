@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Array Test Bed</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function( ) {
+	$('.example').each(function() {
+		$this = $(this); // reference to the p tag
+		//alert($this.find('a').html());
+		$this.find('a').click(function() {
+			codeElem = $(this).prev('code');
+			var code = codeElem.text();
+			var expl = codeElem.attr('title') || 'none';
+			results(code,expl);
+		});
+	});
+	
+	
+		
+});
+
+var items = ['shoes', 'socks', 'belt', 'hat'];
+
+function results(code,expl) {
+	if (items[0]!=undefined) {
+		$('#start code').html(items.toString());
+	} else {
+		$('#start code').html('<strong>empty array</strong>');
+	}
+		$('#code code').html(code);
+		var originalItems = items.toString();
+		var returnVal = eval(code);
+	if (items[0]!=undefined) {
+		if (originalItems==items.toString()) {
+		$('#finish code').html('<strong>Array unchanged</strong>');
+		} else {
+		$('#finish code').html(items.toString());
+		}
+	} else {
+		$('#finish code').html('<strong>empty array</strong>');
+	}
+		if (returnVal) {
+		$('#return code').html(returnVal.toString());
+		} else {
+		$('#return code').html('nothing returned');
+		}
+		
+		$('#explanation span').html(expl);
+	}
+	
+		
+		
+	</script>
+</head>
+
+<body id="twoCol" onLoad="results('var items = [\'shoes\', \'socks\', \'belt\', \'hat\']');">
+<div id="container">
+  <div id="banner"><img src="../images/banner.png" alt="JavaScript: The Missing Manual" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  
+  <div id="contentWrap">
+  <div id="main">
+  <h1> Array Test Bed</h1>
+  <h2>Original Array</h2>
+  <p class="example"><code title="Initializes array with 4 items">items = ['shoes', 'socks', 'belt', 'hat'];</code>
+    <a href="#">Run It</a>  </p>
+  <h2>Splice</h2>
+  <p class="example"><code title="removes 3rd item, and inserts two new items">items.splice(2,1,'coat','scarf');</code> <a href="#">Run It</a> </p>
+  <h2>Push</h2>
+  <p class="example"><code title="adds two items to end of array and returns total number of items in array">items.push('umbrella','shirt');</code> <a href="#">Run It</a></p>
+  <h2>Unshift</h2>
+  <p class="example"><code title="adds two items to beginning of array and returns total number of items in array">items.unshift('tie','pants');</code> <a href="#">Run It</a> </p>
+  <h2>Shift</h2>
+  <p class="example"><code title="removes 1 item from the beginning of the array">items.shift();</code> <a href="#">Run It</a> </p>
+  <h2>Pop</h2>
+  <p class="example"><code title="removes 1 item from end of array">items.pop();</code> <a href="#">Run It</a></p>
+  <h2></h2>
+  <h2>Slice</h2>
+<p class="example"><code title="creates a new array made up of a 'slice' of the original array. The first number is the starting index, the second number is the ending index">items.slice(1,2);</code> 
+  <a href="#">Run It</a></p>
+<h2>Reverse</h2>
+<p class="example"><code title="reverses the order of the items in the array">items.reverse();</code>
+  <a href="#">Run It</a></p>
+<h2>Join</h2>
+<p class="example"><code title="creates a string by combining the value of each array item. The string given to the join() command is used as the seperator">items.join(':');</code>
+  <a href="#">Run It</a></p>
+<div id="results"><h2>Results</h2>
+<div id="start">items[] contents at start: <code>&nbsp;</code></div>
+<div id="code">JavaScript code: <code>&nbsp;</code></div>
+<div id="finish">items[] contents after JavaScript: <code>&nbsp;</code></div>
+<div id="return">Returned value: <code>&nbsp;</code></div>
+<div id="explanation">Explanation: <br><span class="explanation">&nbsp;blah</span></div>
+</div>
+  </div>
+  <div id="sidebar">
+    <h2>Array Test Bed</h2>
+  </div>
+  </div>
+  
+<div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+</body>
+</html>

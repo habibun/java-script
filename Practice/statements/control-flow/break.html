@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    var matrix = getData();  // Get a 2D array of numbers from somewhere
+    // Now sum all the numbers in the matrix.
+    var sum = 0, success = false;
+    // Start with a labeled statement that we can break out of if errors occur
+    compute_sum: if (matrix) {
+        for(var x = 0; x < matrix.length; x++) {
+            var row = matrix[x];
+            if (!row) break compute_sum;
+            for(var y = 0; y < row.length; y++) {
+                var cell = row[y];
+                if (isNaN(cell)) break compute_sum;
+                sum += cell;
+            }
+        }
+        success = true;
+    }
+    // The break statements jump here. If we arrive here with success == false
+    // then there was something wrong with the matrix we were given.
+    // Otherwise sum contains the sum of all cells of the matrix.
+</script>
+
+</body>
+</html>

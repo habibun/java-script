@@ -1,0 +1,29 @@
+create a function:
+<script type="text/javascript">
+	function sum(a,b)
+	{
+		var c = a+b;
+		return c;
+	}
+</script>
+
+calling a function:
+<script type="text/javascript">
+var result = sum(1, 2);
+document.write(result);
+</script>
+
+my using arguments array you can improve the sum function:
+<script type="text/javascript">
+function sumOnSteroids()
+{
+	var i, res =0;
+	var number_of_params= arguments.length;
+	for(i=0; i < number_of_params; i++)
+	{
+		res +=arguments[i];
+	}
+	return res;
+}
+sumOnSteroids(1, 2, 3, 4);
+</script>

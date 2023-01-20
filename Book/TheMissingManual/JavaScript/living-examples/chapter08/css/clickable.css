@@ -1,0 +1,17 @@
+.bigLink {
+	background: #F5F5D3;
+	padding: 5px;
+	border: 1px solid #0B3636;
+	float: left;
+	width: 165px;
+	margin-right: 10px;
+	height: 100px;
+}
+#main .bigLink a {
+	color: #154040;
+	text-decoration: none;
+}
+#main .bigLink p {
+	font-size: 14px;
+	margin-top: 20px;
+}

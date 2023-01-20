@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript &amp; jQuery:The Missing Manual</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+body {
+	 -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+ul:last-of-type {
+	padding-bottom: 200px;
+}
+.sideBySide {
+	padding: 0;
+	margin: 0;
+}
+.sideBySide li {
+	list-style: none;
+}
+.disabled {
+	color: #CCC;
+	font-weight: normal;
+}
+.data {
+	font-weight:bold;
+	color:red;
+}
+#eventState {
+	font-size: 50%;
+}
+.event {
+	float: left;
+	width: 65%;
+	clear: left;
+}
+h2.shadowline {
+	background-color: rgba(255,255,255,.5);
+}
+#mousemove {
+	position: relative;
+	overflow: visible;
+}
+#mousemove small {
+	position: absolute;
+	top: 40%;
+	display: inline-block;
+	background-color: red;
+	right: -15px;
+	padding: 2px;
+	line-height: 1;
+	z-index: 100;
+	font-size: 50%;
+	font-weight: bold;
+	color: white;
+}
+#mousemove.disabled small {
+	background-color: green;
+}
+#target {
+	float: right;
+	width: 125px;
+	padding: 0px 10px 10px;
+	background: #E6E2AE;
+	border: 1px solid #333;
+}
+#monitor {
+	height: 450px;
+	overflow: hidden;
+	padding: 10px 10px 10px 10px;
+	position: absolute;
+	font-size: 1.2em;
+	width: 180px;
+	background-color: rgba(255,211,224,.5);
+	-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.75);
+	-moz-box-shadow: 1px 1px 2px rgba(0,0,0,.75);
+	box-shadow: 1px 1px 2px rgba(0,0,0,.75);
+	left: 700px;
+	top: 60px;
+}
+#monitor h2 small {
+	font-size: 70%;
+	display: inline-block;
+	padding: 5px;
+}
+#monitor h2 small:hover {
+	background-color: rgb(255,255,204);
+	color: black;
+	text-shadow: 1px 1px 2px rgba(255,255,255,.75);
+}
+#monitor p {
+	font-size: 60%;
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar .event {
+	float: left;
+	width: 65%;
+	clear: left;
+}
+#monitorResults {
+	margin-top:5px;
+}
+#keydown, #keyup, #keypress {
+	float: left;
+	width: 30%;
+	padding-right: 5px;
+	margin-bottom: 10px;
+}
+#keydown, #keyup {
+	margin-right: 5px;
+}
+#keydown p, #keyup p, #keypress p {
+	margin-bottom: 3px;
+}
+#keyup ul, #keydown ul, #keypress ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+#keyup span, #keydown span, #keypress span {
+	float: right;
+	width: 40%;
+}
+.data {
+	font-weight:bold;
+	color:red;
+}
+#eventState {
+	font-size: 50%;
+}
+#keys {
+	overflow: hidden;
+}
+#keydown {
+	float: left;
+	width: 30%;
+	padding-right: 5px;
+	margin-bottom: 10px;
+}
+#keydown {
+	margin-right: 5px;
+}
+#keypress {
+	float: left;
+	width: 30%;
+	padding-right: 5px;
+	margin-bottom: 10px;
+}
+#keyup {
+	float: left;
+	width: 30%;
+	padding-right: 5px;
+	margin-bottom: 10px;
+}
+#keyup {
+	margin-right: 5px;
+}
+form p {
+	margin: 5px 0;
+	font-size: 80%;
+	color: #CCC;
+}
+input:focus {
+	background-color: #9C9;
+}
+
+.events li {
+	font-size: 95%;
+	width: 100px;
+	padding: 10px;
+	border-radius: 5px;
+	margin-right:10px;
+}
+
+#keys li {
+	font-size: 95%;
+	width: auto;
+	padding: 0;
+	border-radius: auto;
+	margin: 5px 0 0 0;
+}
+.events h2 {
+	margin: 10px 0 5px 0;
+}
+</style>
+<script src="../_js/jquery.min.js"></script>
+<script src="../_js/jquery-ui-min.js"></script>
+<script src="../_js/site.js"></script>
+<script>
+$(document).ready(function() {
+ 
+var eventsBound=false;
+var mouseMoveBound=true;												 
+
+$('#monitor h2 small').wrap('<a href="#"></a>');
+$('#monitor h2').click(function(evt) {
+	$('#monitorResults').html('');
+	evt.stopPropagation();												
+});
+
+$('#mousemove small').wrap('<a href="#"></a>');
+$('#mousemove a').on('click',function(evt) {
+	var $this = $(this);
+	if ($this.parent().hasClass('disabled')) {
+		$('#mousemove small').text('stop');
+		$this.parent().removeClass('disabled');
+		mouseMoveBound=true;
+		$(document).on('mousemove', function(evt) {							
+			handle($('#'+evt.type),evt,this);
+		});
+	} else {
+		$(document).off('mousemove');
+		$('#mousemove small').text('start');
+		$this.parent().addClass('disabled');
+		mouseMoveBound=false;
+	}
+});
+
+
+
+
+var events=['click',
+			'dblclick',
+			'mouseover',
+			'mouseout',
+			'mousemove',
+			'mousedown',
+			'mouseup',
+			'keyup',
+			'keydown',
+			'keypress',
+			'focus',
+			'blur'
+			];
+
+var winEvents=['load',
+			   'resize',
+			   'scroll'
+			 	];
+
+
+
+$('#button').click(function() {
+	if ($(this).val()=='start') {
+		$(this).val('stop');		
+		bindEvents();
+		$('#eventState').text('(active)');
+	} else {
+		$(this).val('start');		
+		unBindEvents();
+		$('#eventState').text('(disabled)');
+	}
+});
+														
+		
+var unBindEvents = function() {
+	for (var i=0;i<events.length; i++) {
+	$(document).off(events[i]);
+	$('*:not("#monitor h2, #button")').off(events[i]);
+	}
+	for (var j=0;j<winEvents.length; j++) {
+	$(window).off(winEvents[j]);
+	}
+	eventsBound=false;
+}
+
+
+var bindEvents= function() {
+
+	eventsBound = true; 
+	
+	
+	$('#prop, #noProp').on('click',function(evt) {
+		var idName = $(this).attr('id');
+		$('#' + idName + 'Elems').text('1');
+		$('#' + idName + 'Tags').text(this.tagName);
+		handle($('#click'),evt,this);
+		if (idName == 'noProp') evt.stopPropagation();
+	});
+
+	$(':text').on('focus',function(evt) {
+		handle($('#focus'),evt,this);
+		evt.stopPropagation();
+	});
+
+	$(':text').on('blur',function(evt) {
+		handle($('#blur'),evt,this);
+		evt.stopPropagation();
+	});
+
+	$('*:has(#prop)').on('click',function(evt) {
+			if ($(evt.target).attr('ID')!='prop') return;
+			$('#propTags').append(", " + this.tagName);
+			var currentClicks = parseInt($('#propElems').text());
+			$('#propElems').text(currentClicks + 1);
+			handle($('#click'),evt,this);
+	});
+
+
+
+	for (i=0;i<events.length;i++) {
+	$(document).on(events[i],function(evt) {
+		handle($('#'+evt.type),evt,this);
+	});
+	}
+
+
+	for (var j=0;j<winEvents.length;j++) {
+	$(window).on(winEvents[j],function(evt) {
+		handle($('#'+evt.type),evt,this);
+	});
+	}
+
+	$(document).on('keydown',function(evt) {
+					updateKey('#keydown',evt);
+	});
+	$(document).on('keyup',function(evt) {
+					updateKey('#keyup',evt);
+	});
+	$(document).on('keypress',function(evt) {
+					updateKey('#keypress',evt);
+	});
+
+};
+
+bindEvents();
+			
+function handle(elem,evt,targElem) {
+	if (eventsBound) {
+		if (evt.type=='mousemove' && ! mouseMoveBound) {
+			return;	
+		}
+		highlight(elem);
+		updateMonitor(evt);
+		updateMouse(evt);
+	}
+}
+	
+function highlight(elem) {
+	if (elem.is(':animated')) return;
+	//var colorStart = jQuery.Color( "rgb(214,223,226);" );
+	colorStart="red";
+	elem.animate({ backgroundColor: colorStart },250).animate({ backgroundColor: "transparent" }, 1000);
+}
+
+function updateMonitor(evt) {
+	var results = $('#monitorResults');
+	var currHTML = results.html();
+	currHTML = currHTML.length > 1200 ? currHTML.slice(0,1200) : currHTML;
+	var eventMessage = '<p class="event">' + evt.type + '</p>';
+	var target = evt.target.tagName ? evt.target.tagName : '';
+	var targetMessage = '<p class="target">' + target + '</p>';
+	results.html(eventMessage+targetMessage+currHTML );
+}
+
+function updateMouse(evt) {
+	$('#x').text(evt.pageX);
+	$('#y').text(evt.pageY);
+}
+
+function updateKey(elem, evt) {
+	$('.which',elem).text(evt.which);
+	$('.shiftkey',elem).text(evt.shiftKey);
+	$('.metakey',elem).text(evt.metaKey);
+	$('.keycode',elem).text(evt.keyCode);
+	$('.altkey',elem).text(evt.altKey);
+	$('.ctrlkey',elem).text(evt.ctrlKey);
+	var key = (evt.type=='keypress') ? evt.which : evt.keyCode;
+	var letter = String.fromCharCode(key);
+	$('.letter',elem).text(letter);
+}	
+}); // end ready
+</script>
+</head>
+
+<body>
+<div class="wrapper clear">
+  	<header>
+	    JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+	</header>
+  <div class="content">
+    <div id="monitor">
+      <h2>Event Monitor <small>(clear)</small></h2>
+      <p class="event"><strong>Event</strong></p>
+      <p class="target"><strong>Target</strong></p>
+      <div id="monitorResults"></div>
+    </div>
+    <div class="main events">
+      <h1>Events <span id="eventState">(active)</span>&nbsp;&nbsp;
+        <input type="button" name="button" id="button" value="stop">
+      </h1>
+      <h2 class="shadowLine">Click Events</h2>
+      <ul class="sideBySide clear">
+        <li id="click">onclick</li>
+        <li  id="dblclick">ondoubleclick</li>
+        <li  id="mousedown">mousedown</li>
+        <li  id="mouseup">mouseup</li>
+      </ul>
+      <h2 class="shadowLine">Mouse Events &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>X:<span id="x" class="data"></span>&nbsp;&nbsp;&nbsp;Y:<span id="y" class="data"></span></small></h2>
+      <ul class="sideBySide clear">
+        <li id="mouseover">mouseover</li>
+        <li id="mouseout">mouseout</li>
+        <li id="mousemove">mousemove&nbsp;&nbsp;<small>stop</small></li>
+      </ul>
+      <div id="keys">
+        <h2 class="shadowLine">Key Events</h2>
+        <div  id="keydown" class="clear">
+          <p>keydown</p>
+          <ul>
+            <li><span class="letter data">&nbsp;</span>Key</li>
+            <li><span class="keycode data">&nbsp;</span>keyCode</li>
+            <li><span class="which data">&nbsp;</span>which</li>
+            <li><span class="altkey data">&nbsp;</span>altKey</li>
+            <li><span class="ctrlkey data">&nbsp;</span>ctrlKey</li>
+            <li><span class="metakey data">&nbsp;</span>metaKey</li>
+            <li><span class="shiftkey data">&nbsp;</span>shiftKey</li>
+          </ul>
+        </div>
+        <div  id="keyup" class="clear">
+          <p>keyup</p>
+          <ul>
+            <li><span class="letter data">&nbsp;</span>Key</li>
+            <li><span class="keycode data">&nbsp;</span>keyCode</li>
+            <li><span class="which data">&nbsp;</span>which</li>
+            <li><span class="altkey data">&nbsp;</span>altKey</li>
+            <li><span class="ctrlkey data">&nbsp;</span>ctrlKey</li>
+            <li><span class="metakey data">&nbsp;</span>metaKey</li>
+            <li><span class="shiftkey data">&nbsp;</span>shiftKey</li>
+          </ul>
+        </div>
+        <div id="keypress" class="clear">
+          <p>keypress</p>
+          <ul>
+            <li><span class="letter data">&nbsp;</span>Key</li>
+            <li><span class="keycode data">&nbsp;</span>keyCode</li>
+            <li><span class="which data">&nbsp;</span>which</li>
+            <li><span class="altkey data">&nbsp;</span>altKey</li>
+            <li><span class="ctrlkey data">&nbsp;</span>ctrlKey</li>
+            <li><span class="metakey data">&nbsp;</span>metaKey</li>
+            <li><span class="shiftkey data">&nbsp;</span>shiftKey</li>
+          </ul>
+        </div>
+      </div>
+      <h2 class="shadowLine">Blur/Focus (tab to links or form elements)</h2>
+      <ul class="sideBySide clear">
+        <li id="focus">focus</li>
+        <li  id="blur">blur</li>
+      </ul>
+      <form action="" method="get">
+        <p>
+          <label for="test">Click or tab into me</label>
+           ...
+          <input type="text" name="test" id="test">
+          ...then click or tab out of me.</p>
+      </form>
+      <h2 class="shadowLine">Page Events</h2>
+      <ul class="sideBySide clear">
+        <li id="load">load</li>
+        <li  id="resize">resize</li>
+        <li  id="scroll">scroll</li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+<p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+</footer>
+  <div id="resources">
+    <p class="open">+</p>
+    <h2>Test Beds</h2>
+    <ul class="nav">
+      <li><a href="selectors.html">jQuery Selectors Testbed</a></li>
+      <li><a href="content_functions.html">jQuery Content Functions Test Bed</a></li>
+      <li><a href="events.html">Events Test Bed</a></li>
+      <li><a href="effects.html">jQuery Effects Test Bed</a></li>
+      <li><a href="array_methods.html">Array Methods</a></li>
+      <li><a href="regex_tester.html">Regular Expression Tester</a></li>
+    </ul>
+    <h2>jQuery Resources</h2>
+    <ul class="nav">
+      <li><a href="http://jquery.com">jQuery</a></li>
+      <li><a href="http://jqueryui.com/">jQuery UI</a></li>
+      <li><a href="http://jquerymobile.com/">jQuery Mobile</a></li>
+      <li><a href="http://jqapi.com/">jQAPI.com</a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

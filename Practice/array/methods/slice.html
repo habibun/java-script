@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.
+         */
+
+        var a = ["zero", "one", "two", "three"];
+        var sliced = a.slice(1, 3);
+        console.log(sliced);
+        console.log(a);
+
+
+        //Select elements from an array:
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        var citrus = fruits.slice(1, 3);
+
+//        console.log(citrus);    //Orange,Lemon
+
+
+        //Select elements using negative values:
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        var myBest = fruits.slice(-3, -1);
+
+//        console.log(myBest);    //Lemon,Apple
+    </script>
+</head>
+<body>
+
+</body>
+</html>

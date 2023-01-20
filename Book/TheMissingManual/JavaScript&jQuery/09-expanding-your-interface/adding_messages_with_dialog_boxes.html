@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#hello').dialog();
+        });
+
+        $('#loginLink').click(function(evt) {
+            evt.preventDefault();
+            $('#login').dialog('open');
+        }); // end click
+
+        $('#login form').submit(function() {
+            $('#login').dialog('close');
+        }); // end submit
+
+        $('#dialog').dialog({
+            buttons : {
+                "Confirm" : function() {
+                    // code executed when "Confirm" button is clicked
+                },
+                "Cancel" : function() {
+                    // code executed when "Cancel" button is clicked
+                }
+            } // end buttons
+        }); // end dialog
+    </script>
+</head>
+<body>
+<div id="hello" title="Hello World!">
+    <p>This dialog box is actually a div, that's placed
+        on the page using absolute positioning.</p>
+    <p>Try dragging the dialog around the screen. You can!</p>
+</div>
+</body>
+</html>

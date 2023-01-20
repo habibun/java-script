@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--If you want to add an animated GIF-->
+    <style>
+        .ui-tabs-loading em {
+            background: url(images/loading.gif) no-repeat left center;
+            padding: 0 0 0 25px;
+        }
+    </style>
+</head>
+<body>
+
+<!--For example, if you want the
+message to be “Retrieving,” you can write this:-->
+<script>
+    $(document).ready(function () {
+        $('#tabs').tabs({
+            spinner: 'Retrieving'
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#menu').hover(
+                    function () {
+                        $('#submenu').show();
+                    }, // end mouseover
+                    function () {
+                        $('#submenu').hide();
+                    } // end mouseout
+            ); // end hover
+
+            $(document).click(function (evt) {
+                var xPos = evt.pageX;
+                var yPos = evt.pageY;
+                alert('X:' + xPos + ' Y:' + yPos);
+            }); // end click
+
+            $('#menua').click(function (evt) {
+                // clever javascript goes here
+                evt.preventDefault(); // don't follow the link
+            });
+
+            /*For example, if you want to prevent all tags
+             with the class tabButton from responding to any click events, you can write this:*/
+            $('.tabButton').off('click');
+
+            /*The stopPropagation()  function prevents an event from
+             passing onto any ancestor tags.*/
+            $('#theLink').click(function (evt) {
+                // do something
+                evt.stopPropagation(); // stop event from continuing
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

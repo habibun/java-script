@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--STEP2: Attach an external JavaScript file from Google Maps.-->
+    <script type="text/javascript" src="http://maps.google.com/
+maps?file=api&v=2&key=YOUR_KEY_HERE"></script>
+    <!--STEP3: Attach two jQuery files.-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.jmap.js"></script>
+    <!--STEP6: Call the jMaps function-->
+    <script type="text/javascript">
+        $(document).ready(function( ) {
+            $('#map').jmap( );
+        });
+    </script>
+
+    <!--In addition, you can add a CSS rule to the page’s stylesheet to define the height and width of the map on the page. For example:-->
+    <style>
+        #map {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+<!--STEP 1: Get a Google Maps API key from http://code.google.com/apis/maps/signup.-->
+
+<!--STEP4: Add an empty <div> tag with an ID to the page-->
+<div id="map"></div>
+
+<!--STEP5: If you want to provide driving directions with the map, add another empty <div> tag-->
+<div id="directions"></div>
+
+
+</body>
+</html>

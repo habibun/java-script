@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * The forEach() method calls a provided function once for each element in an array, in order.
+         */
+
+        //List each item in the array:
+        /*var numbers = [4, 9, 16, 25];
+
+        numbers.forEach(function (item, index) {
+            console.log(index + " = " + item);
+        });*/
+
+        //Get the sum of all the values in the array:
+        var numbers = [65, 44, 12, 4];
+        var sum = 0;
+
+        function myFunction(item) {
+            return sum += item;
+        }
+        numbers.forEach(myFunction);
+        console.log(sum);       //125
+    </script>
+</head>
+<body>
+
+</body>
+</html>

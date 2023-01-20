@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     *• \d{5} matches five digits, as in 97213.
+     * ( ) creates a subpattern
+     * -\d{4} matches the hyphen followed by four digits, like this: -1234.
+     * ? matches zero or one instance of the preceding pattern.
+     *
+     * @type {RegExp}
+     */
+    var zipCode = /\d{5}(-\d{4})?/;
+</script>
+</body>
+</html>

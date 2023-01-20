@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * function with closures
+         */
+        function Order() {
+            var total = 0;
+            return function addProduct(price){
+                var fee = 1;
+                var tax = 1;
+                total += price + fee + tax;
+                return total;
+            }
+        }
+        var myOrder = new Order();
+//        console.log(myOrder(100));
+//        console.log(myOrder(100));
+//        console.log(myOrder(100));
+
+        /**
+         * function without closure
+         */
+         function OrderNormal(price) {
+            var fee = 1;
+            var tax = 1;
+            return price+fee+tax;
+        };
+
+        console.log(OrderNormal(100));
+        console.log(OrderNormal(100));
+        console.log(OrderNormal(100));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

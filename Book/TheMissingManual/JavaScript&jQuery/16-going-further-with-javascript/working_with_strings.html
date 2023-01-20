@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /* Determining the Length of a String*/
+        var password = $('#password').val();
+        if (password.length <= 6) {
+            alert('That password is too short.');
+        } else if (password.length > 15) {
+            alert('That password is too long.');
+        }
+
+        /*Changing the Case of a String */
+        var correctAnswer = 'Greg LeMond';
+        var response = prompt('Who was the first American to win the Tour de France?', '');
+        if (response.toUpperCase() == correctAnswer.toUpperCase()) {
+            // correct
+        } else {
+            // incorrect
+        }
+        var answer = 'Greg LeMond';
+        alert(answer.toLowerCase()); // 'greg lemond'
+
+        /* Searching a String: indexOf() Technique */
+
+        var quote = "To be, or not to be.";
+        var firstPosition = quote.indexOf('be'); // returns 3
+        var lastPosition = quote.lastIndexOf('be'); // returns 17
+
+
+        /* Extracting Part of a String with slice()- to extract part of a string */
+        var url = 'http://www.sawmac.com';
+        var domain = url.slice(7); // www.sawmac.com
+        var end_of_string = quote.slice(-6);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

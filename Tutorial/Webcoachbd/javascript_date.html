@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var currentTime = new Date();
+
+        /**
+         * getDate method
+         */
+        var curTime = new Date();
+        var curDate = curTime.getDate();
+        document.write(curDate);
+
+
+        /**
+         * getDay method
+         *
+         * 0 = sunday
+         */
+        var curTime = new Date();
+        var curDay = curTime.getDay();
+        document.write(curDay);
+
+        /**
+         * getFullYear method
+         */
+        var birthDate= new Date('August 27, 2010');
+        var birthYear = birthDate.getFullYear();
+        document.write(birthYear);
+
+        /**
+         * getMonth  method
+         * 0 = january
+         */
+        var curDate= new Date();
+        var curMonth = curDate.getMonth();
+        document.write(curMonth);
+
+        /**
+         * getSeconds method
+         */
+        var curDate= new Date();
+        var curSecond = curDate.getSeconds();
+        document.write(curSecond);
+
+
+        /**
+         * getTime method
+         */
+        var curDate= new Date();
+        var curTime = curDate.getTime();
+        document.write(curTime );
+
+        /**
+         * getMinutes method
+         */
+        var curDate= new Date();
+        var curMinute = curDate.getMinutes();
+        document.write(curMinute);
+
+
+        /**
+         * getHours method
+         */
+        var myDate= new Date('August 26, 1986 23:15:00');
+        var myHour = myDate.getHours();
+        document.write(myHour + "now -");
+
+
+        /**
+         * Date Time Customization
+         */
+        //format(dd/mm/yyyy)
+        var d = new Date();
+        var curDate = d.getDate();
+        var curMonth = d.getMonth();
+        curMonth++;
+        var curYear = d.getFullYear();
+
+        document.write(curDate  + '/' + curMonth + '/' + curYear);
+
+        //format (26 August 2013)
+        var monthNames = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+
+        var d = new Date();
+        var curDate = d.getDate();
+        var curMonth = d.getMonth();
+        var curYear = d.getFullYear();
+
+        document.write(curDate  + ' ' + monthNames[curMonth] + ' ' + curYear);
+
+
+        //format(AM, PM)
+        var amPm = '';
+        var d = new Date();
+
+        var curHour = d.getHours();
+        var curMin = d.getMinutes();
+
+        if (curHour  < 12){
+            amPm  = 'AM';
+        }else{
+            amPm  = 'PM';
+        }
+        if (curHour  == 0) {
+            curHour   = 12;
+        }
+        if (curHour   > 12) {
+            curHour   = curHour   - 12;
+        }
+
+        document.write(curHour   + ':' + curMin + ' ' + amPm);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

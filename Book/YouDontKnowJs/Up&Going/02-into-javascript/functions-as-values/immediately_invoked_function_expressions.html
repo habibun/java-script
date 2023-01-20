@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        (function IIFE() {
+            console.log("Hello!");
+        })();
+
+
+        //declare variables that won't affect the surrounding code outside the IIFE
+        var a = 42;
+
+        (function IIFE() {
+            var a = 10;
+            console.log(a);
+        })();
+        console.log(a);
+
+        //IIFE can also have return values
+        var x = (function IIFE2() {
+            return 42;
+        })();
+
+        console.log(x);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

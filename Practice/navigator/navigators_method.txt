@@ -1,0 +1,5 @@
+Method                  Description
+javaEnabled()           This method determines if JavaScript is enabled in the client. If JavaScript is enabled, this method returns true; otherwise, it returns false.
+plugings.refresh        This method makes newly installed plug-ins available and populates the plugins array with all new plug-in names. Netscape only.
+preference(name,value)  This method allows a signed script to get and set some Netscape preferences. If the second parameter is omitted, this method will return the value of the specified preference; otherwise, it sets the value. Netscape only.
+taintEnabled()          This method returns true if data tainting is enabled and false otherwise.

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /* to assign the element used as accordion tabs like this*/
+    $('#accordion').accordion({
+        header: 'h2'
+    });
+    /*For example, to make a panel open when the mouse moves
+     over a tab, you’d add the event option with a value of mouseover to the object literal like this*/
+    $('#accordion').accordion({
+        header: 'h2',
+        event: 'mouseover'
+    });
+
+    /*Accordion height:
+    If you’d rather the accordion change heights when you display panels with varying amounts of content,
+    you can set the autoheight option to false:
+    */
+    autoHeight: false
+
+    /*Triggering event:You can assign a new event
+     like this:*/
+    event: 'mouseover'
+
+    /*Initially open panel: A simple way to
+     make sure an accordion panel is open is to first give a class to its tab
+     (for example, the <h2> or <dt> tag that opens the panel):
+     */
+    '<h2 class="open">Accordion Tab</h2>'//(html)
+    /*Then, assign the class selector to the accordion( ) function’s active option:*/
+    active: '.open'
+    /*to start with all accordion panels
+     closed. To do so, set the option to false:*/
+    active: false
+
+    /*Applying a class to the currently selected Tab:
+    *set the Accordion plug-in’s selectedClass option like this:
+    * */
+    selectedClass:'current'
+
+ </script>
+</body>
+</html>

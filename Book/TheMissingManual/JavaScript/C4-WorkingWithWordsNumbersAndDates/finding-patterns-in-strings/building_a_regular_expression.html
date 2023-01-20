@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     *1. Match one number
+     *
+     * \d, which matches any single number
+     */
+
+    /**
+     * 2. Match five numbers in a row.
+     *
+     * Since \d matches a single number, a simple way to match five numbers is with this regular expression: \d\d\d\d\d
+     */
+
+    /**
+     * 3. Match only five numbers.
+     *
+     *\b word boundary character
+     *
+     * so you could rewrite your regular expression like this
+     * \b\d\d\d\d\d\b
+     *
+     * You can also use the ^ character to match the beginning of a string
+     *
+     *  $ character to match the end of a string
+     *
+     *  After all, you’re really looking for something like 97213 (with no other characters in the string)
+     *In this case, the regex would be ^\d\d\d\d\d$
+     */
+
+    /**
+     * 4. Put your regex into action in JavaScript
+     *
+     *to see if the input is in the form of a valid five-number Zip code.see below
+     */
+    var zip = '12345';
+    var zipTest = /^\d\d\d\d\d$/;   //create regex
+    if(zip.search(zipTest) == -1){
+        console.log('this is not valid zip code');
+    }else{
+        console.log('this is valid zip code');
+    }
+
+    /**
+     * to match five numbers, you can write \d{5}
+     */
+
+    /**
+     * \. translates to “find me the period symbol”
+     *
+     * you can use .*, which translates to “find one character (.) zero or more times (*).”
+     *
+     * \S character, which matches any nonspace character
+     *
+     * To make a regular expression ignore the difference between upper and lowercase letters, you use the i argument
+     *
+     * see below
+     */
+    var testString = 'The file is logo.gif';    //the string to test
+    var gifRegex = /\S*\.gif/;  //the regular expression
+    var results = testString.match(gifRegex);
+    console.log(results[0]);
+</script>
+</body>
+</html>

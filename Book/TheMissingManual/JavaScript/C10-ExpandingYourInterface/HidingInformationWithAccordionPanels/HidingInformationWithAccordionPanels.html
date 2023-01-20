@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--step 1: attach this file-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/ui.core.js"></script>
+    <script type="text/javascript" src="js/ui.accordion.js"></script>
+</head>
+<body>
+<!--step 2:Provide an HTML tag to act as a container for the accordion elements-->
+<!--A simple technique is to wrap the accordion HTML (described in the next
+step) in a <div> tag with an ID-->
+<div id="accordion">
+    <!-- accordion HTML here -->
+</div>
+
+
+<!--step 3:Structure the HTML for the accordion-->
+<!--One simple way is to use a heading tag for the trigger, followed by a <div> for
+each accordion element. For example:-->
+<div id="accordion">
+    <h2>Accordion Tab 1</h2>
+    <div>Content for accordion panel 1 goes here</div>
+    <h2>Accordion Tab 2</h2>
+    <div>Content for accordion panel 2 goes here</div>
+</div>
+
+<!--Another approach is to use a definition list like this:-->
+<dl id="accordion">
+    <dt>Accordion Tab 1</dt>
+    <dd>Content for accordion panel 1 goes here</dd>
+    <dt>Accordion Tab 2</dt>
+    <dd>Content for accordion panel 2 goes here</dd>
+</dl>
+<script>
+    /* step 4:Apply the accordion( ) function to the container element, and then identify the
+     tab elements.*/
+
+    /*if you use an <h2> tag as the tab (the element’s that clicked to
+     show an accordion panel), then the JavaScript code should look like this
+     */
+    $(document).ready(function( ) {
+        $('#accordion').accordion({
+            header: 'h2'
+        });
+    });
+</script>
+</body>
+</html>

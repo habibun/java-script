@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--STEP1: Go to http://maps.google.com and search for the location you want-->
+<script>
+    /* STEP2: In the browser’s location bar, type: */
+    javascript:void(prompt('',gApplication.getMap( ).getCenter( )));
+
+    /*Once you have the proper latitude and longitude values, you can send them to the
+     jmap( ) function as part of an object literal like this:*/
+    $('#map').jmap('init',{mapCenter:[43.878946,-103.459824]});
+</script>
+
+</body>
+</html>

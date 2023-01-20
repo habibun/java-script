@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var username = $('#username');
+
+            /* to access field value */
+            var fieldValue = $('#username').val();
+
+            /*You could use a CSS attribute selector like this:*/
+            $('input[type="radio"]');
+
+            /* to select all text field */
+            $(':text');
+
+            /* to select specific checkbox with checked value */
+            var checkedValue = $('input[name="shipping"]:checked').val();
+
+            /* to select select option tag */
+            var selectedState = $('#state :selected').val();
+
+            /*The code to retrieve the quantity and set the total cost for the form*/
+            var unitCost = 9.95;
+            var amount = $('#quantity').val(); // get value
+            var total = amount * unitCost;
+            total = total.toFixed(2);
+            $('#total').val(total); // set value
+
+            /* determining the button are checked or not */
+            if ($('#news').prop('checked')) {
+                // the box is checked
+            } else {
+                // the box is not checked
+            }
+
+            /*
+             * SUBMIT
+             * */
+
+            /* validate the form */
+            $('#signup').submit(function () {
+                if ($('#username').val() == '') {
+                    alert('Please supply a name in the Name field.');
+                    return false;
+                }
+            }); // end submit()
+
+            /* stop form submitting */
+            /*$('form').submit(function (evt) {
+             // stop form submisssion
+             evt.preventDefault();
+             });*/
+
+            /* you can use form submit event */
+            $('form').submit(function () {
+                // code to run when form is submitted
+            });
+
+            /*
+             * FOCUS
+             * */
+            /*you can erase it when she focuses on the field */
+            $('#username').focus(function () {
+                var field = $(this);
+                if (field.val() == field.prop('defaultValue')) {
+                    field.val('');
+                }
+            });
+
+            /*
+             * BLUR
+             * */
+            $('#quantity').blur(function () {
+                var fieldValue = $(this).val();
+                if (isNaN(fieldValue)) {
+                    alert('Please supply a number');
+                }
+
+            });
+
+            /*
+             * CLICK
+             * */
+            $(':radio').click(function () {
+                //function will apply to every radio button when clicked
+            });
+
+            /*
+             * CHANGE
+             * */
+            $('#planet').change(function () {
+                if ($(this).val() == 'Please choose a planet.') {
+                    alert('Please select a planet from this menu.');
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+<form action="process.php" method="post" name="signup" id="signup">
+    <div>
+        <label for="quantity" class="label">Quantity</label>
+        <input name="quantity" type="text" id="quantity">
+    </div>
+    <div>
+        <label for="username" class="label">Name</label>
+        <input name="username" type="text" id="username" value="Please type your user name">
+    </div>
+    <div><span class="label">Hobbies</span>
+        <input type="checkbox" name="hobby" id="heliskiing" value="helisking">
+        <label for="heliskiing">Heli-skiing</label>
+        <input type="checkbox" name="hobby" id="pickle" value="pickle">
+        <label for="pickle">Pickle eating</label>
+        <input type="checkbox" name="hobby" id="walnut" value="walnut">
+        <label for="walnut">Making walnut butter</label>
+    </div>
+    <div><label for="planet" class="label">Planet of Birth</label>
+        <select name="planet" id="planet">
+            <option>Please choose a planet.</option>
+            <option>Earth</option>
+            <option>Mars</option>
+            <option>Alpha Centauri</option>
+            <option>You've never heard of it</option>
+        </select>
+    </div>
+    <div class="labelBlock">Would you like to receive annoying e-mail from us?
+    </div>
+    <div class="indent">
+        <input type="radio" name="spam" id="yes" value="yes" checked="checked">
+        <label for="yes">Yes</label>
+        <input type="radio" name="spam" id="definitely" value="definitely">
+        <label for="definitely">Definitely</label>
+        <input type="radio" name="spam" id="choice" value="choice">
+        <label for="choice">Do I have a choice?</label>
+    </div>
+    <div>
+        <input type="submit" name="submit" id="submit" value="Submit">
+    </div>
+</form>
+</body>
+</html>

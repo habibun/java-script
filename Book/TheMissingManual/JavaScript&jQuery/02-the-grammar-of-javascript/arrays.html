@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /* creating an array */
+    var array = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
+
+    /*You can store any mix of values in an array. In other words, numbers, strings, and
+     Boolean values can all appear in the same array:*/
+    var prefs = [1, -30.4, 'www.oreilly.com', false];
+
+    /* accessing item in array */
+    console.log(array[0]);
+
+    /* array length property */
+    var length = array.length;
+    console.log(length);
+
+    /* adding an item to the end of an array */
+    var properties = ['red', '14px', 'Arial'];
+    //        properties[3] = 'bold';
+    /* an array by using the array’s length property as the index. */
+    properties[properties.length] = 'bold';
+    /* you can use an array's push command which adds whatever you supply between the parenthesis to the end of the array */
+    properties.push('strong');
+    /* one advantage of the push command is that it lets you add more than one item to the array */
+    console.log(properties.length);
+
+
+    /* adding an item to the beginning of an array */
+    properties.unshift('first');
+    console.log(properties[0]);
+
+    /* deleting items from an array */
+    var p = [0, 1, 2, 3];
+    /* remove item using shift method */
+    var removedItem = p.shift();
+
+    /* remove item using pop method */
+    var removeItem = p.pop();
+    console.log(p.length);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+#when you replace one word then we use string replace function:
+<script>
+    var visitorName = "Chuck";
+    var myOldString = "Hello username! I hope you enjoy your stay username.";
+    var myNewString = myOldString.replace("username", visitorName);
+    document.write("Old string =  " + myOldString);
+    document.write("<br />New string = " + myNewString);
+</script>
+
+#when you replace one word then you use regular expression:
+<script>
+    var visitorName = "Chuck";
+    var myOldString = "Hello username! I hope you enjoy your stay username.";
+    var myNewString = myOldString.replace(/username/, visitorName);
+    document.write("Old string =  " + myOldString);
+    document.write("<br />New string = " + myNewString);
+</script>
+
+#when you replace all word then use regular expression global:
+<script>
+    var visitorName = "Chuck";
+    var myOldString = "Hello username! I hope you enjoy your stay username.";
+    var myNewString = myOldString.replace(/username/g, visitorName);
+    document.write("Old string =  " + myOldString);
+    document.write("<br />New string = " + myNewString);
+</script>
+</body>
+</html>

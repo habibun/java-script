@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type='text/javascript'>
+        function getContent() {
+            var content = document.getElementById('content1');
+            alert('The content of the first DIV element is = ' +  content.innerHTML);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="content1">Div #1</div>
+    <div id="content2">Div #2</div>
+    <div id="content3">Div #3</div>
+    <input type="button" value="Show Content" onclick="getContent()">
+</body>
+</html>

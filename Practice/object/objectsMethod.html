@@ -1,0 +1,14 @@
+<script>
+    var hero = {
+        breed: 'Turtle',
+        occupation: 'Ninja',
+        say: function () {
+            return 'I am ' + hero.occupation;
+        }
+    }
+    //calling object method using dot notation
+    var resultDot = hero.say();
+    //calling object method using square bracket
+    var resultBrace = hero['say']();
+    document.write(resultBrace);
+</script>

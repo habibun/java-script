@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var count;
+    document.write("Starting Loop" + "<br />");
+    for (count = 0; count < 10; count++) {
+        document.write("Current Count : " + count);
+        document.write("<br />");
+    }
+    document.write("Loop stopped!");
+</script>
+
+
+alternate for loop syntax:
+<script type="text/javascript">
+    var i = 0, punishment = '';
+    for (;;) {
+        punishment += 'I will never do this again, ';
+        if (++i == 100) {
+            break;
+        }
+    }
+    document.write(punishment);
+</script>
+
+
+nested for loop example works only console window:
+<script type="text/javascript">
+    var res = '\n';
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            res += '* ';
+        }
+        res += '\n';
+    }
+</script>
+
+
+</body>
+</html>

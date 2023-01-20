@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#swap').replaceWith('<img src="happy.png" alt="Happy Face" height="100" width="150" id="swap">');
+        });
+
+        $(document).ready(function () {
+            var newPhoto = new Image();
+            newPhoto.src = 'images/newImage.jpg';
+            var oldSrc = $('#photo').attr('src');
+            $(' h1').hover(
+                    function () {
+                        $('#photo').attr('src', newPhoto.src);
+                    },
+                    function () {
+                        $('#photo').attr('src', oldSrc);
+                    }); // end hover
+        }); // end ready
+
+    </script>
+</head>
+<body>
+<img src="sad.png" alt="Sad Face" height="50" width="50" id="swap">
+</body>
+</html>

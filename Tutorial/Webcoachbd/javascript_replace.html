@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var regExp = /Webcoachbd/;
+        var sen = 'What do you know about Webcoachbd. Webcoachbd is the largest Bengali tutorial site.';
+        var rep = sen.replace(regExp, 'Tutorial Site');
+        document.write(rep);
+
+        //replace parameter with function
+        var regExp = /Webcoachbd/g;
+        var sen = 'What do you know about Webcoachbd. Webcoachbd is the largest Bengali tutorial site.';
+        var rep = sen.replace(regExp, function upper(w){
+            return w.toUpperCase();
+        });
+        document.write(rep);
+
+
+        /**
+         * toLowerCase method
+         */
+        var st = 'WEBCOACHBD';
+        var lc = st.toLowerCase();
+        document.write(lc);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

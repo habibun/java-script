@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //the basic structure look like this
+    $('#selector').hover(function1, function2);
+
+    //example
+    $('#menu').hover(
+            function () {
+                $('#submenu').show();
+            }
+            , function () {
+                $('#submenu').hide();
+            });
+
+    //using plain old function
+    function showSubmenu() {
+        $('#submenu').show();
+    }
+    function hideSubmenu() {
+        $('#submenu').hide();
+    }
+    $('#menu').hover(showSubmenu, hideSubmenu);
+</script>
+</body>
+</html>

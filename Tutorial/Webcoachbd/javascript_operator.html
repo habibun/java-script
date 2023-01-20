@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //x is a operand and + is a operator and y is a operand
+        var x = 15;
+        var y = 10;
+        var z = x + y;
+        document.write(z);
+
+
+
+        //arithmetic operator
+        //( + ) plus operator
+        var x = 15;
+        var y = 10;
+        output = x + y;
+        document.write('x + y : ' + output + '<br/>');
+
+        // ( - ) minus operator
+        output = x - y;
+        document.write('x - y : ' + output + '<br/>');
+
+
+        // ( * ) multiply operator
+        output = x * y;
+        document.write('x * y : ' + output + '<br/>');
+
+
+        // ( / ) division operator
+        output = x / y;
+        document.write('x / y : ' + output + '<br/>');
+
+
+        // ( % ) modulas operator
+        output = x % y;
+        document.write('x % y : ' + output + '<br/>');
+
+        // ( ++ ) post increment operator
+        x++;
+        document.write('x++ : ' + x + '<br/>');
+
+        // ( ++ ) pre increment operator
+        ++x;
+        document.write('++x : ' + x + '<br/>');
+
+        // ( -- ) post decrement operator
+        y--;
+        document.write('y-- : ' + y + '<br/>');
+
+        // ( -- ) pre decrement operator
+        --y;
+        document.write('-- y : ' + y + '<br/>');
+
+
+
+        //Assignment Operator
+        var x = 15;
+        var y = 10;
+        x += y;
+        document.write('x += y : ' + x + '<br/>');
+
+        x -= y;
+        document.write('x -= y : ' + x + '<br/>');
+
+        x *= y;
+        document.write('x *= y : ' + x + '<br/>');
+
+        x /= y;
+        document.write('x /= y : ' + x + '<br/>');
+
+        x %= y;
+        document.write('x %= y : ' + x);
+
+
+
+
+        //Comparison Operator
+        var x = 15;
+        var y = 16;
+        if (x == y) {
+            alert('These two operand values are equal');
+        } else {
+            alert('values are not equal');
+        }
+
+
+        //Unary operator
+        var x = 8;
+        x++;
+        document.write(x);
+
+
+        //Binary operator: Binary operator works with two operand - example: +, -
+
+
+        //Ternary operator(it's work with three operand)
+        var x = 50;
+        var y = 45;
+        x > y ? document.write(x-y) : document.write('x is small');
+
+
+        //Logical operator
+        var x = 3;
+        var y = 4;
+        if( (x > y) && (x+y == 7)){
+            document.write('both 2 expression/condition not true, so entered here');
+        }else if((x > y) || (x+y == 7)){
+            document.write('at least 1 condition/ expression is true, so entered here');
+        }else{
+            document.write('error');
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

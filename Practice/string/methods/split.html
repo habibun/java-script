@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * The split() method is used to split a string into an array of substrings,
+         * and returns the new array.
+         */
+
+        //Split a string into an array of substrings:
+        var str = "How are you doing today?";
+        var res = str.split(" ");   //How,are,you,doing,today?
+
+        //Omit the separator parameter:
+        var str = "How are you doing today?";
+        var res = str.split();  //How are you doing today?
+
+        //Separate each charater, including white-space:
+        var str = "How are you doing today?";
+        var res = str.split("");    //H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,?
+
+        //Use the limit parameter:
+        var str = "How are you doing today?";
+        var res = str.split(" ",3); //How,are,you
+
+        //Use a letter as a separator:
+        var str = "How are you doing today?";
+        var res = str.split("o");   //H,w are y,u d,ing t,day?
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

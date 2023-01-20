@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Script 6.1</title>
+<style type="text/css">
+/*styles for the table on this page*/
+table {
+	border-right: 1px solid #A7A37E;
+	border-bottom: 1px solid #A7A37E;
+}
+td, th {
+	font-size: 1.3em;
+	padding: 3px;
+}
+th {
+	font-weight: bold !important;
+	border-bottom: 1px solid #333333;
+	background: url(../chapter01/images/th_bg.png) repeat-x;
+	border-top: 1px solid #333333;
+	padding-top: 4px;
+	border-left: 1px solid #A7A37E;
+}
+td {
+	border-left: 1px solid #A7A37E;
+}
+.even {
+	background-color: #E7F7FF;
+}
+
+.highlight {
+	background-color: #FC6 !important;
+}
+</style>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function( ) {
+	$('table.striped tr:even').addClass('even');
+    $('table.striped tbody tr').mouseover(function(){
+        $(this).addClass('highlight');
+    });
+    $('table.striped tbody tr').mouseout(function() {
+        $(this).removeClass('highlight');
+    });
+
+    //no need to waste time creating the same selection twice
+    $('table.striped tr:even').addClass('even');
+    var rows = $('table.striped tbody tr');
+    rows.mouseover(function(){
+        $(this).addClass('highlight');
+    });
+    rows.mouseout(function() {
+        $(this).removeClass('highlight');
+    });
+
+    //Efficient Programming with jQuery Chaining
+    $('table.striped tr:even').addClass('even');
+    $('table.striped tbody tr')
+            .mouseover(function() {
+                $(this).addClass('highlight');
+            })
+            .mouseout(function() {
+                $(this).removeClass('highlight');
+            });
+});
+</script>
+</head>
+<body id="twoCol">
+<div id="container">
+  <div id="banner"><img src="../images/banner.png" alt="Quis Nostrud" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  <div id="contentWrap">
+    <div id="main">
+      <h1>Striped Tables</h1>
+      <table width="98%" border="0" cellspacing="0" cellpadding="0" class="striped">
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Inventory Status</th>
+            <th scope="col">Weight (in lbs.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ultra-Glow Hair Spray</td>
+            <td>$20.00</td>
+            <td>in stock</td>
+            <td>.5</td>
+          </tr>
+          <tr>
+            <td>Anodyne 3000</td>
+            <td>$495.00</td>
+            <td>back order</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>Big Foot Hair Dryer</td>
+            <td>$55.00</td>
+            <td>in stock</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Cat Out of The Hat</td>
+            <td>$15.00</td>
+            <td>back order</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Tickle Me Elmo</td>
+            <td>$67.00</td>
+            <td>in stock</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Mens Watch</td>
+            <td>$350.00</td>
+            <td>in stock</td>
+            <td>.5</td>
+          </tr>
+          <tr>
+            <td>Leather Briefcase</td>
+            <td>$150.00</td>
+            <td>in stock</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Lorem Ipsum</td>
+            <td>$5.00</td>
+            <td>in stock</td>
+            <td>.25</td>
+          </tr>
+          <tr>
+            <td>Dolor Sat</td>
+            <td>$7.50</td>
+            <td>back order</td>
+            <td>.25</td>
+          </tr>
+          <tr>
+            <td>Chicken Gumbo</td>
+            <td>$15.00</td>
+            <td>in stock</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Another Product</td>
+            <td>$3.00</td>
+            <td>in stock</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Hat for Cat</td>
+            <td>$5.00</td>
+            <td>back order</td>
+            <td>.75</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="sidebar">
+      <h2>Script 6.1</h2>
+    </div>
+  </div>
+  <div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+</body>
+</html>

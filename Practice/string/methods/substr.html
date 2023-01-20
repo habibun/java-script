@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript String substr() Method</title>
+    <script>
+        /**
+         * The substr() method extracts parts of a string,
+         * beginning at the character at the specified position,
+         * and returns the specified number of characters.
+         */
+
+        //The substr() method extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters.
+        var str = "Hello world!";
+        var res = str.substr(1, 4);
+        console.log(res);   //ello
+
+        //Begin the extraction at position 2, and extract the rest of the string:
+        var str = "Hello world!";
+        var res = str.substr(2);    //llo world!
+
+        //Extract only the first character:
+        var str = "Hello world!";
+        var res = str.substr(0, 1);     //H
+
+        //Extract only the last character:
+        var str = "Hello world!";
+        var res = str.substr(11, 1);    //!
+    </script>
+</head>
+<body>
+
+</body>
+</html>

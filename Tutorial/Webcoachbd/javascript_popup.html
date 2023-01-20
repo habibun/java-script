@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //open new window using window open function
+        /*function pop() {
+            window.open( "http://www.google.com/" );
+        }*/
+
+        //another example with multi parameter
+        function pop() {
+            window.open( 'http://www.google.com', 'testWindow', 'height=400, width=400, left=200, top=100, scrollbars=1' );
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" onClick="pop()" value="Old fashion pop">
+</form>
+<p onClick="pop()">Another pop</p>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function printAmount() {
+            console.log(amount.toFixed(2));
+        }
+        var amount = 99.99;
+        printAmount();
+
+
+
+
+        amount = amount * 2;
+        printAmount();
+
+
+
+        //function with arguments
+        function printAmount2(amt) {
+            console.log(amt.toFixed(2));
+        }
+
+        function formatAmount() {
+            return "$" + amount.toFixed(2);
+        }
+
+        var amount = 99.99;
+
+        printAmount2(amount * 2);
+
+        amount = formatAmount();
+
+        console.log(amount);
+
+
+
+
+        const TAX_RATE = 0.08;
+
+        function calculateFinalPurchaseAmount(amt) {
+            //calculate the new amount with the tax
+            amt = amt + (amt * TAX_RATE);
+
+            //return the new amount
+            return amt;
+        }
+
+        var amount = 99.99;
+
+        amount = calculateFinalPurchaseAmount(amount);
+
+        console.log(amount.toFixed(2));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

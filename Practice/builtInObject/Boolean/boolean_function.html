@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean function</title>
+    <script>
+        //You can use the Boolean() function to find out if an expression (or a variable) is true:
+        Boolean(10 > 9);    //returns true
+
+
+        //Everything With a "Real" Value is True
+        var b1 = Boolean(100);
+        var b2 = Boolean(3.14);
+        var b3 = Boolean(-15);
+        var b4 = Boolean("Hello");
+        var b5 = Boolean('false');
+        var b6 = Boolean(1 + 7 + 3.14);
+
+        //Everything Without a "Real" is False
+
+        //The Boolean value of 0 (zero) is false:
+        var x = 0;
+        Boolean(x);       // returns false
+
+        //The Boolean value of -0 (minus zero) is false:
+        var x = -0;
+        Boolean(x);       // returns false
+
+        //The Boolean value of "" (empty string) is false:
+        var x = "";
+        Boolean(x);       // returns false
+
+        //The Boolean value of undefined is false:
+        var x;
+        Boolean(x);       // returns false
+
+        //The Boolean value of null is false:
+        var x = null;
+        Boolean(x);       // returns false
+
+        //The Boolean value of false is (you guessed it) false:
+        var x = false;
+        Boolean(x);       // returns false
+
+        //The Boolean value of NaN is false:
+        var x = 10 / "H";
+        Boolean(x);       // returns false
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

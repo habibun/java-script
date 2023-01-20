@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /**
+         * Hoisting
+         */
+
+        /*var a = 2;
+        foo();
+
+        function foo() {
+            a = 3;
+            console.log(a);
+
+            var a;
+        }
+
+        console.log(a);*/
+
+
+        /**
+         * Nested scopes
+         */
+        /*function foo() {
+            var a = 1;
+
+            function bar(){
+                var b = 2;
+
+                function baz() {
+                    var c = 3;
+
+                    console.log(a, b, c);
+                }
+
+                baz();
+                console.log(a, b);
+            }
+
+            bar();
+            console.log(a);
+        }
+
+        foo();*/
+
+        /*function foo() {
+            a = 2;
+        }
+
+        foo();
+        a;
+        console.log(a);*/
+
+
+        function foo() {
+            var a = 1;
+
+            if(a >= 1) {
+                let b = 2;
+
+                while (b < 5) {
+                    let c = b * 2;
+                    b++;
+
+                    console.log(a + c);
+                }
+            }
+        }
+
+        foo();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

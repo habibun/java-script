@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*function one() {
+            //this a only belongs to the one() function
+            var a =1;
+            console.log(a);
+        }
+
+        function two() {
+            //this a only belongs to the two() function
+            a = 2;
+            console.log(a);
+        }
+
+        one();
+        two();*/
+
+        function outer() {
+            var a = 1;
+
+            function inner() {
+                var b = 2;
+
+                //we can access both a and b here
+                console.log(a + b);
+            }
+            inner();
+
+            //we can only access a here
+            console.log(a);
+        }
+
+        outer();
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

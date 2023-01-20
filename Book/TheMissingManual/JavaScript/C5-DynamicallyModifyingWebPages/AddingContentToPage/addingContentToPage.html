@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<div id="container">
+    <div id="errors">
+        <h2>Errors:</h2>
+    </div>
+</div>
+<input type="text" name="userName" id="userName">
+<script>
+    alert($('#errors').html());
+
+    //replace the current content inside the selection
+    $('#errors').html('there are four error in this form');
+
+    //append( ) adds HTML as the last child element of the selected element
+    $('#errors').append('<p>There are four error in this form</p>');
+
+    //prepend( ) is just like append( ), but adds HTML directly after the opening tag for the selection
+    $('#errors').prepend('<p>There are four error in this form');
+
+    //If you want to add HTML just outside of a selection, either before the selected element’s opening tag or directly after the element’s closing tag,
+    $('#userName').after('<span class="error">User name required</span>');
+</script>
+</body>
+</html>

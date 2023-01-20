@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../usedFiles/jquery-2.1.3.js"></script>
+    <style>
+        div {
+            background-color: red;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="main"></div>
+<p>this is a test.</p>
+<button id="btn">Make text bigger</button>
+<script>
+    var bgColor = $('#main').css('background-color');
+
+    document.write(bgColor);
+
+    //to change the font size for the <body> tag to 200% size
+    $('body').css('font-size', '200%');
+
+    //to change the padding inside all of the tags with a class of .pullquote to 100px
+    $('.pullquote').css('padding', 100);
+
+    //It’s often useful to change a CSS property based on its current value
+    $('#btn').click(function () {
+        var baseFont = $('body').css('font-size');
+        baseFont = parseInt(baseFont, 10);
+        $('body').css('font-size', baseFont * 2);
+    })
+
+</script>
+</body>
+</html>

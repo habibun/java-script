@@ -1,0 +1,12 @@
+Comparison Operator:
+
+x=5
+
+operator            description                             example
+==                  is equal to                             x==8 is false x==5 is true
+===                 is exactly equal to (value and type)    x===5 is true x==="5" is false
+!=                  is not equal                            x!=8 is true
+>                   is greater than                         x>8 is false
+<                   is less than                            x<8 is true
+>=                  is greater than or equal to             x>=8 is false
+<=                  is less than or equal to                x<=8 is true

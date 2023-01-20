@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth();
+
+        /* Getting the Month */
+        var months = ['January', 'February', 'March', 'April', 'May',
+            'June', 'July', 'August', 'September',
+            'October', 'November', 'December'];
+        var now = new Date();
+        var month = months[now.getMonth()];
+
+        /* Getting the Day of the Week*/
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
+            'Thursday', 'Friday', 'Saturday'];
+        var now = new Date();
+        var dayOfWeek = days[now.getDay()];
+
+        /* where you wish the time to appear */
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        document.write(hours + ":" + minutes + ":" + seconds);
+
+
+        /* CHANGING HOURS TO A.M. AND P.M. */
+        var now = new Date();
+        var hour = now.getHours();
+        var am_pm;
+        if (hour < 12) {
+            am_pm = 'am';
+        } else {
+            am_pm = 'pm';
+        }
+        hour = hour % 12;
+        if (hour == 0) {
+            hour = 12;
+        }
+        hour = hour + ' ' + am_pm;
+
+
+        /* you need to add a 0 in front of the single digit */
+        var minutes = now.getMinutes();
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+
+
+        /* You can put all of these parts together to create a simple function to output times */
+        function getTime(secs) {
+            var sep = ':'; //separator character
+            var hours, minutes, seconds, time;
+            var now = new Date();
+            var am_pm;
+            hours = now.getHours();
+            if (hours < 12) {
+                am_pm = 'am';
+            } else {
+                am_pm = 'pm';
+            }
+            hours = hours % 12;
+            if (hours == 0) {
+                hours = 12;
+            }
+            time = hours;
+            minutes = now.getMinutes();
+            if (minutes < 10) {
+                minutes = '0' + minutes;
+            }
+            time += sep + minutes;
+            if (secs) {
+                seconds = now.getSeconds();
+                if (seconds < 10) {
+                    seconds = '0' + seconds;
+                }
+                time += sep + seconds;
+            }
+            return time + ' ' + am_pm;
+        }
+
+        /* For example, to create a Date for noon on New Year’s Day 2015, you could do this: */
+        var ny2015 = new Date(2015, 0, 1, 12, 0, 0, 0);
+
+
+        /* To create a date that’s one week from now, you could do the following:*/
+        var now = new Date(); // today
+        var nowMS = now.getTime(); // get # milliseconds for today
+        var week = 1000 * 60 * 60 * 24 * 7; // milliseconds in one week
+        var oneWeekFromNow = new Date(nowMS + week);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

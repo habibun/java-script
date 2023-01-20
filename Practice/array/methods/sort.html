@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * the sort method sorts the items of array
+         * @type {string[]}
+         */
+
+        //sort an array
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.sort();      //Apple,Banana,Mango,Orange
+//        console.log(fruits.sort());
+
+        //Sort numbers in an array in ascending order:
+        var points = [40, 100, 1, 5, 25, 10];
+        points.sort(function(a, b){return a-b});    //1,5,10,25,40,100
+
+        //Sort numbers in an array in descending order:
+        var points = [40, 100, 1, 5, 25, 10];
+        points.sort(function(a, b){return b-a});    //100,40,25,10,5,1
+
+        //Get the highest value in an array:
+        var points = [40, 100, 1, 5, 25, 10];
+        points.sort(function (a, b) {
+            return b-a;
+        });
+        console.log(points[0]);     //100
+
+        //Get the lowest value in an array:
+        var points = [40, 100, 1, 5, 25, 10];
+        points.sort(function(a, b){return a-b});
+        console.log(points[0]);
+
+        //Sort an array alphabetically, and then reverse the order of the sorted items (descending):
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.sort();
+        fruits.reverse();       //Orange,Mango,Banana,Apple
+    </script>
+</head>
+<body>
+
+</body>
+</html>

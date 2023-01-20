@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /* $() Is the Same as jQuery() */
+        jQuery('p').css('color', '#F03');
+
+        $('p').css('color', '#F03');
+
+        /* Saving Selections into Variables */
+        $('#tooltip').html('<p>An aardvark</p>');
+        $('#tooltip').fadeIn(250);
+        $('#tooltip').animate({left: 100px}, 250);
+
+
+        /* using method chaining */
+        $('#tooltip').html('<p>An aardvark</p>')
+                .fadeIn(250)
+                .animate({left: 100px}, 250);
+
+        /* another option */
+        var tooltip = $('#tooltip')
+        tooltip.html('<p>An aardvark</p>');
+        tooltip.fadeIn(250);
+        tooltip.animate({left: 100px}, 250);
+
+        /* Optimizing Your Selectors */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

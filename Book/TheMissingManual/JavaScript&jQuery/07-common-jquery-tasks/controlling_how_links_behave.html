@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        /*Controlling How Links Behave*/
+        var homePath = $('#homeLink').attr('href');
+
+        $('a[href^="http://"]').each(function () {
+            var href = $(this).attr('href');
+            href = href.replace('http://', '');
+            $(this).after(' (' + href + ')');
+        });
+
+        $('#showForm').click(function () {
+            $('#loginForm').fadeIn('slow');
+            return false;
+        });
+
+        $('#showForm').click(function (evt) {
+            $('#loginForm').fadeIn('slow');
+            evt.preventDefault();
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

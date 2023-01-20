@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*you want the second
+     instead of the first panel displayed when the page loads. You can use this code instead
+     */
+    $('#tabs').tabs({
+        selected:1
+    });
+    /*In addition, you can start the page with no
+     panels visible by setting the selected option to null like this:
+     */
+    $('#tabs').tabs({
+        selected:null
+    });
+</script>
+</body>
+</html>

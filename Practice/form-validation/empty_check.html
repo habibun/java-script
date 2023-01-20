@@ -1,0 +1,46 @@
+<html>
+<head>
+    <script type="text/javascript">
+        //if the length of the element's string is 0 then display helper message
+        function notEmpty(elem, helperMsg) {
+            if (elem.value.length == 0) {
+                alert(helperMsg);
+                elem.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<form>
+    Required Field: <input type='text' id='req1'/>
+    <input type='button'
+           onclick="notEmpty(document.
+getElementById('req1'), 'Please Enter a Value')"
+           value='Check Field'/>
+</form>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+            if (x == null || x == "") {
+                alert("First name must be filled out");
+                return false;
+            }
+        } </script>
+</head>
+<body>
+<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+    First name: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

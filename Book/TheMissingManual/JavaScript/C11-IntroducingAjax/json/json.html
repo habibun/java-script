@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--JSON is
+simply a JavaScript object literal, or a collection of name/value pairs. Here’s a simple
+example of JSON:-->
+{
+firstName: 'Frank',
+lastName: 'Smith',
+phone: '503-555-1212'
+}
+
+<!--Note: Alternatively, you can put the name in the name/value pair in quotes as well, like this:-->
+{
+'firstName': 'Frank',
+'lastName': 'Smith',
+'phone': '503-555-1212'
+}
+
+<!--The getJSON( ) function looks and
+works much like the get( ) and post( ) functions. The basic structure looks like this:-->
+$.getJSON(url, data, callback);
+
+<!--A basic request would look like this:-->
+$.getJSON('contacts.php','contact=123',processContacts);
+
+<!--The basic structure of the callback, then,
+would look like this:-->
+function processContacts(data) {
+}
+
+
+</body>
+</html>

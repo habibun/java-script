@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<!-- The easiest way to select a single form element is to assign an ID to it, like this -->
+<input type="text" name="user" id="user">
+<input type="submit" value="getValue" id="result">
+
+<script>
+    //You can then use the DOM’s getElementById( ) method (page 158) to select that element:
+//    var userField = document.getElementById('user');
+
+    //Or, you could use jQuery’s selection function:
+//    var userField = $('#user');
+
+    //say you want to determine the value in a field
+    var userField = $('#user').val();
+
+    //demo the value in a field
+    $('#result').click(function() {
+        var userField = $('#user').val();
+        alert(userField);
+    });
+
+    //the getElementsByTagName( ) method lets you select all of a form’s <input> tags like this:
+    var fields = document.getElementsByTagName('input');
+
+    //in jquery You can select all text fields like this
+    $(':text');
+
+    //say you have two forms on a page, and you want to select the text fields in just one of the forms
+    //Assuming that the form with the fields you’re after has an ID of signup, you can select text fields in that form only like this
+    $('#signup :text');
+
+    //if you want to find all checkbox and radio button that are turned on,you can use this code.
+    $(':checked');
+
+    /*
+    have a group of radio buttons that share the name email. You can use jQuery’s
+    attribute selector in conjunction with the :checked filter to find the
+    value of the checked radio button like this
+    */
+    var checkedValue = $('input[name=email]:checked').val();
+
+//      say you have a <select> tag with an ID of state, listing all 50 U.S.
+//      states. To find which state the visitor has selected, you can write this
+
+    var selectedState = $('#state :selected').val();
+
+</script>
+</body>
+</html>

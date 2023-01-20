@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var newPhoto = new Image();
+    newPhoto.src = '../../usedFiles/brightDayMini.jpg';
+
+    var preloadImages = [
+        '../../usedFiles/brightDay.jpg',
+        '../../usedFiles/greenBird.jpg',
+        '../../usedFiles/greenBirdMini.jpg'
+    ];
+
+    var imgs = [];
+    for (var i = 0; i < preloadImages.length; i++) {
+        imgs[i] = new Image();
+        imgs[i].src = preloadImages[i];
+    }
+</script>
+</body>
+</html>

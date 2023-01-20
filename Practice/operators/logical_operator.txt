@@ -1,0 +1,16 @@
+logical operator:
+
+
+operator            description                                                                                             example
+&&                  called logical AND operator.If both the operands are non zero then condition becomes true.              (A && B) is true.
+||                  Called Logical OR Operator. If any of the two operands are non zero then then condition becomes true    (A || B) is true.
+!                   Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true   !(A && B) is false.
+                    then Logical NOT operator will make false
+
+
+
+Given that x=6 and y=3, the table below explains the logical operators:
+Operator                            Description                                 Example
+&&                                  and                                         (x < 10 && y > 1) is true
+||                                  or                                          (x==5 || y==5) is false
+!                                   not                                         !(x==y) is true

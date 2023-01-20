@@ -1,0 +1,25 @@
+Assume variable A holds 2 and variable B holds 3 then:
+
+Operator    Description                                                                                                              Example
+&           Called Bitwise AND operator. It performs a Boolean AND operation on each bit of its integer arguments.                  (A & B) is 2 .
+
+|           Called Bitwise OR Operator. It performs a Boolean OR operation on each bit of its integer arguments.                    (A | B) is 3.
+
+^           Called Bitwise XOR Operator. It performs a Boolean exclusive OR operation on each bit of its integer
+            arguments. Exclusive OR means that either operand one is true or operand two is true, but not both.                     (A ^ B) is 1.
+
+~           Called Bitwise NOT Operator. It is a is a unary operator and operates by reversing all bits in the operand.             (~B) is -4 .
+
+<<          Called Bitwise Shift Left Operator. It moves all bits in its first operand to the left by the number
+            of places specified in the second operand. New bits are filled with zeros. Shifting a value left by one position
+            is equivalent to multiplying by 2, shifting two positions is equivalent to multiplying by 4, etc.                      (A << 1) is 4.
+
+>>          Called Bitwise Shift Right with Sign Operator. It moves all bits in its first operand to the right by the number
+            of places specified in the second operand. The bits filled in on the left depend on the sign bit of the original
+            operand, in order to preserve the sign of the result. If the first operand is positive, the result has zeros
+            placed in the high bits; if the first operand is negative, the result has ones placed in the high bits.
+            Shifting a value right one place is equivalent to dividing by 2 (discarding the remainder),
+            shifting right two places is equivalent to integer division by 4, and so on.                                            (A >> 1) is 1.
+
+>>>     Called Bitwise Shift Right with Zero Operator. This operator is just like the >> operator,
+        except that the bits shifted in on the left are always zero,                                                                 (A >>> 1) is 1.

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--step 1: Attach the necessary external JavaScript files to your page.-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/ui.core.js"></script>
+    <script type="text/javascript" src="js/ui.tabs.js"></script>
+</head>
+<body>
+<!--step 2: Structure the HTML for the tabs.-->
+<ul id="tabs">
+    <li>Description</li>
+    <li>Experiments</li>
+    <li>Video</li>
+</ul>
+
+<!--step 3: Add the HTML for the panels.-->
+<div id="description">
+    <!—HTML for panel #1 goes in here -->
+</div>
+<div id="experiments">
+    <!—HTML for panel #2 goes in here -->
+</div>
+<div id="video">
+    <!—HTML for panel #3 goes in here -->
+</div>
+
+<!--step 4: 4. Add a link from each tab to each panel.-->
+<ul id="tabs">
+    <li><a href="#description">Description</a></li>
+    <li><a href="#experiments">Experiments</a></li>
+    <li><a href="#video">Video</a></li>
+</ul>
+
+<!-- step 5: Apply the tabs( ) function to the <ul> tag containing the tabs.-->
+<script type="text/javascript">
+    $(document).ready(function( ) {
+        $('#tabs').tabs( );
+    });
+</script>
+
+</body>
+</html>

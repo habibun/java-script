@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //search string using search method
+        var regExp = /Webcoachbd/;
+        var sen = "What do you know about Webcoachbd. Webcoachbd is the largest Bengali tutorial site.";
+        var isMatch = sen.search(regExp);
+
+        if(isMatch  != -1){
+            document.write("There was a match at position " + isMatch);
+        }else{
+            document.write("There was no match in the first string");
+        }
+
+
+        //search method using regular expression
+        var regExp = /Webcoachbd/g;
+        var sen = "What do you know about Webcoachbd. Webcoachbd is the largest Bengali tutorial site.";
+        var isMatch = sen.match(regExp);
+
+        document.write("Strings those matches are : " + isMatch);
+        // and the array becomes isMatch = ['Webcoachbd', 'Webcoachbd'];
+    </script>
+</head>
+<body>
+
+</body>
+</html>

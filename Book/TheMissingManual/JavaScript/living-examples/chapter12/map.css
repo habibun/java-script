@@ -1,0 +1,23 @@
+.mapLabel {
+    clear: left;
+    float: left;
+    width: 150px;
+    text-align: right;
+    text-transform: uppercase;
+    font: 14px/22px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin-right: 5px;
+    border-top: 1px solid #666;
+}
+
+#submit {
+    margin-left: 155px;
+}
+
+#getDir {
+    margin-top: 15px;
+}
+
+#map {
+    height: 500px;
+    width: 500px;
+}

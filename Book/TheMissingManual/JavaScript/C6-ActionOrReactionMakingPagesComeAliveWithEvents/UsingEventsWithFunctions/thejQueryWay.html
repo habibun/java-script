@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //if you want to add mouseover event to every link on a page
+    $('a').mouseover();
+    //To add a click event to a element with an ID of menu
+    $('#menu').click();
+
+    //You can pass a previously defined function’s name like this:
+    $('#start').click(startSlideShow);
+
+    //In other words, the following won’t work
+    $('#start').click(startSlideShow());
+
+    //You can also pass an anonymous function to the event
+    $('#menu').mouseover(function () {
+        $('#submenu').show();
+    });
+</script>
+</body>
+</html>

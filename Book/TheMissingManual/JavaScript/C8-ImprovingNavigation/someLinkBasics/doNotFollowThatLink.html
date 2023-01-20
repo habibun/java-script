@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../usedFiles/jquery-2.1.3.js"></script>
+    <style>
+        div {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<a id="showForm" href="http://localhost.com">Login here</a>
+
+<div id="loginForm">
+    <label>Name
+        <input type="text" name="name">
+    </label>
+    <br>
+    <label>Password
+        <input type="password" name="password">
+    </label>
+    <br>
+    <input type="submit" value="submit">
+</div>
+<script>
+    //stop the link using return false method
+    $('#showForm').click(function () {
+        $('#loginForm').fadeIn('slow');
+        return false;
+    });
+
+    //You can also use jQuery’s preventDefault( ) function, like this:
+    $('#showForm').click(function (evt) {
+        $('#loginForm').fadeIn('slow');
+        evt.preventDefault();
+    })
+</script>
+</body>
+</html>

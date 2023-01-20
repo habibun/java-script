@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*To add a marker, you first need to add a map to a page as described above; then to
+     add a marker, you apply the jmap( ) function a second time, like this:*/
+    $('#map').jmap('addMarker', {pointLatLng:[43.878946, -103.459824]});
+
+    /*and latitude of the spot where the marker should go. You can determine the longitude and latitude for the marker by following the steps on page 449. You can add
+     multiple markers by calling the function multiple times:*/
+    $('#map').jmap('addMarker', {pointLatLng:[43, -103]});
+    $('#map').jmap('addMarker', {pointLatLng:[43.5, -103.5]});
+
+    /*In addition, you can add a pop-up bubble to each marker that appears when the
+     marker is clicked. To do that, add another item to the object literal containing the
+     name pointHTML and the HTML you wish to display. For example:*/
+    $('#map').jmap('addMarker', {
+        pointLatLng:[43.878946, -103.459824],
+        pointHTML: '<h2>Mount Rushmore</h2><p>Lorem Ipsum</p>'
+    });
+
+    /*You can also store the HTML in a variable and access the variable when passing the
+     object literal to the jmap( ) function like this:*/
+    var markerHTML='<h2>Mount Rushmore</h2><p>Lorem ipsum dolor sat</p>';
+    $('#map').jmap('addMarker', {
+        pointLatLng:[43.878946, -103.459824],
+        pointHTML: markerHTML
+    });
+
+</script>
+</body>
+</html>

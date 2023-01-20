@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //The basic structure of an object literal is this:
+    {
+        name1: 'value1',
+        name2: 'value2'
+    }
+
+    /*You can pass the object literal directly to the get( ) or post( ) function.
+    For example, this code uses the query string method:
+    * */
+    $.post('rankMovie.php','rating=5');
+
+//    To use an object literal, rewrite the code like this:
+    $.post('rankMovie.php', { rating: 5 });
+
+    /*You can either pass the object literal directly to the get( ) or post( ) functions, or
+     first store it in a variable and pass that variable to get( ) or post( ):
+     */
+    var data = { rating: 5 };
+    $.post('rankMovie.php', data);
+
+    /*Of course, you can include any number of name/value pairs in the object that you
+     pass to the get( ) or post( ) function:
+     */
+    var data = {
+        rating: 5,
+        user: 'Bob'
+    }
+    $.post('rankMovie.php', data);
+
+
+</script>
+</body>
+</html>

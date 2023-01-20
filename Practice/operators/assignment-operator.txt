@@ -1,0 +1,12 @@
+Assignment Operator:
+
+x=10
+y=5
+
+operator            example                 same as                         result
+=                   x=y                                                     x=5
++=                  x+=y                    x=x+y                           x=15
+-=                  x-=y                    x=x-y                           x=5
+*=                  x*=y                    x=x*y                           x=50
+/=                  x/=y                    x=x/y                           x=2
+%=                  x%=y                    x=x%y                           x=0

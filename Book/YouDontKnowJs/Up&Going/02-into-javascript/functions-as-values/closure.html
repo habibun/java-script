@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*function makeAdder(x) {
+
+            function add(y) {
+                return y + x;
+            }
+
+            return add;
+        }
+
+
+        var plusOne = makeAdder(1);
+        var plusTen = makeAdder(10);
+
+        console.log(plusOne(3));
+        console.log(plusOne(41));
+        console.log(plusTen(13));*/
+
+
+        /**
+         * Modules
+         */
+        function User() {
+            var username, password;
+
+            function doLogin(user, pw) {
+                username = user;
+                password = pw;
+
+                //do the rest of the login work
+            }
+
+            var publicApi = {
+                login: doLogin
+            };
+
+            return publicApi;
+        }
+
+        //create a user module instance
+        var fred = User();
+        fred.login("fred", "12Battery34");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

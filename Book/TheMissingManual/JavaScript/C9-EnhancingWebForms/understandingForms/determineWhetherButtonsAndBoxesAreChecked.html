@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<!--
+In HTML, the checked attribute determines whether a particular element is
+checked. For example, to turn on a box when the Web page is loaded, you add the
+checked attribute like this
+-->
+<input type="checkbox" name="news" id="news" checked="checked" />
+
+<script>
+    //Since checked is an HTML attribute, you can easily use jQuery to check the status of the box like this:
+    if ($('#news').attr('checked')) {
+        alert('the box is checked');
+    }else{
+        alert('the box is not checked');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<a id='menu' href="testing.html">test</a>
+<script>
+    $('#menu').click(function (evt) {
+        evt.preventDefault();
+    });
+
+    //Another technique is simply to return the value false at the end of the event function
+
+    $('#menu').click(function (evt) {
+        return false;
+    });
+</script>
+</body>
+</html>

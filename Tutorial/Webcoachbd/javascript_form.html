@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * accessing form element
+         */
+
+        /*function validateForm(){
+            //accessing form element using order number
+            var t = document.wForm.elements[0].value;
+
+            //accessing form element using name
+            var t = document.wForm.elements['first_name'].value;
+
+            //accessing form element using getElementById function
+            var t = document.getElementById('first_name').value;
+
+            alert(t);
+        }*/
+
+        /**
+         * validating form element using built in function
+         *
+         * @returns {boolean}
+         */
+        /*function validateForm(){
+            var t = document.getElementById('first_name').value;
+            if(t.length == 0){
+                alert('Please enter any value');
+                return false;
+            }else if(isNaN(t) == false){
+                alert('Please enter any text');
+                return false;
+            }else{
+                alert('form submitted');
+                return true;
+            }
+        }*/
+
+
+        /**
+         * validating form element using regular expression
+         * check text using regular expression
+         *
+         */
+        function validateForm(){
+            var t = document.getElementById('first_name').value;
+            var regEx = /^[a-zA-Z]+$/;
+
+            if(t.length == 0){
+                alert('Please enter any value');
+                return false;
+            }else if(t.match(regEx) == null){
+                alert('Please enter any text');
+                return false;
+            }else{
+                alert('form submitted');
+                return true;
+            }
+        }
+
+        /**
+         * Email and Number field validation
+         */
+        function validateForm(){
+            var age = document.getElementById('age').value;
+            var email = document.getElementById('email').value;
+
+            var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
+
+            if(age.length == 0 || isNaN(age)){
+                alert('Please enter any number');
+                return false;
+            }else if(email.length == 0 || filter.test(email) != true){
+                alert('Please enter valid email');
+                return false;
+            }else{
+                alert('form submitted');
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--<form action="" name="wForm" method="post" onsubmit="validateForm()">
+        <p><input type="text" name="first_name" id="first_name"/></p>
+        <p><input type="submit" name="submit" value="Submit"/></p>
+    </form>-->
+
+    <!--<form action="" name="wForm" method="post" onsubmit="return validateForm()">
+        <p><input type="text" name="first_name" id="first_name"/></p>
+        <p><input type="submit" name="submit" value="Submit"/></p>
+    </form>-->
+
+    <!-- email and number validation form -->
+    <form action="test.php" name="wForm" method="post" onsubmit="return validateForm()">
+        <p><input type="text" name="age" id="age"/></p>
+        <p><input type="text" name="email" id="email"/></p>
+        <p><input type="submit" name="submit" value="Submit"/></p>
+    </form>
+</body>
+</html>

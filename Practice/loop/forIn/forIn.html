@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var person = {
+        fname: "John",
+        lname: "Doe",
+        age: 25
+    };
+    for (x in person) {
+        document.write(person[x] + " ");
+    }
+</script>
+
+another example using for in loop:
+<script type="text/javascript">
+    var a = ['a', 'b', 'c', 'x', 'y', 'z'];
+    var result = '';
+    for (var i in a) {
+        result += 'index: ' + i + ', value: ' + a[i] + '<br/>';
+    }
+    document.write(result);
+</script>
+</body>
+</html>

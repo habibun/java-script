@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//simple callback function
+function invoke_and_add(a,b)
+{
+	return a() + b();
+}
+
+function one()
+{
+	return 1;
+}
+
+function two()
+{
+	return 1;
+}
+
+var call = invoke_and_add(one,two);
+document.write(call);
+
+//without callback function
+function multiplyByTwo(a,b,c){
+	var i,
+	ar = []
+	for (var i = 0; i < 3; i++) {
+		ar[i] = arguments[i] * 2;
+	}
+	return ar;
+}
+
+function addOne(a)
+{
+	return a + 1;
+}
+
+var result = multiplyByTwo(1,2,3);
+document.write(result);
+
+var result2 = addOne(100);
+document.write(result2);
+	
+//each of the elements is to be passed through both functions
+var myarr = [];
+myarr = multiplyByTwo(10,20,30);
+
+//now loop through each element, passing it to addOne().
+for(var i = 0; i < 3; i++)
+{
+	myarr[i] = addOne(myarr[i]); 
+}
+
+result3 = myarr;
+document.write(result3);
+
+
+//with callback function
+function addOne(a)
+{
+	return a + 1;
+}
+
+function multiplyByTwo(a,b,c, callback)
+{
+	var i;
+	arr =[];
+	for (i = 0; i < 3; i++) {
+		arr[i] = callback(arguments[i] * 2);
+	}
+	return arr;
+}
+
+/*var resultWithCallBack = multiplyByTwo(1,2,3, addOne);
+document.write(resultWithcallBack);*/
+
+//using annonymous function
+var resultWithCallBackAnd = multiplyByTwo(1,2,3, function(a){return a + 1;});
+document.write(resultWithCallBackAnd);
+</script>
+
+</body>
+</html>

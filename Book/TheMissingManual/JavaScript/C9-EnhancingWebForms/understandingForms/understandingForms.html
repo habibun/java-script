@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="process.php" method="post" name="signup" id="signup">
+    <div>
+        <label for="username" class="label">Name</label>
+        <input name="username" type="text" id="username" size="36">
+    </div>
+    <div><span class="label">Hobbies</span>
+        <input type="checkbox" name="hobby" id="heliskiing" value="heliisking">
+        <label for="heliskiing">Heli-skiing</label>
+        <input type="checkbox" name="hobby" id="pickle" value="pickle">
+        <label for="pickle">Pickle eating</label>
+        <input type="checkbox" name="hobby" id="walnut" value="walnut">
+        <label for="walnut">Making walnut butter</label>
+    </div>
+    <div>
+        <label for="planet" class="label">Planet of Birth</label>
+        <select name="planet" id="planet">
+            <option>Earth</option>
+            <option>Mars</option>
+            <option>Alpha Centauri</option>
+            <option>You've never heard of it</option>
+        </select>
+    </div>
+    <div class="labelBlock">Would you like to receive annoying e-mail from
+        us?
+    </div>
+    <div class="indent">
+        <input type="radio" name="spam" id="yes" value="yes" checked="checked">
+        <label for="yes">Yes</label>
+        <input type="radio" name="spam" id="definitely" value="definitely">
+        <label for="definitely">Definitely</label>
+        <input type="radio" name="spam" id="choice" value="choice">
+        <label for="choice">Do I have a choice?</label>
+    </div>
+    <div>
+        <input type="submit" name="submit" id="submit" value="Submit">
+    </div>
+</form>
+</body>
+</html>

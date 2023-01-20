@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<a class="popup" href="http://localhost">localhost</a>
+<script>
+    //say you want some links on a page to open in a new window that’s 300 pixels square, has scrollbars, and is resizable
+    $('.popup').click(function() {
+        var winPros = 'height=300,width=300,resizable=yes';
+        var newWin = open($(this).attr('href'), 'aWin', winPros);
+    })
+</script>
+</body>
+</html>

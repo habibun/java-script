@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*Here’s how you might write part of this code using the typical conditional statement*/
+    if (favoriteColor == 'blue') {
+        message = 'Blue is a cool color.';
+    } else if (favoriteColor == 'red') {
+        message = 'Red is a warm color.';
+    } else if (favoriteColor == 'green') {
+        message = 'Green is the color of the leaves.';
+    } else {
+        message = 'What kind of favorite color is that?';
+    }
+
+    /*Here’s how the switch statement can help with the if/else if code on page 499:*/
+    switch (favoriteColor) {
+        case 'blue':
+            message = 'Blue is a cool color.';
+            break;
+        case 'red':
+            message = 'Red is a warm color.';
+            break;
+        case 'green':
+            message = 'Green is the color of the leaves.';
+            break;
+        default:
+            message = 'What kind of favorite color is that?';
+    }
+
+    /*In fact, you can also put more than one case statement right after one another (and
+     intentionally exclude the default keyword) if you want to run the same code for
+     several values. For example:*/
+    switch (favoriteColor) {
+        case 'navy':
+        case 'blue':
+        case 'indigo':
+            message = 'Blue is a cool color.';
+            break;
+        case 'red':
+            message = 'Red is a warm color.';
+            break;
+        case 'green':
+            message = 'Green is the color of the leaves.';
+            break;
+        default:
+            message = 'What kind of favorite color is that?';
+    }
+
+</script>
+</body>
+</html>

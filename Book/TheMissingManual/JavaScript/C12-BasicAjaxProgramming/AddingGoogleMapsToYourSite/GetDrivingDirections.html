@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--STEP1: Add an empty <div> for the directions.-->
+<div id="directions"></div>
+
+<!--STEP2: Add a form to the page.-->
+<form name="getDirections" id="getDirections">
+    <p>
+        <label for="from">From: </label>
+        <input name="from" type="text" id="from">
+    </p>
+    <p>
+        <input type="submit" name="submit" value="Get Directions">
+    </p>
+</form>
+
+<script>
+    /*STEP3: Add a submit event to the form and call jMaps.*/
+    /*for example, if the
+     form has an ID of getDirections, add a submit event handler like this:*/
+    $('#getDirections').submit(function( ){
+        $('#map').jmap('searchDirections', {
+            toAddress: '123 Main St., St. Paul, MN'
+            fromAddress: $('#from').val( ),
+            directionsPanel: 'directions'
+        });
+        return false;
+    });
+</script>
+
+</body>
+</html>

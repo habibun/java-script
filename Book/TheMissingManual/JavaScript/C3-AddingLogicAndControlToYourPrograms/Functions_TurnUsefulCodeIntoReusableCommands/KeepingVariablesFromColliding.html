@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<!-- function with parameter -->
+<script type="text/javascript">
+    var message = 'Outside the function';
+    function warning(message){
+        alert(message);
+    }
+    warning('Inside the function');  //Inside the function
+    alert(message);  //Outside the function
+</script>
+
+<!-- function without parameter -->
+<script type="text/javascript">
+    var message = 'Outside the function';  //local variables
+    function warning(){
+        var message = 'Inside the function';
+        alert(message);
+    }
+    alert(message); //outside the function
+</script>
+
+<!-- global variables  -->
+<script type="text/javascript">
+    var message = 'global variable';
+    function warning(){
+        alert(message);
+    }
+    warning(); //global variables
+</script>
+</body>
+</html>

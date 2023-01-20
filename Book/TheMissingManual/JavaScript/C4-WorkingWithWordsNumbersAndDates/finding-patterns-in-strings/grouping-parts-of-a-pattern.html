@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    /**
+     * The regular expression used here—/Apr(il)?\b/—makes the “Apr” required, but
+     the subpattern—(il)—optional (that ? character means zero or one time). Finally,
+     the \b matches the end of a word
+     */
+    var sentence = 'April is the cruelest month.';
+    var aprMatch = /Apr(il)?\b/;
+    var result = sentence.search(aprMatch);
+    if(sentence.search(aprMatch !== -1)){
+        console.log('found Apr or April');
+    } else {
+        console.log('not found');
+    }
+</script>
+
+</body>
+</html>

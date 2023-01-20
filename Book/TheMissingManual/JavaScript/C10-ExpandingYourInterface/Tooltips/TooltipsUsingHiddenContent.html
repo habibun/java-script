@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--4. Attach the external JavaScript files, add another <script> tag, and add the
+jQuery $(document).ready( ) function.-->
+    <script type="text/javascript" src="../../../missingManual/javaScript/livingExamples/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../missingManual/javaScript/livingExamples/js/jquery.cluetip.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.localtip').cluetip({
+                local: true
+            });
+        });
+    </script>
+    <!--5. Apply the cluetip( ) function to the HTML tags you’ve added the title attribute
+to and pass an object literal (page 188) to the cluetip( ) function with the local
+keyword set to true.
+-->
+    $('.localtip').cluetip({
+    local:true
+    });
+</head>
+<body>
+<!--2. Add a title attribute and ID or class name to the HTML element. For example:-->
+<a href="http://www.chia-vet.com/" class="localtip"
+   title="Chia-Vet.com">
+    </a>
+<!--1. On the page where you’re adding the tooltip, create the HTML for the tooltip
+content.
+-->
+<div id="nameInfo">
+    <p>Please fill out this form field with your
+        complete name, like this <strong>Bob Smith</strong>.</p>
+</div>
+
+<!--3. Add a rel attribute to the tag, with the ID selector for the HTML you added in
+step 1.
+-->
+<a href="http://www.chia-vet.com/" class="localtip"
+   title="Chia-Vet.com" rel="#nameInfo"></a>
+
+</body>
+</html>

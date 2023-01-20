@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * \( matches a literal opening parenthesis character. Because parentheses are used to group patterns
+     * ? indicates that the ( character is optional, so a phone number without parentheses like 503-555-1212 will still match
+     * (\d{3}) is a subpattern that matches any three digits.
+     * \)? matches an optional closing parenthesis.
+     * [ -.] will match either a space, hyphen, or period
+     *(\d{3}) is another subpattern that matches any three digits.
+     * [ -.] will match either a space, hyphen or period.
+     * (\d{4}) is the last subpattern, and it matches any four digits.
+     *
+     * @type {RegExp}
+     */
+    var usPhoneNumber = /\(?(\d{3})\)?[ -.](\d{3})[ -.](\d{4})/;
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /* creating and using a basic regular expression */
+        var quote = 'To be or not to be.';
+        var myRegEx = /To be/;
+        var foundPosition = quote.search(myRegEx);
+        //        console.log(foundPosition);
+
+        /* using index of */
+        var indexOf = quote.indexOf('To be');
+        //        console.log(indexOf);
+
+
+        /* Building a Regular Expression*/
+        var zipCode = /^\d\d\d\d\d$/;   //create regex
+
+        /* another option */
+        zipCode = /^\d{5}$/;
+
+        if (zipCode.search(zipCode) == -1) {
+            alert('This is not a valid zip code');
+        } else {
+            alert('This is a valid zip code');
+        }
+
+        /* find any string that matches the basic pattern of a gif */
+        var testString = 'The file is logo.gif create by alex.gifford@example.com';
+        // the string to test
+        var gifRegex = /\S+\.gif\b/i; // the regular expression
+        var results = testString.match(gifRegex);
+        var file = results[0]; // logo.gif
+
+        /* , say you want to see if a string contains either “Apr” or “April”—both of
+         those begin with “Apr” */
+        var sentence = 'April is the cruelest month.';
+        var aprMatch = /Apr(il)?\b/;
+        if (sentence.search(aprMatch) != -1) {
+            // found Apr or April
+        } else {
+            //not found
+        }
+
+
+        /* Useful Regular Expressions */
+
+        /* see chapter 16 example_regex */
+
+
+    </script>
+</head>
+<body>
+<form>
+    <label for="zipCode">Zip code: </label>
+    <input name="zipCode" type="text" id="zipCode">
+    <input type="submit" onclick="regular()">
+</form>
+</body>
+</html>

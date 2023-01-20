@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /* suppose when the page loads you want the slideshow to pause and
+    only start again when you click a Play button. You can do that with the following
+    code: */
+    $('#gallery').cycle( ); //start slideshow
+    $('#gallery').cycle('pause'); //stop slideshow
+    $('#play').click(function( ) { // add click event
+        $('#gallery').cycle('resume'); //start slideshow
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //to find every even row of a table
+    $('tr:even');
+
+    //you may want to just find every even table row in a table with class name of striped
+    $('.striped tr:even');
+
+    //say you want to select every <a> tag except ones with a class of navButton
+    $('a:not(.navButton)');
+
+    //to find every link that doesn’t begin with http://
+    $('a:not([href^=http://])');
+
+    //say you want to find all <li> tags, but only if they have an <a> tag inside them
+    $('li:has(a)');
+
+    //to find every link that says “Click Me!”
+    $('a:contains(Click Me!)');
+
+    //say you’ve hidden several <div> tags; you can find them and then make them visible using jQuery
+    $('div:hidden').show();
+</script>
+</body>
+</html>

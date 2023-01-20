@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*You can use JavaScript to intercept clicks on these
+     links and translate them into Ajax calls to the server:*/
+    $('#message a').click(function () {
+        var href = $(this).attr('href');
+        var querystring = href.slice(href.indexOf('?') + 1);
+        $.get('rate.php', querystring, processResponse);
+        return false; // stop the link
+    });
+
+    /*So in this example, the function’s name is
+     processResponse. The code to deal with the server’s response might look like this:*/
+    function processResponse(data, status) {
+        var newHTML;
+        if (status=='success') {
+            newHTML = '<h2>Your vote is counted</h2>';
+            newHTML += '<p>The average rating for this movie is ';
+            newHTML += data + '.</p>';
+        } else {
+            newHTML='<h2>There has been an error.</h2>';
+            newHTML+='<p>Please try again later.</p>';
+        }
+        $('#message').html(newHTML);
+    }
+
+    /*In this example, the callback function was defined outside of the get( ) function;
+     however, you can use an anonymous function (see page 193) if you want to keep
+     all of the Ajax code together:
+     */
+    .get('file.php', data, function(data,status) {
+        // callback function programming goes here
+    });
+</script>
+</body>
+</html>

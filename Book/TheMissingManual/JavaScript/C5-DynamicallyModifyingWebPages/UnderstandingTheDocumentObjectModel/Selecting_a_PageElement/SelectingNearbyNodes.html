@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1 id="header">A headline</h1>
+
+<p>Some <strong>important</strong> text</p>
+<script>
+    //childNodes
+    var headLine = document.getElementById('header');
+    var headLineKids = headLine.childNodes;
+    var headLineText = headLineKids[0].nodeValue;
+    alert(headLineText);
+
+    //parentNodes
+    var headLine = document.getElementById('header');
+    var headLineParent = headLine.parentNode;
+    alert(headLineParent);
+
+    //nextSibling
+    var headline = document.getElementById('header');
+    var headlineSibling = headline.nextSibling;
+    alert(headlineSibling);
+
+    //prevSibling
+    var headline = document.getElementById('header');
+    var headlineSibling = headline.prevSibling;
+    if (!headlineSibling) {
+        alert('This node does not have a previous sibling!');
+    } else {
+        // do something with the sibling node
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/site.css" rel="stylesheet">
+    <link href="plugins/super_plugin/super-plugin.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="plugins/super_plugin/jquery.super-plugin.min.js"></script>
+    <script>
+        $('#accordion').accordion();
+
+        $('#date').datepicker({
+            numberOfMonths: 3,
+            showButtonPanel: true
+        });
+    </script>
+</head>
+<body>
+
+<div id="accordion">
+    <h3>First header</h3>
+
+    <div>First content panel</div>
+    <h3>Second header</h3>
+
+    <div>Second content panel</div>
+</div>
+
+</body>
+</html>

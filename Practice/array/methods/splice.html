@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>splice</title>
+    <script>
+        //Add items to the array:
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.splice(2, 0, "Lemon", "Kiwi");       //Banana,Orange,Lemon,Kiwi,Apple,Mango
+
+        //At position 2, add the new items, and remove 1 item:
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.splice(2, 1, "Lemon", "Kiwi");   //Banana,Orange,Lemon,Kiwi,Mango
+
+        //At position 2, remove 2 items:
+        var fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+        fruits.splice(2, 2);    //Banana,Orange,Kiwi
+    </script>
+</head>
+<body>
+
+</body>
+</html>

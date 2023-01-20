@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        var obj = {
+            num: 4
+        };
+
+        var addToThis = function(a, b, c) {
+            return this.num + a + b + c;
+        };
+
+        var arr = [1,2,3];
+
+        //functionName.apply(object, functionArguments in array)
+        var result = addToThis.apply(obj, arr);
+        console.log(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

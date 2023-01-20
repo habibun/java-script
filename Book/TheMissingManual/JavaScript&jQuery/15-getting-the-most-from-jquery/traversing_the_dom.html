@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /* find function*/
+        $('#gallery').click(function () {
+            $(this).find('img').fadeTo(500, .3).fadeTo(250, 1);
+        }); // end click
+
+        /* children */
+        $('#mainDiv').click(function () {
+            $(this).children('div').show().css('outline', 'red 2px solid');
+        });
+
+        /* parent */
+        $('#gallery a').hover(
+                function () {
+                    var $this = $(this);
+                    // add outline to link
+                    $this.css('outline', '2px solid red');
+                    // add background color to div
+                    $this.parent().css('backgroundColor', 'white');
+                },
+                function () {
+                    var $this = $(this);
+                    // remove outline from link
+                    $this.css('outline', '');
+                    // remove background color from div
+                    $this.parent().css('backgroundColor', '');
+                }
+        ); // end hover
+
+        /* closest*/
+        $('#gallery img').click(function () {
+            var $this = $(this);
+            $this.css('outline', '2px red solid');
+            $this.closest('div').css('backgroundColor', 'white');
+        }); // end click
+
+        /* siblings*/
+        $('#gallery a').click(function () {
+            $(this).siblings().fadeTo(500, .3).fadeTo(250, 1);
+        }); // end click
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

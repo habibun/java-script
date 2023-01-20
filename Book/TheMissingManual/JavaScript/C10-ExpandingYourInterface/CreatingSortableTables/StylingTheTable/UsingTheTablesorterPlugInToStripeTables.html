@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*The
+         only other step is creating styles to format the look of those table rows. For example:
+        */
+        tr.even {
+            background-color: #F34;
+        }
+
+        tr.odd {
+            background-color: #034;
+        }
+    </style>
+</head>
+<body>
+<script>
+    /*To stripe a table using the Tablesorter plug-in, just pass this object literal to the
+     tablesorter( ) function: {widgets:['zebra']}. For example, here’s how you can rewrite
+     the code from step 6 on page 32 to add the table-striping functionality:
+     */
+    $('table').tablesorter({widgets: ['zebra']});
+
+
+</script>
+</body>
+</html>

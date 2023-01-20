@@ -1,0 +1,16 @@
+Arithmetic Operator:
+
+y=5
+
+operator                description                     example                 result
++                       Addition                        x=y+2                   x=7 y=5
+-                       Subtraction                     x=y-2                   x=3 y=5
+*                       Multiplication                  x=y*2                   x=10 y=5
+/                       Division                        x=y/2                   x=2.5 y=5
+%                       Modulus (division remainder)    x=y%2                   x=1 y=5
+
+                       Increment                        x=++y                   x=6 y=6
+++                                                      x=y++                   x=5 y=6
+
+--                     Decrement                        x=--y                   x=4 y=4
+                                                        x=y--                   x=5 y=4

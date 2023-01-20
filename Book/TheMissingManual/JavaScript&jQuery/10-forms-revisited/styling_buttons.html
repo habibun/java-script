@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <link href="../living-examples/_css/jquery-ui.min.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $('#submit').button({});
+
+            /*Or, if you’ve used a class to identify more than one button, you could write this:*/
+            $('.button').button({
+                icons: {
+                    primary: "ui-icon-gear",
+//                    secondary: "ui-icon-triangle-1-s",
+                    secondary: 'ui-icon-circle-arrow-e'
+                }
+            });
+
+            /* hide text on this button */
+            $('#next').button({
+                icons: {secondary: 'ui-icon-arrowthick-1-e'},
+                text: false
+            });
+
+        }); // end ready
+    </script>
+</head>
+<body>
+<input type="submit" id="submit" value="Submit form!">
+<input type="reset" id="reset" value="Reset form.">
+<input type="button" id="inputButton" value="An input button.">
+<button id="button" class="button">A button element</button>
+<button id="next">Next</button>
+</body>
+</html>

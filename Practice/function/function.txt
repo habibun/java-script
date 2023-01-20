@@ -1,0 +1,13 @@
+javascript have two kinds of function.
+
+A.Built in function
+1.Javascript Array Function
+2.Javascript Boolean Function
+3.Javascript Math Function
+4.Javascript Date Function
+5.Javascript Number Function
+6.Javascript String Function
+7.Javascript RegExp Function
+
+B.User Defined Function
+

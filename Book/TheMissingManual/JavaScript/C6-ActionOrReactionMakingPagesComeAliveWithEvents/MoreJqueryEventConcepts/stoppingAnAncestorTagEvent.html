@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<div style="width:100px;height: 100px;background-color: azure;">
+    <a id='menu' href="testing.html">test</a>
+</div>
+<script>
+    $('a').click(function (evt) {
+        evt.stopPropagation();
+        alert('this is anchor tag');
+    });
+    $('div').click(function () {
+        alert('this is div tag');
+    });
+</script>
+</body>
+</html>

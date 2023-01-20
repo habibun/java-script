@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var x = 'Webcoachbd is a nice site';
+        var y = x.split(' ', 3);
+        // now an array generated. y = ['Webcoachbd','is','a']
+        document.write(y[0]);
+
+        //if empty found in starting of a string
+        var x = ' Webcoachbd is a nice site';
+        var y = x.split(' ', 3);
+        // now an array generated y = ['', 'Webcoachbd', 'is', 'a']
+        document.write(y[0]);
+
+
+        // delimiter without parameter
+        var x = 'Webcoachbd is a nice site';
+        var y = x.split();
+        // now an array generated y = ['Webcoachbd is a nice site']
+        document.write(y[0]);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

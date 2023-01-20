@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*to set the width of a
+     tooltip, you use the width option:
+     */
+    $('.tip').cluetip({
+        width: 300
+    });
+
+    /*to make a tooltip 275 pixels wide:*/
+    width:275
+
+    /*To add arrows to a tooltip:*/
+    arrows:true
+
+    /*To turn drop shadows off:*/
+    dropShadow:false
+
+    /*To make drop shadows that are 10 pixels wide, pass this option to the cluetip( ) function:*/
+    dropShadowSteps: 10
+
+    /*you can make the tooltip appear directly to the right or left of
+     the mouse when it moves over the element. To get this effect, use the value
+     'mouse' like this:
+     */
+    positionBy:'mouse'
+
+    /*You can also position the tooltip either above or below the element by using the
+     'bottomTop' value:
+     */
+    positionBy:'bottomTop'
+
+    /*• topOffset controls how many pixels from the top of the element the tooltip
+     appears. Normally, it’s set to 15 pixels, but you can change that. For example, if
+     you want the tooltip to appear over the element, covering it, use a negative value
+     */
+
+
+    /*• leftOffset controls how many pixels from the right edge of the element the tooltip appears.*/
+    leftOffset: -20
+
+    /*You can use this effect to make a small form appear
+     when a visitor mouses over a “login” link, for instance. The tooltip with the
+     form remains open until the visitor fills out the form.
+     */
+    sticky:true
+
+    /*closePosition controls where the “close” link appears when creating a “sticky”
+     tooltip*/
+    closePosition:'bottom'
+
+    /*Normally, the setting uses the
+     word “close,” but you can change the text to, say, “close this tooltip,” like this:
+     */
+    closeText:'close this tooltip'
+
+    /*n addition, you can supply HTML instead of just text, so if you want to use a
+     graphic image as a close button, you can simply supply a valid <img> tag like this:
+     */
+    closeText:'<img src="images/close.png" alt="" />'
+
+    /*For example, to make a tooltip fade in over the course
+     of one second, use this code:*/
+    fx: {
+        open:'fadeIn',
+                openSpeed: 1000
+    }
+
+    /*To make a tooltip slide down into view in half a second, use the following:*/
+    fx: {
+        open:'slideDown',
+                openSpeed: 500
+    }
+
+/*You also want the tooltip to fade into view, to not have a drop
+ shadow, to be 200 pixels wide, and to remain open until the visitor clicks a “close”
+ link in the tooltip’s title bar:*/
+    $('.tip').cluetip({
+        splitTitle: '|',
+        fx: {
+            open:'fadeIn',
+            openSpeed:1000
+        },
+        dropShadow:false,
+        width:200,
+        sticky:true,
+        closePosition:'title'
+    });
+</script>
+</body>
+</html>

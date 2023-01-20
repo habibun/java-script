@@ -1,0 +1,22 @@
+<script>
+    var hero = {};
+    //test undefined properties
+    var ud = hero.breed;
+
+    //adding some properties and method
+    hero.breed = 'turtle';
+    hero.name = 'leonardo';
+    hero.sayName = function () {
+        return hero.name;
+    }
+    //calling the method
+    //var result = hero.sayName();
+
+    //deleting a property
+    delete hero.name;
+
+    //calling method after delete
+    var result = hero.sayName();
+    document.write(result);
+
+</script>

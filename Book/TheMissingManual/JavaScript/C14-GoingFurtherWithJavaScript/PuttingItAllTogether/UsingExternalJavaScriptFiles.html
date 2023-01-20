@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/ui.tabs.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+        // focus first text field
+        $(":text")[0].focus();
+        // disable submit button on submit
+        $('form').submit(function () {
+            var subButton = $(this).find(':submit');
+            subButton.attr('disabled', true);
+            subButton.val('...sending information...');
+        });
+    }); //end ready
+
+
+    /* Add a class name to the field you want the focus on when the page loads. For
+    example, say you add the class name focus to the text field like this:*/
+    <input type="text" class="focus" name="firstName">
+
+    //You could then you use this JavaScript to make sure that field is focused:
+    $('.focus').focus( );
+
+    /*• You can get the same effect by adding a class name to the <form> tag itself,
+     using this JavaScript:*/
+    $('.focus :text')[0].focus( );
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * charAt(index)
+         */
+        var x = 'Hello Webcoachbd';
+        document.write(x.charAt(8));
+
+        /**
+         * substr(start, length)
+         */
+        var x = 'Hello Webcoachbd';
+        document.write(x.substr(3,5));
+
+        /**
+         * substring(start, end)
+         */
+        var x = 'Hello Webcoachbd';
+        document.write(x.substring(6, 15));
+
+        /**
+         * toString()
+         */
+        //in case of array
+        var arT = ['HTML', 'CSS', '22', 'JS'];
+        var reS = arT.toString();
+        document.write(reS);
+
+        //in case of number
+        var n = 22;
+        document.write(typeof(n));
+        document.write('<br/>');
+        var reS = n.toString();
+        document.write(typeof(reS));
+
+        //toString with parameter radix
+        var n = 22;
+        document.write(typeof(n));
+        document.write('<br/>');
+        var reS = n.toString(2);
+        document.write(reS);
+
+
+        /**
+         * parseInt(string, radix)
+         */
+        document.write(parseInt('52 Hello Webcoachbd'));
+        document.write('<br/>');
+        document.write(parseInt('52.230'));
+        document.write('<br/>');
+        document.write(parseInt('Hello'));
+        document.write('<br/>');
+        document.write(parseInt('52'));
+        document.write('<br/>');
+        document.write(parseInt('-52'));
+        document.write('<br/>');
+        document.write(parseInt('0Hello'));
+        document.write('<br/>');
+        document.write(parseInt('0xHello'));
+        document.write('<br/>');
+        document.write(parseInt('0x10'));
+        document.write('<br/>');
+        document.write(parseInt('10110001110',2));
+        document.write('<br/>');
+        document.write(parseInt('22',8));
+        document.write('<br/>');
+        document.write(parseInt('22',16));
+
+        /**
+         * parseFloat(string)
+         */
+        document.write(parseFloat('52'));
+        document.write('<br/>');
+        document.write(parseFloat('52Hello'));
+        document.write('<br/>');
+        document.write(parseFloat('52.36'));
+        document.write('<br/>');
+        document.write(parseFloat('52.00'));
+
+        /**
+         * floor()
+         */
+        document.write(Math.floor(1.80));
+        document.write('<br/>');
+        document.write(Math.floor(1.20));
+        document.write('<br/>');
+        document.write(Math.floor(-1.80));
+
+        /**
+         * ceil()
+         */
+        document.write(Math.ceil(1.80));
+        document.write('<br/>');
+        document.write(Math.ceil(1.20));
+        document.write('<br/>');
+        document.write(Math.ceil(-1.80));
+
+        /**
+         * encodeURI()
+         */
+        var uri = 'http://www.webcoachbd.com/hello world';
+        var eu = encodeURI(uri);
+        document.write(eu);
+
+        /**
+         * decodeURI()
+         */
+        var uri = 'http://www.webcoachbd.com/hello%20world';
+        var du = decodeURI(uri);
+        document.write(du);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

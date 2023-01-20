@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World</title>
+<link href="../_css/jquery-ui.min.css" rel="stylesheet">
+<link href="../_css/site.css" rel="stylesheet">
+<script src="../_js/jquery.min.js"></script>
+<script src="../_js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('[title]').tooltip();
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+		JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+	</header>
+	<div class="content">
+		<div class="main">
+			<h1>Tooltips</h1>
+			<p>You can add tooltips to anything on a page.</p>
+			<div class="row">
+			<p title="Yes I am a paragraph.">A paragraph</p>
+			<p>An image <img src="images/map.png" title="I am a map!"></p>
+			<p><button title="Click this button!">A button</button></p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+	</footer>
+</div>
+</body>
+</html>

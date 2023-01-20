@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //the JavaScript interpreter converts them to numbers to perform the multiplication
+    var a = '3';
+    var b = '4';
+    alert(a * b); // 12
+
+    //Number() converts whatever string is passed to it into a number, like this:
+    var a = '3';
+    var b = '4';
+    alert(a + b); // 34
+    var total = Number(a) + Number(b);
+    document.write(total);
+
+    //A faster technique is the + operator, which does the same thing as Number()
+    var a = '3';
+    var b = '4';
+    var total = +a + +b // 7
+
+    //parseInt() tries to convert a string to a number as well
+    var age = '20 years';
+    age = parseInt(age, 10); //20
+
+    //parseFloat() to retrieve the entire value including decimal places
+    var space = '4.5 acres';
+    space = parseFloat(space); // 4.5
+    /*
+     important note:
+     If your goal is to add two numbers, but they’re strings, then use Number( ) or + operator. However,
+     if you want to extract a number from a string that might include letters, like
+     '200px' or '1.5em', then use parseInt( ) to capture whole numbers (200, for example) or parseFloat( ) to capture numbers with decimals (1.5, for example)
+     */
+</script>
+</body>
+</html>

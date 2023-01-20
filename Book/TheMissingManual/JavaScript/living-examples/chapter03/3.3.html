@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Script 3.3</title>
+    <link href="../css/global.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        var score = 0;
+        var questions = [
+            ['How many moons does Earth have?', 1],
+            ['How many moons does Saturn have?', 31],
+            ['How many moons does Venus have?', 0]
+        ];
+        function askQuestion(question) {
+            var answer = prompt(question[0], '');
+            if (answer == question[1]) {
+                alert('Correct');
+                score++;
+            } else {
+                alert('Sorry. The correct answer is ' + question[1]);
+            }
+        }
+
+        for (var i = 0; i < questions.length; i++) {
+            askQuestion(questions[i]);
+        }
+    </script>
+</head>
+<body id="twoCol">
+<div id="container">
+    <div id="banner"><img src="../images/banner.png" alt="JavaScript: The Missing Manual" width="760" height="65"><span
+            id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+
+    <div id="contentWrap">
+        <div id="main">
+            <h1>A Simple Quiz</h1>
+
+            <p>
+                <script type="text/javascript">
+                    var message = 'You got ' + score;
+                    message += ' out of ' + questions.length;
+                    message += ' questions correct.';
+                    document.write(message);
+                </script>
+            </p>
+        </div>
+
+        <div id="sidebar">
+            <h2>Script 3.3</h2>
+        </div>
+    </div>
+
+    <div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+</body>
+</html>

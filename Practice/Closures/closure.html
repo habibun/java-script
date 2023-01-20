@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure</title>
+    <script>
+        function makeFunc(){
+            var name = "Mozilla";
+            function displayName() {
+                alert(name);
+            }
+
+            return displayName;
+        }
+
+        var myFunc = makeFunc();
+        //        myFunc();
+
+        //Here's a slightly more interesting example — a makeAdder function:
+        function makeAdder(x){
+            return function(y) {
+                return x + y;
+            };
+        }
+
+        var add5 = makeAdder(5);
+        //        console.log(add5);
+        var add10 = makeAdder(10);
+        //        console.log(add10);
+
+        //        console.log(add5(2));  // 7
+        //        console.log(add10(2)); // 12
+    </script>
+</head>
+<body>
+
+</body>
+</html>

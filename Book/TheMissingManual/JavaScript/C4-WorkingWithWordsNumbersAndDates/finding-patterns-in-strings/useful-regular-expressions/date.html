@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * ( ) surrounds the next two regex patterns to group them
+     * [01]? matches either 0 or 1 and the ? makes this optional
+     * \d matches any number.
+     * [-\/ .] will match a hyphen, a forward slash, a period, or a space character.
+     * ( ) is the next subpattern
+     * [0123]? matches either 0, 1, 2, or 3 zero or more times
+     * \d matches any digit.
+     * [-\/ .] is the same as above.
+     * ( ) captures the year.
+     * \d{4} matches any four digits, like 1908 or 2880.
+     * @type {RegExp}
+     */
+    var date = /([01]?\d)[-\/ .]([0123]?\d)[-\/ .](\d{4})/;
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<script>
+    function Hero(name) {
+        this.name = name;
+        this.occupation = 'Ninja';
+        this.whoAreYou = function () {
+            return "I'm " + this.name + " and I'm a " + this.occupation;
+        }
+    }
+
+    var h1 = new Hero('Michelangelo');
+    var h2 = new Hero('Donatello');
+
+
+    var h3 = new h2.constructor('Rafaello');
+    result = h3.name;
+
+    var o = {};
+    result1 = typeof o;
+
+    result2 = o.constructor;
+    document.write(result2);
+
+</script>

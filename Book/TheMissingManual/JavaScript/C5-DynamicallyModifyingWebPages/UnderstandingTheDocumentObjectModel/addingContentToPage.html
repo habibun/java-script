@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1 id="header">A headline</h1>
+
+<p>Some <strong>important</strong> text</p>
+<script>
+    //get a list of all <p> tags on page
+    var pTags = document.getElementsByTagName('p');
+    //get the first <p> tag on page
+    var theP = pTags[0];
+    alert(theP.innerHTML);
+
+    //change content inside the node using innerHTML
+    var headLine = document.getElementById('header');
+    headLine.innerHTML = 'Javascript was here!';
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //to find all of the links on a page
+    var pageLinks = document.getElementById('a');
+    //The getElementsByTagName( ) method returns a list of nodes, instead of just a single node
+    //you can access single nodes using index notation
+    var singleNode = pageLinks[0];
+
+    //find the total number of elements using the length property
+    var length = pageLinks.length;
+
+    //You can also use getElementById( ) and getElementsByTagName( ) together
+    var banner = document.getElementById('banner');
+    var bannerLinks = banner.getElementsByTagName('a');
+    var totalBannerLinks = bannerLinks.length;
+</script>
+</body>
+</html>

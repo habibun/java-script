@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+       /*
+        var obj = {
+          num: 4
+        };
+
+        var addToThis = function(a, b, c) {
+            return this.num + a + b + c;
+        };
+
+        var bound = addToThis.bind(obj);
+        var result = bound(1,2,3);
+
+        console.log(result);
+        */
+
+       var Button = function (content) {
+           this.content = content;
+       };
+
+       Button.prototype.click = function() {
+           console.log(this.content + ' Clicked');
+       };
+
+       var myButton = new Button('OK');
+       myButton.click();
+
+       var looseClick = myButton.click;
+       looseClick();    //undefined Clicked
+
+        var boundClick = myButton.click.bind(myButton);
+        boundClick();   // bound, 'this' is myButton
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

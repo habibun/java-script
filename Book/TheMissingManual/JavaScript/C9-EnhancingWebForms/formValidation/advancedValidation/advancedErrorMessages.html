@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../../../missingManual/javaScript/livingExamples/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../../missingManual/javaScript/livingExamples/chapter09/validation/jquery.validate.js"></script>
+</head>
+<body>
+<form action="process.php" method="post" id="signup">
+    <div>
+        <label for="name">Name</label>
+        <input name="name" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input name="password" type="password" id="password">
+    </div>
+    <div>
+        <label for="confirm_password">Confirm password</label>
+        <input name="confirm_password" type="password" id="confirm_password">
+    </div>
+    <div>
+        <label for="email">E-mail Address</label>
+        <input name="email" type="text">
+    </div>
+    <div>
+        <label for="birthday">Date of birth</label>
+        <input name="birthday" type="date">
+    </div>
+    <div>
+        <input type="submit" name="submit" value="Submit">
+    </div>
+</form>
+<script>
+    /*The basic structure of the messages object is as follows:
+     messages: {
+        fieldname: {
+            methodType: 'Error message'
+        }
+     }
+     */
+    $(document).ready(function() {
+        $('#signup').validate({
+            rules: {
+                password:{
+                    required: true,
+                    rangelength: [8,16]
+                },
+                confirm_password:{
+                    equalTo: '#password'
+                }
+            },
+            messages: {
+                password: {
+                    required: "Please type the password you'd like to use.",
+                    rangelength: "Your password must be between 8 and 16 characters long."
+                },
+                confirm_password: {
+                    equalTo: "The two passwords don't match."
+                }
+            } // end of messages
+        }); // end validate( )
+    });
+</script>
+</body>
+</html>

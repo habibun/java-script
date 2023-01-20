@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    //step 2
+    <link href="../../../missingManual/javaScript/css/greybox2.css" rel="stylesheet" type="text/css">
+
+    //step 3
+    <script type="text/javascript" src="../../../missingManual/javaScript/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../missingManual/javaScript/js/jquery.greybox2.js"></script>
+</head>
+<body>
+//step 1
+<a class="pageWindow" href="more.html" title="More about product XYZ">
+    Click here to see more info</a>
+<script>
+    $(document).ready(function () {
+        var gbOptions = {
+            gbWidth: 600,
+            gbHeight: 500,
+            captionHeight: 22,
+            ffMacFlash: true
+        };
+        $('.pageWindow').greybox(gbOptions);
+    });
+</script>
+</body>
+</html>

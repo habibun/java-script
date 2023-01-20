@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //to change the background color and opacity of the background placed over the page
+    var lbOptions = {
+        overlayBgColor: '#FF0033',
+        overlayOpacity: .5
+    };
+    $('#gallery a').lightBox(lbOptions);
+
+    //set other option and applying in lightBox
+    var lbOptions = {
+        txtImage: 'Photo',
+        txtOf: '/',
+        containerResizeSpeed: 1000,
+        imageBtnClose: 'images/close.png',
+        imageBtnPrev: 'images/previous.png',
+        imageBtnNext: 'images/next.png'
+    };
+    $('#gallery a').lightBox(lbOptions);
+
+    //skip the creating a variable step
+
+    $('#gallery a').lightBox({
+        txtImage: 'Photo',
+        txtOf: '/',
+        containerResizeSpeed: 1000,
+        imageBtnClose: 'images/close.png',
+        imageBtnPrev: 'images/previous.png',
+        imageBtnNext: 'images/next.png'
+    });
+</script>
+</body>
+</html>

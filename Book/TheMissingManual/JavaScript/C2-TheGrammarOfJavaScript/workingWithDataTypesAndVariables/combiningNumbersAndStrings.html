@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //whenever you use the + operator with a string value and a number, the JavaScript interpreter converts the number to a string
+
+    var numOfVisits = 101;
+    var message = 'You have visited this site ' + numOfVisits + ' times.';
+
+    document.write(message);
+   // In this case, you use the + operator to do two things: convert the number to a string and concatenate it with the other string
+
+
+
+
+    // automatic type conversion
+    var numOfShoes = '2';
+    var numOfSocks = 4;
+    var totalItems = numOfShoes + numOfSocks;
+
+    //First, you add + to the beginning of the string that contains a number like this:
+    var totalItems = +numOfShoes + numOfSocks;
+
+    //another technique to prevent this is using number command
+    var totalItems = Number(numOfShoes) + numOfSocks;
+
+</script>
+</body>
+</html>

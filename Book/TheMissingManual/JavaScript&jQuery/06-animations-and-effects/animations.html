@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <script>
+        $('#moveIt').click(function () {
+            $(this).animate(
+                    {
+                        left: '+=50px'
+                    },
+                    1000); // end animate
+
+            $('#animate').click(function () {
+                $(this).animate(
+                        {
+                            width: '400px',
+                            height: '400px'
+                        }, 1000,
+                        'easeInBounce'); // end animate
+            });
+        }); // end click
+    </script>
+</head>
+<body>
+
+</body>
+</html>

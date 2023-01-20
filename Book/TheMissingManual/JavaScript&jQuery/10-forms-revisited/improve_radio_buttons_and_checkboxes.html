@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <link href="../living-examples/_css/jquery-ui.min.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+//            $('#radio').buttonset();
+            $('#radio input').button();
+        });
+    </script>
+</head>
+<body>
+<div id="radio">
+    <p class="label">Number of bags to check</p>
+    <input type="radio" id="none" name="bags" checked="checked">
+    <label for="none">0</label>
+
+    <input type="radio" id="one" name="bags">
+    <label for="one">1</label>
+
+    <input type="radio" id="two" name="bags">
+    <label for="two">2</label>
+</div>
+</body>
+</html>

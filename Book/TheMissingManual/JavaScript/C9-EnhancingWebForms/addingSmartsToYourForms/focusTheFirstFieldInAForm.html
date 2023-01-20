@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<form action="process.php" method="post" name="signup" id="signup">
+    <div>
+        <label for="username" class="label">Name</label>
+        <input name="username" type="text" id="username" size="36">
+    </div>
+    <div>
+        <label for="password" class="label">Password</label>
+        <input name="password" type="text" id="password" size="36">
+    </div>
+    <div>
+        <input type="submit" name="submit" id="submit" value="Submit">
+    </div>
+</form>
+<script>
+    //So the JavaScript to place the focus on—that is, place the cursor in—that field looks like this
+    $(document).ready(function () {
+        $('#username').focus();
+    });
+
+    /*
+     you can also create a
+     generic script that always focuses the first text field of a form, without having to
+     assign an ID to the field
+     */
+    $(document).ready(function () {
+        $(':text')[0].focus();
+    });
+
+    /*
+     * To focus the signup form’s text field, just add
+     an ID (signup, for example) to the form, and then use this code
+     * */
+
+    $(document).ready(function () {
+        $('#signup :text')[0].focus();
+    });
+</script>
+</body>
+</html>

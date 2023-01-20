@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to open a new window, and assure that the new window does NOT GET focus (send the new window to the background).</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+    function myFunction() {
+        var myWindow = window.open("", "", "width=200, height=100");
+        myWindow.document.write("<p>A new window!</p>");
+        myWindow.blur();
+    }
+</script>
+
+</body>
+</html>

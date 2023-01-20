@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tabbedPanels').tabs();
+
+            /* using load function load specific from remote page */
+            $('#tabContainer').tabs({
+                load: function (evt, ui) {
+                    var newHTML = ui.panel.find('#panelContent').html();
+                    ui.panel.html(newHTML);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li><a href="#details">Product Details</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#order">Order</a></li>
+</ul>
+</body>
+</html>

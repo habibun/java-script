@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #main {
+            background-color: yellow;
+        }
+
+        body {
+            font-size: 16px;
+        }
+    </style>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').css('background-color', 'red');
+            /* addClass adds a specified class to an element */
+            $('a[href^="http://"]').addClass('externalLink');
+
+            /* remove class is opposite of addClass */
+            $('#alertBox').removeClass('highlight');
+
+            $('#changeStyle').click(function () {
+                $('body').toggleClass('altStyle');
+            });
+
+            var bgColor = $('#main').css('background-color');
+            console.log(bgColor);
+
+            var fontSize = $('body').css('font-size');
+            console.log(fontSize);
+
+            $('p.highlight').css('border', '1px solid black');
+
+            /* changing multiple css properties at once */
+            $('p.multiple').css({'color': 'red', 'background-color': 'yellow', 'font-size': '32px'});
+        });
+    </script>
+</head>
+<body>
+<div id="main">
+    this is div tag.
+</div>
+<p class="highlight">this is a paragraph.</p>
+
+<p class="multiple">this is a paragraph.</p>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * Create an array
+         */
+        var fruits = ["Apple", "Banana"];
+//        console.log(fruits.length);
+
+        /**
+         * Access (index into) an Array item
+         */
+        var first = fruits[0];
+//        console.log(first);
+
+        var last = fruits[fruits.length - 1];
+//        console.log(last);
+
+        /**
+         * Loop over an Array
+         */
+        fruits.forEach(function (item, index, array) {
+//            console.log(item);
+//            console.log(index);
+//            console.log(array);
+        });
+
+        /**
+         * Add to the End of an Array
+         */
+//        var addLast = fruits.push("Orange");
+//        console.log(fruits[2]);
+
+        /**
+         * Add to the front of an Array
+         */
+//        var addFirst = fruits.unshift("Strawberry");
+//        console.log(fruits[0]);
+
+        /**
+         * Remove from the end of an Array
+         */
+//        var removeLast = fruits.pop();
+//        console.log(fruits[3]);
+
+        /**
+         * Remove from the front of an Arrray
+         */
+//        var removeFirst = fruits.shift();
+//        console.log(fruits[0])
+
+        /**
+         * Find the index of an item in the Array
+         */
+        var pos = fruits.indexOf("Apple");
+//        console.log(pos);
+
+        /**
+         * Remove an item by index position
+         */
+        var removeItem = fruits.splice(pos, 0, "test", "test2");
+//        console.log(fruits);
+
+        /**
+         * Copy an Array
+         */
+        var shallowCopy = fruits.slice();
+        console.log(shallowCopy[2]);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

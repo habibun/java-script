@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        var newWin = open('http://www.google.com/', 'theWin', 'height=200,width=200');
+
+        var winProps = 'width=400,height=300,location=yes';
+        var newWin = open('about.html', 'aWin', winProps);
+
+        $('.popup').click(function () {
+            var winProps = 'height=300,width=300,resizable=yes,scrollbars=yes';
+            var newWin = open($(this).attr('href'), 'aWin', winProps);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

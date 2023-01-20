@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+var getValue, setValue; 
+(function() {
+  var secret = 0;   
+  getValue = function(){
+      return secret;  
+  };  
+  setValue = function(v){
+      secret = v;  
+  }; 
+})();
+
+setValue(123);
+var result = getValue();
+document.write(result);
+
+</script>
+
+</body>
+</html>

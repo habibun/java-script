@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // milliseconds from 1/1/1970 to today
+    var today = new Date(2015, 4, 2);
+    // milliseconds from 1/1/1970 to next new year
+    var nextYear = new Date(2016, 4, 2);
+    // calculate milliseconds from today to next year
+    var timeDiff = nextYear - today;
+    var second = 1000; // 1000 milliseconds in a second
+    var minute = 60 * second; // 60 seconds in a minute
+    var hour = 60 * minute; // 60 minutes in an hour
+    var day = 24 * hour; // 24 hours in a day
+    var totalDays = timeDiff / day; // total number of days
+    document.write(totalDays);
+
+    //display the time on a Web page
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    document.write(hours + ":" + minutes + ":" + seconds);
+</script>
+</body>
+</html>

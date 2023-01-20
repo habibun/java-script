@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //the code to send the rating to the server using Ajax would look like this
+    $.get('rateMovie.php','rating=5');
+
+//    Or, if you’re using the POST method:
+    $.post('rateMovie.php', 'rating=5');
+
+    /*If you need to send more than one name/value pair to the server, insert a &
+     between each pair:
+     */
+    $.post('rateMovie.php','rating=5&user=Bob');
+
+    /* the following query string isn’t valid: */
+    'favFood=Mac & Cheese' // incorrect
+    /*For example, the space character is represented by
+     %20, the & symbol by %26, and the = sign by %3D. So you need to write out the
+     “Mac & Cheese” example like this:
+     */
+    'favFood=Mac%20%26%20Cheese' // properly escaped
+
+    /*JavaScript provides a method for properly escaping strings—the
+     encodeURIComponent( ) method. You supply the endcodeURIComponent( )
+     method with a string, and it returns a properly escaped string. For example:
+     */
+    var queryString = 'favFood=' + encodeURIComponent('Mac & Cheese');
+    $.post('foodChoice.php', queryString);
+</script>
+</body>
+</html>

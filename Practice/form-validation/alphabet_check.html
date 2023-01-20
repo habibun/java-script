@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type='text/javascript'>
+        function isAlphabet(elem, helperMsg) {
+            var alphaExp = /^[a-zA-Z]+$/;
+            if (elem.value.match(alphaExp)) {
+                return true;
+            } else {
+                alert(helperMsg);
+                elem.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<form>
+    Letters Only: <input type='text' id='letters'/>
+    <input type='button'
+           onclick="isAlphabet(document.getElementById
+('letters'), 'Letters Only Please')"
+           value='Check Field'/>
+</form>
+
+</body>
+</html>

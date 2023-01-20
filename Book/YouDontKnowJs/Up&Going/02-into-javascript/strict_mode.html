@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function foo() {
+            "use strict";
+
+            // this code is strict mode
+            function bar() {
+                // this code is strict mode
+            }
+        }
+
+
+
+
+        // this code is not strict mode
+//        Compare that to:
+
+        "use strict";
+        function foo() {
+        // this code is strict mode
+        }
+        function bar() {
+            // this code is strict mode
+        }
+        // this code is strict mode
+
+
+        /*
+         *One key difference (improvement!) with strict mode is disallowing
+         the implicit auto-global variable declaration from omitting the var:
+         */
+
+        function foo2(){
+            "use strict";
+            a = 1;
+            console.log(a);
+        }
+        foo2();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

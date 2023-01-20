@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        $(document).ready(function () {
+            $('#menu').menu({
+                position: {
+                    my: 'center top',
+                    at: 'center bottom'
+                },
+                icons: {
+                    submenu: 'ui-icon-triangle-1-s'
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<ul id="mainMenu">
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="products.html">Products</a>
+        <ul>
+            <li><a href="a.html">Product A</a></li>
+            <li><a href="b.html">Product B</a></li>
+            <li><a href="c.html">Product C</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

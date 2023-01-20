@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var num = 1;
+    while (num <= 100) {
+        document.write('Number ' + num + '<br>');
+        num = num + 1;
+    };
+    //    you can achieve the same effect using a for loop with only three lines of code:
+    for (var num = 1; num < 100; num++) {
+        document.write('Number ' + num + '<br>');
+    }
+
+    //array with for loop
+    var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    for (var i = 0; i < days.length; i++) {
+        document.write(days[i] + ', ');
+        i++;
+    }
+
+    //say you want to print an array in reverse order
+    var example = ['first', 'second', 'third', 'last'];
+    for (var j = example.length; j > 0; j--) {
+        document.write(example[j - 1] + '<br>');
+    }
+</script>
+</body>
+</html>

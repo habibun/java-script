@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //change method mainly used in menu selection
+    /*
+    * each time a new selection is made you want to make sure the new selection isn’t the instruction text “Please choose a country
+    * */
+    $('#country').change(function( ) {
+        if ($(this).val( )=='Please choose a country') {
+            alert('Please select a country from this menu.');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+         *  The Order of Operations
+         * */
+        var total = 4 + 5 * 10; //54
+        /* rewrite the equation use parentheses to group operations */
+        total = (4 + 5) * 10;
+
+        console.log(total);
+
+
+        /*
+         * Combining Strings
+         * */
+        var firstName = 'John';
+        var lastName = 'Smith';
+        var fullName = firstName + lastName;
+        /* add empty space between string */
+        fullName = firstName + ' ' + lastName;
+
+        console.log(fullName);
+
+        /*
+         * Combining Numbers and Strings
+         * */
+        var numOfVisits = 101;
+        var message = 'You have visited this site ' + numOfVisits + ' times.';
+        console.log(message);
+
+        /*
+         * automatic type conversion
+         * */
+        var numOfShoes = '2';
+        var numOfSocks = 4;
+        var totalItems = numOfShoes + numOfSocks;
+        /* First, you add + to the beginning of the string that contains a number like this: */
+        totalItems = +numOfShoes + numOfSocks;
+        /* Another technique is to use the Number()  command like this: */
+        totalItems = Number(numOfShoes) + numOfSocks;
+        console.log(totalItems);
+
+        /*
+         * changing the values in variable
+         * */
+        var score = 0;
+        score = 100;
+        /*The same rules apply when concatenating a string to a variable*/
+        var name = 'Franklin';
+        var message = 'Hello';
+        message = message + ' ' + name;
+        /* there’s a shortcut operator for concatenating a string */
+        message += ' ' + name;
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

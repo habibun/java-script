@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /* id selector */
+        var messagesPara = document.getElementById('message');      //document object model
+        var messagePara = $('#message');        //jquery
+
+        /* element selector */
+        var linkList = document.getElementsByTagName('a');      //document object model
+        var LinksList = $('a');         //jquery
+
+        /* class selector */
+        var subMenu = document.getElementsByClassName('submenu');       //document object model
+        var subMenus = $('.submenu');       //jquery
+
+
+        /*
+         * advanced selectors
+         * */
+
+        /* descendant selectors */
+        $('#navBar a');
+
+        /* child selector */
+        $('body > p');
+
+        /* adjacent sibling */
+        $('h2+div');
+
+        /* attribute selector */
+        $('img[alt]');
+
+        $('input[type="text"]');
+
+        $('a[href^="http://"]');
+
+        $('a[href^="mailto:"]');
+
+        $('a[href$=".pdf"]');
+
+        /* jquery filters */
+        $('tr:even');
+
+        /* find every even table row in a table with class name of striped */
+        $('.striped tr:even');
+
+        /* if you wanted to select first paragraph on a page */
+        $('p:first');
+        /* if you wanted to select last paragraph on a page */
+        $('p:last');
+
+        /* For example, say you want to select every <a> tag except ones with a class of navButton */
+        $('a:not(.navButton)');
+
+        /* to fid every link that doesn’t begin with http://, you can write this */
+        $('a:not([href^="http://"])');
+
+        /* you want to fid all <li> tags, but only if they have an <a> tag inside them */
+        $('li:has(a)');
+
+        /* :contains() finds elements that contain specific text */
+        $('a:contains(Click Me!)');
+
+        /* say you’ve hidden several <div> tags; you can fid them and then make them visible using jQuery */
+        $('div:hidden').show();
+
+        /* to select all images inside a <div> tag with an ID of slideshow and then hide those images, you write this in jQuery */
+        $('#slideshow img').hide();
+
+        /* chaining function */
+        $('#popUp').width(300).height(300);
+        $('#popUp').width(300).height(300).text('Hi!').fadeIn(1000);
+
+    </script>
+</head>
+<body>
+<p id="message">Special message</p>
+</body>
+</html>

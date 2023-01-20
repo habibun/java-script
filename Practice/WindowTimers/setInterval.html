@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WindowTimers.setInterval()</title>
+    <script>
+        /**
+         * Repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. Returns an intervalID.
+         */
+
+        var nIntervId;
+
+        function changeColor() {
+            nIntervId = setInterval(flashText, 1000);
+        }
+
+        function flashText() {
+            var oElem = document.getElementById("my_box");
+            oElem.style.color = oElem.style.color == "red" ?  "blue" : "red";
+        }
+        function stopTextColor() {
+            clearInterval(nIntervId);
+        }
+
+        (function showAlert(){
+            setInterval(function () {
+               alert("Hello")
+            }, 3000);
+        })();
+    </script>
+</head>
+<body onload="changeColor();">
+    <div id="my_box">
+        <p>Hello World</p>
+    </div>
+
+    <button onclick="stopTextColor();">Stop</button>
+</body>
+</html>

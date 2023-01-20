@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function prompter() {
+            var answer = prompt("What is your favorite site", "Webcoachbd.com")
+            if(answer){
+                alert( "Your favorite site is " +  answer + "!");
+            }else{
+                alert("canceled");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="prompter()" value="Favorite">
+</body>
+</html>

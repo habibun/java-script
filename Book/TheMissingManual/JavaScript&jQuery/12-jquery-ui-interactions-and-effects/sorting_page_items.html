@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../living-examples/_css/jquery-ui.min.css" rel="stylesheet">
+    <link href="../living-examples/_css/site.css" rel="stylesheet">
+    <link href="../living-examples/chapter12/interactions.css" rel="stylesheet">
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /*$('#playlist').sortable({
+             opacity : 0.5,
+             placeholder : 'ui-state-highlight',
+             });*/
+
+            /* Sortable Widget Options */
+            $('#playlist2').sortable({
+                cursor: 'pointer',
+//                handle : 'ul',
+                /* axis-You can limit the movement of a sortable element */
+                axis: 'x',
+                /* cancel.  This option lets you prevent dragging an item if a specifi element is
+                 clicked on */
+                cancel: '.trashcan',
+                /* containment. You can prevent a visitor from dragging a list item outside a container element*/
+//                containment : '#mainContent',
+                /* parent */
+                containment: 'parent',
+                /* delay */
+                delay: 100,
+
+                /*distance.  A pixel distance that a list item must be dragged before sorting begins*/
+                distance: 10,
+                /* you can use the items option and set it to 'li li' , which means
+                 only a list item inside another list item (a nested list item) can be sorted*/
+                items: 'li li',
+
+                /* opacity*/
+                opacity: 0.5,
+
+                /*placeholder*/
+                placeholder: 'ui-state-highlight'
+            });
+
+            /*connectWith*/
+            $('#wishList').sortable({
+                connectWith: '#shoppingCart'
+            });
+
+            /* Sortable Events */
+            $('#playList').sortable({
+                stop: function (event, ui) {
+                    alert('Well sorted, my friend!');
+                }
+            });
+
+            /* Sortable Methods*/
+            $('#sortableItems').sortable('destroy');
+
+            /* serialize */
+            var listOrder = $('#playlist').sortable('serialize');
+
+            /* toArray */
+            var colors = $('#colorList').sortable('toArray');
+
+        }); // end ready
+    </script>
+</head>
+<body>
+<ul id="playlist">
+    <li>My Way -- Frank Sinatra</li>
+    <li>Like a Rolling Stone -- Bob Dylan</li>
+    <li>Respect -- Aretha Franklin</li>
+</ul>
+
+<ul id="playlist2">
+    <li>My Way -- Frank Sinatra</li>
+    <li>Like a Rolling Stone -- Bob Dylan</li>
+    <li>Respect -- Aretha Franklin</li>
+</ul>
+
+</body>
+</html>

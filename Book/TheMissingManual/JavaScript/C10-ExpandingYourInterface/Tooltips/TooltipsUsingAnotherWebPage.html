@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../../missingManual/javaScript/livingExamples/js/jquery.js"></script>
+    <script type="text/javascript" src="../../../missingManual/javaScript/livingExamples/js/jquery.cluetip.js"></script>
+    <!--4. Attach the external JavaScript files, add another <script> tag, and then add the
+jQuery $(document).ready( ) function.-->
+    <script>
+        $(document).ready(function() {
+            $('.tip').cluetip();
+        });
+    </script>
+</head>
+<body>
+<!--step 1: Create an HTML file containing the information you want to see in the tooltip body.-->
+<a href="http://www.chia-vet.com/"></a>
+<!--2. Add a title attribute and class name to the HTML element. For example:-->
+<a href="http://www.chia-vet.com/" class="tip"
+   title="Chia-Vet.com">
+</a>
+<!--step 3: Add a rel attribute to the tag, including a path to the HTML file you created in
+step 1.-->
+<a href="http://www.chia-vet.com/" class="tip"
+   title="Chia-Vet.com" rel="../../usedFiles/chia.html">chia
+    </a>
+
+</body>
+</html>

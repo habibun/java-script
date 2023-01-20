@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //create a simple function to output times in best formats
+    function printTime(secs) {
+        var sep = ':';  //separator character
+        var hours, minutes, seconds, time;
+        var now = new Date();
+        hours = now.getHours();
+        if (hours < 10) {
+            meridiem = 'am';
+        } else {
+            meridiem = 'pm';
+        }
+        hours = hours % 12;
+        if (hours == 0) {
+            hours = 12;
+        }
+        time = hours;
+        minutes = now.getMinutes();
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+        time += sep + minutes;
+        if (secs) {
+            seconds = now.getSeconds();
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
+            time += sep + seconds;
+        }
+        return time + ' ' + meridiem;
+    }
+    var result = printTime(true);
+    document.write(result);
+</script>
+</body>
+</html>

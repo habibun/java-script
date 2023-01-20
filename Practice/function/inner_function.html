@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	function a(param){
+		function b(theinput){
+			return theinput * 2;
+		}
+		return 'The resut is ' + b(param);
+	}
+//the same function using literal notation
+var a = function (param){
+	var b = function(theinput)
+	{
+		return theinput * 2;
+	}
+	return 'The resut is ' + b(param);
+}
+
+var result = a(2);
+document.write(result);
+</script>
+
+
+</body>
+</html>

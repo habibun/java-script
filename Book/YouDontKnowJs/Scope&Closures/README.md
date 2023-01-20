@@ -1,0 +1,1 @@
+“You Don’t Know JavaScript: scope & closures by Kyle Simpson (O’Reilly)

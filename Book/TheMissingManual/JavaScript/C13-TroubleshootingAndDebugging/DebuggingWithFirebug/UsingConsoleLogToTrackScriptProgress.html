@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var name = 'jony';
+    var score = 10;
+
+    /*For example, you could print the current value of the variable elementName to the
+     console using this code:*/
+    console.log(name);
+
+    /*But if you wanted to precede the name with a message, you can write this:*/
+    /*The special %s is
+     way of saying “substitute the variable value with me.” In other words, %s gets
+     replaced with the value of name*/
+    console.log('User name: %s', name);
+
+    /*You can add more than one variable to the message; just include one %s for each
+     variable. For example, if you have two variables, name and score, and want to print
+     both along with a custom log message, you can do the following:*/
+    console.log('%s has a score of %s', name, score);
+
+    /*You can use %s for numeric values, but Firebug provides two other tokens—%d
+     and %f—to represent integers (like 1, 2, and 10) and floating point numbers (like
+     1.22, and 2.4444). Using one of the two numeric tokens means the numbers are
+     printed in a different color—just an easy way to tell them apart from the rest of the
+     text.
+     For example, you can rewrite the line of code above to display the number stored
+     in the variable score:*/
+    console.log('%s has a score of %d', name, score);
+
+    /*but Firebug provides two other tokens—%d
+     and %f—to represent integers (like 1, 2, and 10) and floating point numbers (like
+     1.22, and 2.4444)*/
+</script>
+</body>
+</html>

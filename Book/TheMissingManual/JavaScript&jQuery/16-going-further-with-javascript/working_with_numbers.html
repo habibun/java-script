@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /* Changing a String to a Number */
+        var a = '3';
+        a = Number(a);
+        var b = '4';
+        b = Number(b);
+        alert(a + b); // 34
+        /* or*/
+        var total = +a + +b; // 7
+
+
+        /* parseInt */
+        var age = '20 years';
+        age = parseInt(age); //20
+
+        /* parseFloat */
+        var space = '4.5 acres';
+        space = parseFloat(space); // 4.5
+
+
+        /* Testing for Numbers*/
+        var x = '10'; // is a number
+        if (isNaN(x)) {
+            alert("won't run");
+        } else {
+            alert('will run');
+        }
+
+        /* Rounding Numbers */
+        var decimalNum = 10.25;
+        var roundedNum = Math.round(decimalNum); // 10
+
+
+        /* Formatting Currency Values */
+        var cost = 10;
+        var printCost = '$' + cost.toFixed(2); // $10.00
+
+        /* Creating a Random Number */
+
+        /* to generate a number from 0 to 9, you’d use this code */
+        Math.floor(Math.random() * 10);
+
+        /* if you want to simulate a die roll to get a number from 1 to 6 */
+        var roll = Math.ceil(Math.random() * 6); // 1,2,3,4,5 or 6
+
+        /* RANDOMLY SELECTING AN ARRAY ELEMENT */
+        var people = ['Ron', 'Sally', 'Tricia', 'Bob']; //create an array
+        var random = Math.floor(Math.random() * people.length);
+        var rndPerson = people[random]; //
+
+        /* A FUNCTION FOR SELECTING A RANDOM NUMBER*/
+        function rndNum(from, to) {
+            return Math.floor((Math.random() * (to - from + 1)) + from);
+        }
+        var dieRoll = rndNum(1, 6); // get a number between 1 and 6
+    </script>
+</head>
+<body>
+
+</body>
+</html>

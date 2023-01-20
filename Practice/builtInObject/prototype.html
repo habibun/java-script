@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prototype</title>
+    <script>
+        function Employee(name){
+            this.name = name;
+
+            /*this.getName = function()
+            {
+                return this.name;
+            }*/
+        }
+
+        var e1 = new Employee("Mark");
+
+        /*e1.getName  = function(){
+            return this.name;
+        };*/
+
+        Employee.prototype.getName = function () {
+          return this.name;
+        };
+
+        var e2 = new Employee("Sara");
+
+        document.write("E1 name = " + e1.getName() + "<br/>");
+        document.write("E2 name = " + e2.getName() + "<br/>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

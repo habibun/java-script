@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        setTimeout('refreshUserList()',4000);
+
+        setTimeout(function(){
+            //any js code
+        }, 5000);
+
+        /**
+         * example
+         */
+        $(document).ready(function(){
+            $('h1').hide();
+            setTimeout(function(){
+                $('h1').slideDown();
+            },5000);
+        });
+
+        /**
+         * clearTimeout()
+         */
+        $(document).ready(function(){
+            var sliderId;
+            $('h1').hide();
+            sliderId = setTimeout(function(){
+                $('h1').slideDown();
+
+            },5000);
+            $('#cancel').click(function(){
+                clearTimeout(sliderId);
+            });
+        });
+
+        //exaple with function
+        var sliderId;
+        $(document).ready(function(){
+            $('h1').hide();
+            slider();
+            $('#cancel').click(function(){
+                stopSlider();
+            });
+        });
+
+        function slider(){
+            sliderId = setTimeout(function(){
+                $('h1').slideDown();
+
+            },5000);
+        }
+        function stopSlider(){
+            clearTimeout(sliderId);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+create object using normal way:
+<html>
+<body>
+<script type="text/javascript">
+    personObj = {firstname: "John", lastname: "Doe", age: 50, eyecolor: "blue"};
+    document.write(personObj.firstname + " is " + personObj.age + " years old.");
+</script>
+</body>
+</html>
+
+create object using new operator:
+<html>
+<head>
+    <title>User-defined objects</title>
+    <script type="text/javascript">
+        var book = new Object();   // Create the object
+        book.subject = "Perl"; // Assign properties to the object
+        book.author = "Mohtashim";
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+    document.write("Book name is : " + book.subject + "<br>");
+    document.write("Book author is : " + book.author + "<br>");
+</script>
+</body>
+</html>
+
+
+create object using constructor function:
+<html>
+<body>
+<script type="text/javascript">
+    function student(name, age, rollno) {
+        this.name = name;
+        this.age = age;
+        this.rollno = rollno;
+    }
+    studentv = new student("John", "V", 10);
+    document.write(studentv.name + " reading in age " + studentv.age + "and his roll no:" + studentv.rollno);
+</script>
+</body>
+</html>

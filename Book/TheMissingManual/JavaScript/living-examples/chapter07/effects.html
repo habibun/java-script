@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>jQuery Effects</title>
+    <link href="../css/global.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        <!--
+        #textHolder, #photoHolder {
+            padding: 10px;
+            border: 1px solid #666;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            background: #FFF;
+        }
+
+        .idLabel {
+            position: absolute;
+            top: 10px;
+            font-weight: bold;
+            color: #FFF;
+            background: #F00;
+            display: inline;
+            left: 10px;
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+
+        .col1, .col2, .col3 {
+            float: left;
+            width: 160px;
+            padding-bottom: 15px;
+        }
+
+        #photo, #text {
+            clear: left;
+            position: relative;
+            background-color: white;
+        }
+
+        .col1, .col2 {
+            margin-right: 5px;
+        }
+
+        #photo {
+            text-align: center;
+        }
+
+        body {
+            -moz-opacity: .999;
+            overflow: scroll;
+        }
+
+        #main p.effect {
+            font: bold 14px/1.5 "Courier New", Courier, monospace;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .effect {
+            cursor: pointer;
+        }
+
+        .col2 {
+            width: 200px;
+        }
+
+        #col3 {
+            width: 190px;
+        }
+
+        .col3 {
+            width: 180px;
+        }
+
+        -->
+    </style>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.effect').click(function (evt) {
+                var container = $(this).parents('#textHolder');
+                targetID = (container.length == 1) ? '#text' : '#photo';
+                var target = $(targetID);
+                var action = $(this).attr('title');
+                switch (action) {
+                    case 'hide' :
+                        target.hide();
+                        break;
+                    case 'show' :
+                        target.show();
+                        break;
+                    case 'toggle' :
+                        target.toggle();
+                        break;
+                    case 'fadeIn' :
+                        target.fadeIn();
+                        break;
+                    case 'fadeOut' :
+                        target.fadeOut();
+                        break;
+                    case 'slideDown' :
+                        target.slideDown();
+                        break;
+                    case 'slideUp' :
+                        target.slideUp();
+                        break;
+                    case 'slideToggle' :
+                        target.slideToggle();
+                        break;
+                    case 'fadeTo':
+                        varFadeValue = (targetID == '#text') ? $('#textFade').val() : $('#photoFade').val();
+                        target.fadeTo('slow', varFadeValue);
+                        break;
+                }
+                setButtonState(targetID);
+            });
+
+            function setButtonState(targID) {
+                if ($('#photo').is(':animated') || $('#text').is(':animated')) {
+                    setTimeout(
+                            function () {
+                                setButtonState(targID)
+                            },
+                            500);
+                }
+                var vis = $(targID).is(':visible');
+                $('#main .effect:contains(' + targID + ')').each(function () {
+                    if (vis) {
+                        if ($(this).hasClass('vis')) {
+                            $(this).fadeTo('normal', 1);
+                        }
+                        if ($(this).hasClass('hid')) {
+                            $(this).fadeTo('normal', .25);
+                        }
+                    } else {
+                        if ($(this).hasClass('hid')) {
+                            $(this).fadeTo('normal', 1);
+                        }
+                        if ($(this).hasClass('vis')) {
+                            $(this).fadeTo('normal', .25);
+                        }
+                    }
+                });
+            }
+
+
+            setButtonState('#text');
+            setButtonState('#photo');
+
+        });
+    </script>
+</head>
+<body id="twoCol">
+<div id="container">
+    <div id="banner"><img src="../images/banner.png" alt="JavaScript: The Missing Manual" width="760" height="65"><span
+            id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+
+    <div id="contentWrap">
+        <div id="main">
+            <h1>jQuery Effects </h1>
+
+            <div id="textHolder" class="clear">
+                <div class="col1">
+                    <p class="effect hid" title="show">&nbsp;&nbsp;show('#text')</p>
+
+                    <p class="effect vis" title="hide">&nbsp;&nbsp;hide('#text')</p>
+
+                    <p class="effect" title="toggle">toggle('#text')</p>
+                </div>
+                <div class="col2">
+                    <p class="effect hid" title="fadeIn">&nbsp;fadeIn('#text')</p>
+
+                    <p class="effect vis" title="fadeOut">fadeOut('#text')</p>
+
+                    <p class="effect vis" title="fadeTo">&nbsp;fadeTo('#text')
+                        <input name="textFade" type="text" id="textFade" value=".5" size="3" maxlength="4">
+                    </p>
+                </div>
+                <div class="col3">
+                    <p class="effect hid" title="slideDown">&nbsp;&nbsp;slideDown('#text')</p>
+
+                    <p class="effect vis" title="slideUp">&nbsp;&nbsp;&nbsp;&nbsp;slideUp('#text')</p>
+
+                    <p class="effect" title="slideToggle">slideToggle('#text')</p>
+                </div>
+
+
+                <div id="text">
+                    <p class="idLabel">#text</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus rutrum elit ac massa. Proin sit
+                        amet dui et dui venenatis aliquam. Vestibulum et metus sed elit convallis convallis. Quisque
+                        sem. Curabitur mauris libero, nonummy non, commodo id, pretium quis, justo. Sed convallis eros
+                        et odio. Maecenas blandit. Sed at libero sit amet mauris congue pellentesque.</p>
+                </div>
+            </div>
+            <div id="photoHolder" class="clear">
+                <div class="col1">
+                    <p class="effect hid" title="show">&nbsp;&nbsp;show('#photo')</p>
+
+                    <p class="effect vis" title="hide">&nbsp;&nbsp;hide('#photo')</p>
+
+                    <p class="effect" title="toggle">toggle('#photo')</p>
+                </div>
+                <div class="col2">
+                    <p class="effect hid" title="fadeIn">&nbsp;fadeIn('#photo')</p>
+
+                    <p class="effect vis" title="fadeOut">fadeOut('#photo')</p>
+
+                    <p class="effect vis" title="fadeTo">&nbsp;fadeTo('#photo')
+                        <input name="photoFade" type="text" id="photoFade" value=".5" size="3" maxlength="4"></p>
+                </div>
+                <div class="col3">
+                    <p class="effect hid" title="slideDown">&nbsp;&nbsp;slideDown('#photo')</p>
+
+                    <p class="effect vis" title="slideUp">&nbsp;&nbsp;&nbsp;&nbsp;slideUp('#photo')</p>
+
+                    <p class="effect" title="slideToggle">slideToggle('#photo')</p>
+                </div>
+
+                <div id="photo"><p class="idLabel">#photo</p>
+                    <img src="images/large/orange.jpg" width="400" height="300" alt="Orange"></div>
+            </div>
+        </div>
+        <div id="sidebar">
+            <h2>Effects</h2>
+        </div>
+    </div>
+    <div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+</body>
+</html>

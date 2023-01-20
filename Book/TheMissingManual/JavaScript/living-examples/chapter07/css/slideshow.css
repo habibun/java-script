@@ -1,0 +1,45 @@
+body {
+ -moz-opacity: .999;
+}
+
+#gallery {
+	height:500px;
+	width: 575px;
+	margin-top: 15px;
+}
+
+#gallery div {
+	text-align: center;
+	width: 575px;
+	height: 500px;
+}
+
+#gallery img {
+	padding: 10px;
+	border: 1px solid #333;
+	background-color: #FFF;
+}
+
+#gallery div p {
+	font: bold 12px "Trebuchet MS", Arial, Helvetica, sans-serif;	
+}
+#controls {
+	text-align: center;
+}
+#pager    a, #main .control  {
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFF;
+	background: #0E3B3B;
+	padding: 2px 5px;
+	text-decoration: none;
+	margin-left: 5px;
+	cursor: pointer;
+}
+#pager a.activeSlide {
+	background-color: #E6E2AF;
+	color: #000;
+}
+#pager a:hover, #playControl:hover {
+	background: #900;
+}

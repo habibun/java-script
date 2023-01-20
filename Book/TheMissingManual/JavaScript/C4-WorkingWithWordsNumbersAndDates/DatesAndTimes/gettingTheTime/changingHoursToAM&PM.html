@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var now = new Date();
+    var hour = now.getHours();
+    if (hour < 12) {
+        meridiem = 'am';
+    } else {
+        meridiem = 'pm';
+    }
+    hour = hour % 12;
+    if (hour == 0) {
+        hour = 12;
+    }
+    hour = hour + ' ' + meridiem;
+    document.write(hour);
+</script>
+</body>
+</html>

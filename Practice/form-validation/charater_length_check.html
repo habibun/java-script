@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title></title>
+    <script type="application/javascript">
+        function lengthRestriction(elem, min, max) {
+            var uInput = elem.value;
+            if (uInput.length >= min && uInput.length <= max) {
+                return true;
+            }
+            else {
+                alert("Please enter between " + min + " and " + max + " characters");
+                elem.focus();
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<form>
+    Username(6-8 characters): <input type='text' id='restrict'/>
+    <input type='button' onclick="lengthRestriction(document.getElementById('restrict'), 6, 8)" value="Check Field"/>
+</form>
+</body>
+</html>

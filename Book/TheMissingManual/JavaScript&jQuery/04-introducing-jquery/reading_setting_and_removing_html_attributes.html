@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /* search for image location */
+            var imageFile = $('#banner img').attr('src');
+            console.log(imageFile);
+
+            /* or you can set a new image location */
+            var newImgFile = $('#banner img').attr('src', 'images/newImage.png');
+            console.log(newImgFile);
+        });
+    </script>
+</head>
+<body>
+<div id="banner">
+    <img src="../living-examples/_images/open.png" alt="testingImage">
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <script>
+
+        //change content without reloading page
+        function showNumber(){
+            document.getElementById('show').innerHTML = '01961349181';
+        }
+        function showEmail(){
+            document.getElementById('show').innerHTML = 'refatju AT yahoo DOT com';
+        }
+
+        //user input
+    </script>
+</head>
+<body>
+
+<input type="button" onclick="showNumber()" value="Show Mobile Number" />
+<input type="button"  onclick="showEmail()" value="Show Email" />
+<h3 id="show"></h3>
+
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function showEmail(){
+            var getEmail = document.getElementById('email').value;
+
+            var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
+
+            if(getEmail.length == 0 || filter.test(getEmail) != true){
+                document.getElementById('email').value = '';
+                alert('Please enter valid email');
+                return false;
+            }else{
+                document.getElementById('show').innerHTML = getEmail;
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<input id="email" type="text" maxlength="40" autocomplete="off" placeholder="Enter Email here"/>
+<input type="button" onclick="showEmail()" value="Show Email"/>
+
+<h3 id="show"></h3>
+
+</body>
+</html>

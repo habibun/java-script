@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WindowTimers.setTimeout()</title>
+    <script>
+        /**
+         * Sets a timer which executes a function specified piece of code once after the timer expires
+         */
+        var timeoutID;
+
+        function delayedAlert(){
+            timeoutID = window.setTimeout(showAlert, 2000);
+        }
+
+        function showAlert() {
+            alert("That was really slow!");
+        }
+
+        (function showAlert(){
+            setTimeout(function () {
+                alert("Hello");
+            }, 3000);
+        })();
+
+    </script>
+</head>
+<body>
+    <p>Live Example</p>
+    <button onclick="delayedAlert();">Show an alert box after two seconds</button>
+</body>
+</html>

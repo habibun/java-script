@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * The hasOwnProperty() method returns a boolean indicating whether the object has the specified property.
+         */
+        var o = new Object();
+        o.prop = "exists";
+
+        function change() {
+            o.newProp = o.prop;
+            delete o.prop;
+        }
+
+        var result = o.hasOwnProperty('prop');
+//        console.log(result);
+        change();
+        result = o.hasOwnProperty('prop');
+//        console.log(result);
+        result = o.hasOwnProperty('newProp');
+//        console.log(result);
+
+        var buz = {
+            fog: 'stack'
+        };
+
+        for (var name in buz) {
+            if (buz.hasOwnProperty(name)) {
+                console.log('this is fog (' + name + ') for sure. Value: ' + buz[name]);
+            }
+            else {
+                console.log(name); // toString or something else
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

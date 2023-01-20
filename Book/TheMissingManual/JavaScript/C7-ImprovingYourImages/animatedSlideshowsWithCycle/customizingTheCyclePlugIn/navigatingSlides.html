@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--- For example, you could add the following HTML to create side-by-side “Previous slide” and “Next slide” buttons: -->
+<span id="previous">Previous slide</span>
+<span id="next">Next slide</span>
+
+<!-- For example, you could insert a <div> tag with an ID like this:  -->
+    <div id="pager"></div>
+
+<script>
+    //sing the HTML from above, you could add Previous and Next links like this
+    $('#photos').cycle({
+        prev: '#previous',
+        next: '#next'
+    });
+
+    //you can add paging to a slideshow like this:
+    $('#photos').cycle({
+        pager: '#pager'
+    });
+
+
+
+</script>
+</body>
+</html>

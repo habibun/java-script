@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Image Rollovers</title>
+    <link href="../css/global.css" rel="stylesheet" type="text/css">
+    <link href="css/gallery.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#gallery img').each(function () {
+                var imgFile = $(this).attr('src');
+                var preloadImage = new Image();
+                var imgExt = /(\.\w{3,4}$)/;
+                preloadImage.src = imgFile.replace(imgExt, '_h$1');
+
+                $(this).hover(
+                        function () {
+                            $(this).attr('src', preloadImage.src);
+                        },
+                        function () {
+                            $(this).attr('src', imgFile);
+                        }
+                ); // end hover
+            }); // end each
+        }); // end ready()
+    </script>
+</head>
+<body id="twoCol" class="simple">
+<div id="container">
+    <div id="banner"><img src="../images/banner.png" alt="JavaScript: The Missing Manual" width="760" height="65"><span
+            id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+
+    <div id="contentWrap">
+        <div id="main">
+            <h1>Image Rollovers</h1>
+
+            <div id="gallery">
+                <a href="images/large/blue.jpg"><img src="images/small/blue.jpg" width="70" height="70" alt="Blue"></a>
+                <a href="images/large/yellow.jpg"> <img src="images/small/yellow.jpg" width="70" height="70"
+                                                        alt="Yellow"> </a>
+                <a href="images/large/green.jpg"><img src="images/small/green.jpg" width="70" height="70"
+                                                      alt="Green"></a>
+                <a href="images/large/orange.jpg"><img src="images/small/orange.jpg" width="70" height="70"
+                                                       alt="Orange"> </a>
+                <a href="images/large/purple.jpg"><img src="images/small/purple.jpg" width="70" height="70"
+                                                       alt="Purple"> </a>
+                <a href="images/large/red.jpg"><img src="images/small/red.jpg" width="70" height="70" alt="Red"></a>
+            </div>
+            <p class="credit">Photos by <a href="http://www.morguefile.com/forum/profile.php?username=alin">Alin Nan</a>
+            </p>
+
+        </div>
+        <div id="sidebar">
+            <h2>Script 7.1</h2>
+        </div>
+    </div>
+    <div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function() {
+           /* $('[title]').tooltip();
+            /!* class selector *!/
+            $('.tooltip').tooltip();
+
+            $('[title]').tooltip({
+                show: true,
+                hide: 'explode',
+                track: true
+            });*/
+
+            /* using html content in a tooltip */
+            /*$('#me').tooltip({
+                content: '<img src="me.png" alt="Look at me!">'
+            });*/
+
+            $('#me').tooltip({
+                content: $('#tooltipTemplate').html()
+            });
+
+        }); // end ready
+    </script>
+</head>
+<body>
+<!--
+<a href="https://twitter.com/OReillyMedia" title="Follow us on Twitter">
+    <img src="twitter.png">
+</a>
+-->
+
+<a href="coolest_person_on_earth.html" id="me">About Me</a>
+
+<script id="tooltipTemplate" type="text/template">
+    <h2>About Me</h2>
+    <ul>
+        <li>I'm super awesome.</li>
+        <li>I brush my teeth 3 times daily</li>
+        <li><img src="me.png" alt="Look at me!"></li>
+    </ul>
+</script>
+</body>
+</html>

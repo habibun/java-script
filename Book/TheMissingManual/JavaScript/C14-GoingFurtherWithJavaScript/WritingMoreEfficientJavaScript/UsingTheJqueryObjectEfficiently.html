@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    $('a[href^=http://]').addClass('external');
+    $('a[href^=http://]').attr('target','_blank');
+
+    /*Notice that in the above code, $('a[href^=http://]') appears two times. Each time
+     $('a[href^=http://]') is encountered jQuery refinds the links—this is a waste of processing time, so you could store $('a[href^=http://]') into a variable a single time,
+     then access it any number of times without making jQuery go find the elements
+     again:*/
+    var links = $('a[href^=http://]');
+    links.addClass('external');
+    links.attr('target','_blank');
+
+    /*add another command following it to create a chain of commands that are all run on the same object. For example, you can
+     rewrite the above code more succinctly as:*/
+
+    $('a[href^=http://]').addClass('external').attr('target','_blank');
+
+    /*make the code easier to read, the long chain is broken up over multiple lines. For example, you can rewrite the above code as follows
+     (and it’ll still work):*/
+    $('a[href^=http://]')
+            .addClass('external')
+            .attr('target','_blank');
+</script>
+</body>
+</html>

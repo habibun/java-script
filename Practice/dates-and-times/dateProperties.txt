@@ -1,0 +1,3 @@
+Property            Description
+constructor         Specifies the function that creates an object's prototype.
+prototype           The prototype property allows you to add properties and methods to an object.

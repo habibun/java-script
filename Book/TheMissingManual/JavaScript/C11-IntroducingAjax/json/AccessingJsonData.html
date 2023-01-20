@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--There are two ways to access data in a JSON object: dot syntax or array notation-->
+<script>
+    /*For example, suppose you create a variable and store an object literal inside it like
+     this:*/
+    var bday = {
+        person: 'Raoul',
+        date: '10/27/1980'
+    };
+
+    /*so if you want to get the
+     value of person in the object, use dot syntax like this:*/
+    bday.person     // Raoul
+
+    /*To get the birth date:*/
+    bday.date // '10/27/1980'
+
+    /*The same is true with a JSON object that’s returned by the Web server. For example,
+     take the following getJSON( ) example and callback function:*/
+    $.getJSON('contacts.php','contact=123',processContacts);
+    function processContacts(data) {
+    }
+
+/*Assuming that the server returned the JSON example on page 432, that JSON
+ object is assigned to the variable data (the argument for the callback function
+ processContacts( )), just as if this code had been executed:*/
+    var data = {
+        firstName: 'Frank',
+        lastName: 'Smith',
+        phone: '503-555-1212'
+    };
+
+    /*Now within the callback function, you can access the value of firstName like this:*/
+    data.firstName // 'Frank'
+
+    /*And retrieve the last name of the contact like this:*/
+    data.lastName // 'Smith'
+
+
+    /*All of the programming
+     for that might look like this:*/
+    $.getJSON('contacts.php','contact=123',processContacts);
+    function processContacts(data) {
+        var infoHTML='<p>Contact: ' + data.firstName;
+        infoHTML+=' ' + data.lastName + '<br>';
+        infoHTML+='Phone: ' + data.phone + '</p>';
+        $('#info').html(infoHTML);
+    }
+    /*The final outcome would be a paragraph added to the page that looks something
+     like this:*/
+    Contact: Frank Smith
+    Phone: 503-555-1212
+</script>
+</body>
+</html>

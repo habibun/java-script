@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * explicit coercion
+         */
+        /*var a = "42";
+        var b = Number(a);
+
+        console.log(a);
+        console.log(b);
+        console.log(typeof a);
+        console.log(typeof b);*/
+
+        /**
+         * implicit coercion
+         */
+
+//        var a = "42";
+//        var b = a * 1;
+
+//        console.log(a);
+//        console.log(b);
+//        console.log(typeof a);
+//        console.log(typeof b);
+
+        /**
+         * Consider the implicit coercion that’s allowed by the == loose-
+         equality comparison and not allowed with the === strict-equality:
+         */
+//        var a = "42";
+//        var b = 42;
+
+//        console.log(a == b);
+//        console.log(a === b);
+
+        /**
+         * comparing arrays
+         */
+        /*var a = [1,2,3];
+        var b = [1,2,3];
+        var c = "1,2,3";
+
+        console.log(a == c);
+        console.log(b == c);
+        console.log(a == b);*/
+
+        /**
+         * Inequality
+         */
+        /*var a = 41;
+        var b = "42";
+        var c = "43";
+
+        console.log(a < b);
+        console.log(b < c);*/
+
+        /**
+         * comparisons between potentially different value type
+         */
+        var a = 42;
+        var b = "foo";
+
+        console.log(a < b);
+        console.log(a > b);
+        console.log(a == b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

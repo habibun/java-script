@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sortable Playlist</title>
+<link href="../_css/jquery-ui.min.css" rel="stylesheet">
+<link href="../_css/site.css" rel="stylesheet">
+<link href="interactions.css" rel="stylesheet" >
+<script src="../_js/jquery.min.js"></script>
+<script src="../_js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function() {
+  
+   $('.fileList').sortable({
+   	forcePlaceholderSize : true,
+    placeholder : 'ui-state-highlight',
+    connectWith : '.fileList'
+   });
+
+   
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+		JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+	</header>
+	<div class="content">
+		<div class="main">
+			<h1>Files and Folders</h1>
+			<ul id="root">
+				<li class="folder">Folder A 
+				  <ul class="fileList">
+						<li class="file">Resume</li>
+						<li class="file">Thesis</li>
+					</ul>
+				</li>
+				<li class="folder">Folder B
+					<ul class="fileList">
+						<li class="file">Homework</li>
+						<li class="file">Recipes</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<footer>
+		<p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+	</footer>
+</div>
+</body>
+</html>

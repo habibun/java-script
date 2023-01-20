@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Quis Nostrud</title>
+    <link href="../css/global.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#links a').click(function () {
+                var url = $(this).attr('href');
+                $('#headlines').load(url + ' #newsItems');
+                return false;
+            });
+        });
+    </script>
+</head>
+<body id="threeCol">
+<div id="container">
+    <div id="banner"><img src="../images/banner.png" alt="JavaScript: The Missing Manual" width="760" height="65"><span
+            id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+
+    <div id="contentWrap">
+        <div id="main">
+            <h1>Using jQuery&#8217;s load() Function</h1>
+
+            <h2>Headlines</h2>
+            <ul id="links">
+                <li><a href="today.html">Today&#8217;s News</a></li>
+                <li><a href="yesterday.html">Yesterday&#8217;s News</a></li>
+                <li><a href="lastweek.html">Last Week&#8217;s News</a></li>
+            </ul>
+        </div>
+
+        <div id="sidebar">
+            <h2>Script 11.1</h2>
+        </div>
+    </div>
+
+    <div id="news">
+        <h2>News Headlines</h2>
+
+        <div id="headlines"></div>
+    </div>
+
+    <div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+</body>
+</html>

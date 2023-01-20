@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * [-\w.]+ matches a hyphen, any word character, or a period one or more times. So it will match “bob,” “bob.smith,” or “bob-smith.”
+     * @ is the @ sign you find in an email address: missing@sawmac.com.
+     * • [A-z0-9] matches one letter or number
+     * [-A-z0-9]+ matches one or more instances of a letter, number, or hyphen.
+     * \. is a period character so it would match the period in sawmac.com.
+     *  matches one or more instances of the pattern that includes the above three matches. This character allows for subdomain names like bob@mail.sawmac.com.
+     *  [A-z]{2,4} is any letter 2, 3, or 4 times. This matches the com in .com, or uk in .uk
+     *
+     * @type {RegExp}
+     */
+    var emailAddress = /[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}/;
+</script>
+</body>
+</html>

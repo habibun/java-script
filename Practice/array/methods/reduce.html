@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array.prototype.reduce()</title>
+    <script>
+        /**
+         * The reduce() method applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
+         */
+        //Get the sum of the numbers in the array:
+        var numbers = [65, 44, 12, 4];
+
+        function getSum(total, currentValue) {
+            return total + currentValue;
+        }
+//        document.write(numbers.reduce(getSum));
+
+        //reduce method with initial value
+        var sum = [0, 1, 2, 3].reduce(function(a, b) {
+            return a + b;
+        }, 0);
+
+//        console.log(sum); // sum is 6
+
+        //
+        var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+            return a.concat(b);
+        }, []);
+
+        console.log(flattened);// flattened is [0, 1, 2, 3, 4, 5]
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

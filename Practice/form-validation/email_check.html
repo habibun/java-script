@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function emailValidation(elem, helperMsg) {
+            var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+            if (elem.value.match(emailExp)) {
+                return true;
+            }
+            else {
+                alert(helperMsg);
+                elem.focus();
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<form>
+    Email: <input type="text" id="emailer"/>
+    <input type="button" onclick="emailValidation(document.getElementById('emailer'),'Not a Valid Email')"
+           value="Check Field"/>
+</form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function validateForm() {
+            var x = document.forms["myForm"]["email"].value;
+            var atpos = x.indexOf("@");
+            var dotpos = x.lastIndexOf(".");
+            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+                alert("Not a valid e-mail address");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="myForm" action="demo_form.asp" onsubmit="return validateForm();" method="post">
+    Email: <input type="text" name="email">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

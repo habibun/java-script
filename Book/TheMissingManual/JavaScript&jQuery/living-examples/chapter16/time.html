@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get the Time</title>
+<link href="../_css/site.css" rel="stylesheet">
+<script src="../_js/jquery.min.js"></script>
+<script src="getTime.js"></script>
+<script>
+$(document).ready(function() {
+	function displayTime() {
+		$('#time').text(getTime(true));
+	}
+	displayTime();
+	setInterval(displayTime,1000);
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+    JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+  </header>
+	<div class="content">
+		<div class="main">
+			<h1>Displaying Time</h1>
+			<p>The time is: <strong id="time"></strong></p>
+			<div id="headlines"></div>
+		</div>
+	</div>
+	<footer>
+<p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script type="text/javascript">
+        var TAX = .08;
+        function calculateTotal(quantity, price){
+        	var total = quantity * price * (1 + TAX);
+        	var formattedTotal = total.toFixed(2);
+        	return formattedTotal;
+        }
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+    var saleTotal = calculateTotal(2,16.95);
+    document.write('Total cost is: $' + saleTotal);
+</script>
+</body>
+</html> 

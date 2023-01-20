@@ -1,0 +1,87 @@
+h1 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+    margin-bottom: 10px !important;
+    color: #036;
+}
+
+p {
+    font: 18px Georgia, "Times New Roman", Times, serif;
+}
+
+#main {
+    position: relative;
+}
+
+/* style for hiding panels */
+.ui-tabs-hide {
+    display: none;
+}
+
+/* for ul holding tab li elements */
+.ui-tabs-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    zoom: 1;
+}
+
+/* tabs */
+#main .ui-tabs-nav li {
+    padding: 0 !important;
+    margin: 0 5px 0 0;
+    float: left;
+}
+
+#main li {
+    margin-bottom: 10px;
+}
+
+/* style link inside tab */
+.ui-tabs-nav a {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #999;
+    text-decoration: none;
+    display: block;
+    padding: 5px 15px 3px 15px;
+    border: 1px solid #999;
+    border-bottom: none;
+
+}
+
+/* link style for selected tab */
+.ui-tabs-selected a {
+    color: #000;
+    background: #FFC;
+    position: relative; /*position to overlap panel to remove border line between panel and tab */
+    top: 1px;
+    z-index: 100 !important;
+}
+
+/* remove outline around link of selected tab */
+.ui-tabs-nav a:focus {
+    outline: none;
+}
+
+/*panel style*/
+.ui-tabs-panel {
+    clear: left;
+    border: 1px solid #999;
+    margin: 0;
+    margin-top: 0;
+    padding: 10px;
+    background: #FFC;
+    width: 500px;
+    position: relative;
+    z-index: 1;
+}
+
+.ui-tabs-loading em {
+    background: url(images/loading.gif) no-repeat left center;
+    padding: 0 0 0 25px;
+}

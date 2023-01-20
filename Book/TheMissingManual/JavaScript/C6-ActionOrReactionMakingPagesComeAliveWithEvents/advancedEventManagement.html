@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<a href="#">link</a>
+
+<p>this is a paragraph</p>
+<span></span>
+
+<script>
+    //the basic format of the bind function is the following
+    $('#selector').bind('click', myData, functionName);
+
+    //Passing data using the bind( ) function is optional. If you want to use bind( ) merely to attach an
+    //event and function, then leave the data variable out
+    $('selector').bind('click', functionName);
+
+
+    //here is an example
+    var linkVar = {message: 'Hello from a link'};
+    var pVar = {message: 'Hello from a paragraph'};
+
+    function showMessage(evt) {
+        alert(evt.data.message);
+    }
+    $('a').bind('click', linkVar, showMessage);
+    $('p').bind('click', pVar, showMessage);
+</script>
+</body>
+</html>

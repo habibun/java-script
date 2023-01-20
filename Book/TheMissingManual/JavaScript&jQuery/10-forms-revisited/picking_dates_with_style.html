@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <link href="../living-examples/_css/jquery-ui.min.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $('#birthdate').datepicker({
+
+                /* number of month */
+                numberOfMonths: 1,
+
+                /* change month */
+                changeMonth: true,
+
+                /* change year */
+                changeYear: true,
+
+                /* date format */
+                dateFormat: 'dd-mm-yy',
+
+                /* display French names of the month */
+//                monthNames: [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+//                    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" ],
+
+                /* max date from today */
+//                maxDate: 0,
+//                maxDate : '+1y'
+                /*if you want to limit the date selection to three months, two weeks, and fie days into the future*/
+//                maxDate : '+3m +2w +5d',
+
+                /*to prevent people from selecting a date earlier than today, set this option to 0,*/
+//                minDate: 0,
+                /*how to  specify a date that’s one year, two months, and three days in the past*/
+//                minDate : '-1y -2m -3d',
+
+                /**/
+                yearRange: '-120:0'
+            });
+
+            /* or using class selector */
+            $('.date').datepicker();
+
+        }); // end ready
+    </script>
+</head>
+<body>
+<input type="text" name="birthdate" id="birthdate">
+<input type="text" name="arrival" class="date">
+<input type="text" name="departure" class="date">
+</body>
+</html>

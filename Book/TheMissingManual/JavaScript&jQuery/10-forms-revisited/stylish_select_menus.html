@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <link href="../living-examples/_css/jquery-ui.min.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $('#meal').selectmenu({
+                /* set width */
+                width: 200,
+//                width : '100%',
+                icons: {
+                    button: "ui-icon-circle-triangle-s"
+                }
+            });
+
+            /*Or, if you’ve used a class to identify more than one menu, you could write this:*/
+            $('.select').selectmenu();
+
+            $('#colors').selectmenu({
+                width: 300,
+                change: function (event, ui) {
+                    var newImage;
+                    if (ui.item.label === 'Red') {
+                        newImage = 'red_shirt.jpg';
+                    } else if (ui.item.label === 'Green') {
+                        newImage = 'green_shirt.jpg';
+                    } else {
+                        newImage = 'blue_shirt.jpg';
+                    }
+                    $('#shirt').attr('src', newImage);
+                }
+            });
+        }); // end ready
+    </script>
+</head>
+<body>
+<select name="meal" id="meal">
+    <option>No meal</option>
+    <option>Vegan</option>
+    <option>Gluten Free</option>
+    <option>Vegetarian</option>
+    <option>Meat eater</option>
+</select>
+
+<select id="colors">
+    <option value="R785">Red</option>
+    <option value="G101">Green</option>
+    <option value="B498">Blue</option>
+</select>
+</body>
+</html>

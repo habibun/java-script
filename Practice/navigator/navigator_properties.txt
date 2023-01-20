@@ -1,0 +1,8 @@
+Property                    Description
+appCodeName                 This property is a string that contains the code name of the browser, Netscape for Netscape and Microsoft Internet Explorer for Internet Explorer.
+appVersion                  This property is a string that contains the version of the browser as well as other useful information such as its language and compatibility.
+language                    This property contains the two-letter abbreviation for the language that is used by the browser. Netscape only.
+mimTypes[]                  This property is an array that contains all MIME types supported by the client. Netscape only.
+platform[]                  This property is a string that contains the platform for which the browser was compiled."Win32" for 32-bit Windows operating systems
+plugins[]                   This property is an array containing all the plug-ins that have been installed on the client. Netscape only.
+userAgent[]                 This property is a string that contains the code name and version of the browser. This value is sent to the originating server to identify the client

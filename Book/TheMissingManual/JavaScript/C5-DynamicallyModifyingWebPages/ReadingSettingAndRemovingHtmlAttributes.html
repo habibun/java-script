@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<div id="banner">
+    <img src="../usedFiles/brightDay.jpg" height="200px" width="200px">
+</div>
+
+<script>
+    var imageFile = $('#banner img').attr('src');
+    document.write(imageFile);
+
+    //If you pass a second argument to the attr( ) function, you can set the tag’s attribute
+    $('#banner img').attr('src', 'images/newImage.png');
+</script>
+</body>
+</html>

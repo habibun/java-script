@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../../assets/jquery-2.1.3.js"></script>
+    <script>
+        /**
+         * The geolocation property returns a Geolocation object that can be used to locate the user's position.
+         * @param position
+         */
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
+            });
+        }
+    </script>
+</head>
+<body>
+    <p id="data"></p>
+</body>
+</html>

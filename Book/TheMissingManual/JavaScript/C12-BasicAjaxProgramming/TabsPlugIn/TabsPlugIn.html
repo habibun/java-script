@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--1. Attach several external JavaScript files to your page.-->
+    <!--In
+other words, you’ll have three script tags that look something like this:-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/ui.core.js"></script>
+    <script type="text/javascript" src="js/ui.tabs.js"></script>
+</head>
+<body>
+
+<!--2. Structure the HTML for the tabs-->
+<ul id="tabs">
+    <li><a href="specs.html">Specifications</a></li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+</ul>
+
+<!--3. Apply the tabs( ) function to the <ul> tag containing the tabs-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tabs').tabs();
+    });
+</script>
+
+</body>
+</html>

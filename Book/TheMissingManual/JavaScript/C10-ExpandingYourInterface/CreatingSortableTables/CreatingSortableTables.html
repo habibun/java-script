@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--2. Attach the jQuery file.-->
+
+<!--3. Attach the Tablesorter file.-->
+<script type="text/javascript" src="jquery.tablesorter.js"></script>
+
+<!--4. Call the tablesorter( ) function.-->
+<script type="text/javascript">
+    $(document).ready(function( ) {
+        $('table').tablesorter( );
+    });
+</script>
+<!--If you want just a specific table to be sortable, add an
+ID to the table (for example, <table id="sortable">), and then call the function
+like this:
+-->
+$('#sortable').tablesorter( );
+
+<!--POWER USER'S CLINIC-->
+
+<!--For example, if you want
+the table to be sorted by the first column in ascending order
+(A–Z, 0–100), use the following:
+-->
+$('table').tablesorter({
+sortList: [[0,0]]
+});
+
+<!--you can sort the table on two different columns at once -->
+$('table').tablesorter({
+sortList : [[0,0],[2,0]]
+});
+
+<!--1. Create a HTML data table-->
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Brand</th>
+        <th scope="col">Price</th>
+        <th scope="col">Power Source</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Chinook Push-o-matic Indoor Mower</td>
+        <td>$247.00</td>
+        <td>Mechanical</td>
+    </tr>
+    <tr>
+        <td>Sampson Deluxe Apartment Mower</td>
+        <td>$370.00</td>
+        <td>Mechanical</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Script 5.1</title>
+    <link href="../css/global.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var biblioText = '';
+            $('a[href^=http://]').each(function () {
+                var siteText = $(this).text();
+                var extLink = $(this).attr('href');
+                biblioText += '<li><strong>' + siteText + ":</strong> " + extLink + '</li>\n';
+            });
+
+            if (biblioText) {
+                bibHTML = '<div id="bib"><p>Websites referenced in this document:</p></div>';
+                $(bibHTML).append(biblioText).appendTo($('#main'));
+            }
+
+        });
+    </script>
+</head>
+<body id="twoCol">
+<div id="container">
+    <div id="banner"><img src="../images/banner.png" alt="JavaScript: The Missing Manual" width="760" height="65"></div>
+
+    <div id="contentWrap">
+        <div id="main">
+            <h1>A Dynamically Created Bibliography</h1>
+
+            <p>Throughout history, there have been many fantastic Web sites. <a href="http://www.yahoo.com/">Yahoo!</a>
+                comes to mind, as does <a href="http://www.google.com/">Google</a>. And few will forget the
+                culture-shaping influence of <a href="http://www.hampsterdance.com/">Hampster Dance</a>.</p>
+
+        </div>
+
+        <div id="sidebar">
+            <h2>Biblography Example</h2>
+        </div>
+    </div>
+
+    <div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+</body>
+</html>

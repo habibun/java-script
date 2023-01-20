@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../living-examples/_css/jquery-ui.min.css" rel="stylesheet">
+    <link href="../living-examples/_css/site.css" rel="stylesheet">
+    <link href="../living-examples/chapter12/interactions.css" rel="stylesheet">
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <script>
+        $('#pageElement').show('drop', 1000);
+
+        /*The basic structure for using an effect with one of the above functions looks like this:*/
+        $('#element').hide('effectName', {optionName: optionValue}, duration, callBackFunction);
+
+        /* For example, if you wanted to hide an element with an ID of deleteThis on the page
+         by making it explode into 16 pieces in half a second, and then pop up an alert box
+         that says “Boom!” you’d write this code:*/
+        $('#deleteThis').hide('explode', {pieces: 16}, 500, function () {
+            alert('Boom!');
+        });
+
+
+        /* • blind.*/
+        $('#element').hide('blind', {direction: 'left'}, 1000);
+
+        /* bounce */
+        $('#theElement').click(function () {
+            $(this).effect('bounce', {
+                        distance: 100,
+                        times: 20
+                    },
+                    1000
+            );
+        });
+
+        /* highlight*/
+        $('#element').effect('highlight', {color: '#ff0000'}, 1000);
+
+        /* pulsate*/
+        $('#element').effect('pulsate', {times: 20}, 2000);
+
+        /* slide*/
+        $('#element').show('slide', {direction: 'right'}, 1000);
+
+        /* switchClass method */
+        $('#feature').switchClass('defaultStyles', 'highlight', 1000);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    $('p').click(function( ) {
+        $(this).css('color','#F60');
+    });
+
+    /*A better approach is to place the color into a variable at the beginning of your
+     script and then use that variable throughout your script*/
+    $(document).ready(function( ) {
+        var hColor='#F60';
+        $('p').click(function( ) {
+            $(this).css('color', hColor);
+        });
+        $('td').hover(
+                function( ) {
+                    $(this).css('backgroundColor', hColor);
+                },
+                function( ) {
+                    $(this).css('backgroundColor','transparent');
+                }
+        );
+    }); //end ready( )
+
+    /*You could make the above code even more flexible by uncoupling the connection
+     between the color used for the <p> tags and <td> tags. Currently, they’re both set
+     to the same color, but if you want to make it so that you could eventually assign
+     different colors to each, you could add an additional variable to your code:*/
+    $(document).ready(function( ) {
+        var pColor='#F60';
+        var tdColor=pColor;
+        $('p').click(function( ) {
+            $(this).css('color', pColor);
+        });
+        $('td').hover(
+                function( ) {
+                    $(this).css('backgroundColor', tdColor);
+                },
+                function( ) {
+                    $(this).css('backgroundColor','transparent');
+                }
+        );
+    }); //end ready( )
+
+    var tdColor='#FF3';
+</script>
+</body>
+</html>

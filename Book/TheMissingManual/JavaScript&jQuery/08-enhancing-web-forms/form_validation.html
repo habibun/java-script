@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#signup').validate();
+        }); // end ready
+
+        $('#signup').validate({
+            rules: {
+                name: 'required',
+                email: {
+                    required: true,
+                    email: true
+                },
+                birthdate: {
+                    date: true,
+                    required: true
+                },
+                password: {
+                    required: true,
+                    rangelength: [8, 16]
+                },
+                confirm_password: {
+                    equalTo: '#password'
+                }
+            },  // end of rules
+            messages: {
+                password: {
+                    required: "Please type the password you'd like to use.",
+                    rangelength: "Your password must be between 8 and 16 characters long."
+                },
+                confirm_password: {
+                    equalTo: "The two passwords don't match."
+                }
+            }
+        }); // end validate()
+    </script>
+</head>
+<body>
+
+<!--<form action="process.php" method="post" name="signup" id="signup">
+    <input name="name" type="text" class="required" title="Please give us your name.">
+    <input name="dob" type="text" class="required date" title="Please enter your birthdate in the format 01/28/2014.">
+</form>-->
+
+<form action="process.php" method="post" id="signup">
+    <div>
+        <label for="name">Name</label>
+        <input name="name" type="text">
+    </div>
+    <div>
+        <label for="email">E-mail Address</label>
+        <input name="email" type="text">
+    </div>
+    <div>
+        <input type="submit" name="submit" value="Submit">
+    </div>
+</form>
+</body>
+</html>

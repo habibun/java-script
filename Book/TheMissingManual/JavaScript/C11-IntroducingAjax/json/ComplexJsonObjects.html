@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*That code may look something like this:*/
+    $.getJSON('contacts.php', 'limit=2', processContacts);
+
+    /*The Web server may return a string that represents a single JSON object, which
+     combines both of these objects like this:*/
+    {
+        contact1: {
+            firstName: 'Frank',
+                    lastName
+        :
+            'Smith',
+                    phone
+        :
+            '503-555-1212'
+        }
+    ,
+        contact2: {
+            firstName: 'Peggy',
+                    lastName
+        :
+            'Jones',
+                    phone
+        :
+            '415-555-5235'
+        }
+    }
+
+    /*The variable data would then be assigned
+     that JSON object, just as if this code had been executed:*/
+    var data = {
+        contact1: {
+            firstName: 'Frank',
+            lastName: 'Smith',
+            phone: '503-555-1212'
+        },
+        contact2: {
+            firstName: 'Peggy',
+            lastName: 'Jones',
+            phone: '415-555-5235'
+        }
+    };
+
+    /*Now, you could access the first contact object within the callback function like
+     this:*/
+    data.contact1
+
+    /*And retrieve the first name of the first contact like this:*/
+    data.contact1.firstName
+
+    /*But, in this case, since you want to process multiple contacts, jQuery provides a
+     function that lets you loop through each item in a JSON object—the each( ) function. The basic structure of the function is this:*/
+    $.each(JSON, function (name, value) {
+    });
+
+    /*Here’s how the JSON object would look in use in the current
+     example:*/
+    $.getJSON('contacts.php', 'limit=2', processContacts);
+    function processContacts(data) {
+        // create variable with empty string
+        var infoHTML = '';
+///      loop through each object in the JSON data
+        $.each(data, function (contact, contactInfo) {
+            infoHTML += '<p>Contact: ' + contactInfo.firstName;
+            infoHTML += ' ' + contactInfo.lastName + '<br>';
+            infoHTML += 'Phone: ' + contactInfo.phone + '</p>';
+        }); // end of each( )
+///     add finished HTML to page
+        $('#info').html(infoHTML);
+    }
+
+
+</script>
+<!-- The final result will be the following HTML: -->
+<p>Contact: Frank Smith<br>
+    Phone: 503-555-1212</p>
+<p>Contact: Peggy Jones<br>
+    Phone: 415-555-5235</p>
+</body>
+</html>

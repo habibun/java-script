@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <link href="../living-examples/_css/jquery-ui.min.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            var airports = [
+                'Aberdeen Regional Airport, Aberdeen, South Dakota',
+                'Abilene Regional Airport, Abilene, Texas',
+                'Abraham Lincoln Capital Airport, Springfield, Illinois',
+                'Adak Airport, Adak Island, Alaska',
+                'Adirondack Regional Airport, Saranca Lake, New York'
+            ]; // lots more airports would go in here
+            $('#airport').autocomplete({
+                source: airports
+            });
+
+            /* Using Arrays for Autocomplete */
+            var colors = ['Barn Red', 'Beetroot', 'Brick', 'Bright Maroon', 'Burgundy'];
+            $('#redInput').autocomplete({source: colors});
+
+            /* Using Separate Labels and Values */
+            var airports2 = [
+                {
+                    label: 'Aberdeen Regional Airport, Aberdeen, South Dakota',
+                    value: 'ABR'
+                },
+                {
+                    label: 'Abilene Regional Airport, Abilene, Texas',
+                    value: 'ABI'
+                },
+                {
+                    label: 'Abraham Lincoln Capital Airport, Springfield, Illinois',
+                    value: 'SPI'
+                },
+                {
+                    label: 'Adak Airport, Adak Island, Alaska',
+                    value: 'ADK'
+                },
+                {
+                    label: 'Adirondack Regional Airport, Saranca Lake, New York',
+                    value: 'SLK'
+                }
+            ]; // lots more airports would go in here
+            $('#airport2').autocomplete({source: airports2});
+
+
+            /* Getting Autocomplete Data from the Server */
+
+            $('#productSearch').autocomplete({source: '/products.php'});
+
+            /* You can also provide a complete URL including protocol and domain name like this: */
+            $('#productSearch').autocomplete({source: 'http://myCompany.com/products.php'});
+
+
+            /* Autocomplete Options */
+            $('#airport').autocomplete({
+                source: '/airportSearch.php',
+                delay: 500,
+                minLength: 2
+            });
+        }); // end ready
+    </script>
+</head>
+<body>
+<label for="airport">Airport:
+    <input type="text" id="airport" name="airport">
+</label>
+
+<label for="airport2">Airport2: </label>
+<input type="text" id="airport2" name="airport2">
+
+<label for="redInput">Color:</label>
+<input type="text" id="redInput" name="color">
+
+<label for="productSearch">Product:</label><input type="text" id="productSearch" name="productSearch">
+</body>
+</html>

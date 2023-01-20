@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+//            alert($('#errors').html());
+//            $('#errors').html('<p>There are four errors in this form</p>');
+//            $('#errors h2').text('No errors found');
+//            $('#errors').append('<p>There are four errors in this form</p>');
+//            $('#errors').prepend('<p>There are four errors in this form</p>');
+
+            /* If you want to add HTML just outside of a selection */
+//            $('#userName').after('<span class="error">User name required</span>');
+//            $('#userName').before('<span class="error">User name required</span>');
+
+            $('button').click(function () {
+                $('label').remove();
+            });
+            $('#product101').replaceWith('<p>Added to cart</p>');
+
+        });
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="errors">
+        <h2>Errors:</h2>
+    </div>
+</div>
+
+<label for="userName">Username:
+    <input type="text" name="userName" id="userName">
+</label>
+<button>Remove</button>
+</body>
+</html>

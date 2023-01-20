@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../usedFiles/jquery-2.1.3.js"></script>
+    <style>
+        #down {
+            display: none;
+            height: 300px;
+            width: 300px;
+            background-color: #ffff00;
+        }
+
+        p {
+            display: block;
+        }
+
+        #caption {
+            display: none;
+        }
+
+        #up {
+            height: 300px;
+            width: 300px;
+            background-color: #0000ff;
+        }
+    </style>
+</head>
+<body>
+<p id="caption">i am caption</p>
+
+<div id="down"></div>
+<br>
+<br>
+
+<div id="up"></div>
+
+<p>this is a test</p>
+<script>
+
+    //example using slideDown
+    $('#down').slideDown('slow');
+
+    //example using slideUp
+    $('#up').slideUp();
+
+    //slide down with call back function
+    $('#down').slideDown('slow', function () {
+        $('#caption').show();
+    });
+
+    //slideToggle( ) applies the slideDown( ) function if the element is currently hidden, and the slideUp( ) function if the element is visible
+</script>
+</body>
+</html>

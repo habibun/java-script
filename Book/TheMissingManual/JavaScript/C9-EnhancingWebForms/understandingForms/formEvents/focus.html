@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<form>
+    <input name="username" type="text" id="username" value="Please type your user name" size="40">
+    <br>
+    <input name="password" type="text" id="password">
+    <br>
+    <input name="submit" type="submit" id="submit">
+</form>
+
+<script>
+    $('#username').focus(function () {
+        /*var field = $(this);
+         if (field.val( )==field.attr('defaultValue')) {
+         field.val('');
+         }*/
+        if ($('#username').val() == 'Please type your user name') {
+            $('#username').val('');
+        }
+    });
+</script>
+</body>
+</html>

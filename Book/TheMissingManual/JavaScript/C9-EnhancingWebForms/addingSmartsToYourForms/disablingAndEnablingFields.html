@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../usedFiles/jquery-2.1.3.js"></script>
+</head>
+<body>
+<script>
+    /*
+    * For example, to disable all input fields on a form, you can use this code
+    * */
+    $(':input').attr('disabled', true);
+
+    /*
+    * You’ll usually disable a field in response to an event
+    * */
+    $('#single').click(function( ) {
+        $('#spouseSSN').attr('disabled', true);
+    });
+
+    /*
+    * to enable all fields on a form:
+     */
+    $(':input').attr('disabled', false);
+
+
+</script>
+</body>
+</html>

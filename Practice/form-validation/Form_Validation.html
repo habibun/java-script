@@ -1,0 +1,71 @@
+#lengthRestriction:
+<script type='text/javascript'>
+    function lengthRestriction(elem, min, max) {
+        var uInput = elem.value;
+        if (uInput.length >= min && uInput.length <= max) {
+            return true;
+        } else {
+            alert("Please enter between "
+                    + min + " and " + max + " characters");
+            elem.focus();
+            return false;
+        }
+    }
+</script>
+<form>
+    Username(6-8 characters): <input
+        type='text' id='restrict'/>
+    <input type='button'
+           onclick="lengthRestriction
+(document.getElementById('restrict'), 6, 8)"
+           value='Check Field'/>
+</form>
+
+
+#validate  Selection:
+<script type='text/javascript'>
+    function madeSelection(elem, helperMsg) {
+        if (elem.value == "Please Choose") {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+<form>
+    Selection: <select id='selection'>
+    <option>Please Choose</option>
+    <option>CA</option>
+    <option>WI</option>
+    <option>XX</option>
+</select>
+    <input type='button'
+           onclick="madeSelection(document.getElementById
+('selection'), 'Please Choose Something')"
+           value='Check Field'/>
+</form>
+
+
+#email validation:
+<script type='text/javascript'>
+    function emailValidator(elem, helperMsg) {
+        var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+ \.[a-zA-z0-9]{2,4}$/;
+        if (elem.value.match(emailExp)) {
+            return true;
+        } else {
+            alert(helperMsg);
+            elem.focus();
+            return false;
+        }
+    }
+</script>
+<form>
+    Email: <input type='text' id='emailer'/>
+    <input type='button'
+           onclick="emailValidator(document.getElementById
+('emailer'), 'Not a Valid Email')"
+           value='Check Field'/>
+</form>
+

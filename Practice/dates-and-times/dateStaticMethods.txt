@@ -1,0 +1,3 @@
+Method              Description
+Date.parse( )       Parses a string representation of a date and time and returns the internal millisecond representation of that date.
+Date.UTC( )         Returns the millisecond representation of the specified UTC date and time.

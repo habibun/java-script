@@ -1,0 +1,97 @@
+#signup  .label, #order .label {
+	font: bold 14px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #036;
+	float: left;
+	width: 140px;
+	margin-right: 10px;
+	text-align: right;
+	display: block;
+	margin-top: 0;
+	padding-top: 2px;
+	border-top: 1px dotted #666;
+}
+#signup  p, #order p {
+	line-height: 1em;
+	font-size: 1.5em;
+	padding-bottom: 10px;
+	clear: left;
+}
+#signup, #order {
+	float: left;
+	width: 580px;
+}
+#order legend {
+	font-weight: bold;
+	font-size: 1.25em;
+	color: #333;
+	text-transform: uppercase;
+}
+#order fieldset {
+	padding: 10px;
+	border: 1px solid #999;
+	margin-bottom: 15px;
+}
+
+* html #order fieldset {
+  margin-bottom: 0; /* stop weird jump in ie6 */
+}
+
+#submit {
+	margin-left: 150px;
+}
+#signup  .labelBlock, #order .labelBlock {
+	display: block;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-weight: bold;
+	color: #036;
+	display: block;
+	margin-top: 0;
+	margin-bottom: 5px;
+  padding-left: 0;
+	padding-top: 2px;
+	border-top: 1px dotted #666;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+.indent {
+	padding-left: 150px;
+	margin-top: 0px;
+}
+#signup  div, #order div {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	clear: left;
+}
+#order  #creditCard  .label  {
+	font-size: 0.8em;
+	color: #333;
+	border-style: none;
+	width: 120px;
+	text-transform: none;
+}
+#signup #username, #signup #email, #signup #password, #signup #comments, #signup #password2 {
+	width: 300px;
+}
+#signup #dob {
+	width: 100px;
+}
+#order div div {
+	font-size: 1em;
+}
+
+#signup .indent label.error {
+  margin-left: 0;
+}
+
+
+#signup label.error {
+	font-size: 0.8em;
+	color: #F00;
+  font-weight: bold;
+	display: block;
+  margin-left: 150px;
+}
+#signup  input.error, #signup select.error  {
+	background: #FFA9B8;
+  border: 1px solid red;
+}

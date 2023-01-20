@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Script 3.2</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+do {
+	var luckyNumber = prompt('What is your lucky number?','');
+	luckyNumber = parseInt(luckyNumber);
+} while (isNaN(luckyNumber));
+</script>
+</head>
+<body id="twoCol">
+<div id="container">
+  <div id="banner"><img src="../images/banner.png" alt="JavaScript: The Missing Manual" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  
+  <div id="contentWrap">
+  <div id="main">
+  <h1>Using a Do/While Loop</h1>
+  <p>
+  <script type="text/javascript">
+	if (luckyNumber == 7 ) {
+		document.write("Hey, that's my lucky number too!");
+	} else if (luckyNumber == 13 || luckyNumber == 24) {
+		document.write("Wooh. " + luckyNumber + "? That's an unlucky number!");
+	} else {
+		document.write("The number " + luckyNumber + " is lucky for you!");
+	}
+	</script>
+  </p>
+</div>
+  <div id="sidebar">
+   <h2>Do/While Example</h2>
+</div>
+  </div>
+  <div id="footer"><em>&#8220;Building Interactive Web Sites with JavaScript&#8221;</em></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var test = 3;
+        var test2 = "jony";
+        var test3 = "123ABC";
+        console.log(isNaN(test));
+        console.log(isNaN(test2));
+        console.log(isNaN(test3));
+
+        if (!Number.isNaN) {
+            Number.isNaN = function isNaN(x) {
+                return x !== x;
+            };
+        }
+
+        console.log(Number.isNaN("jony"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

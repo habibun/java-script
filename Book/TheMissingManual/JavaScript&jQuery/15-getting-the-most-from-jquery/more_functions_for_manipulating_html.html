@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /* text */
+        $('#error').text('You must supply an e-mail address');
+
+        /* html*/
+        $('#tooltip').html('<h2>Esquif Avalon</h2><p>Designed for canoe camping.</p>');
+
+        /* replaceWith*/
+        $(':submit').replaceWith('<p>processing...</p>');
+
+        /* remove */
+        $('#error').remove();
+
+        /* wrap*/
+        // loop through the list of images
+        $('img').each(function () {
+            // save reference to current image
+            var $this = $(this);
+            // get the alt property for the caption
+            var caption = $this.attr('alt');
+            // add the HTML
+            $this.wrap('<div class="figure"></div>').after('<p>' + caption + '</p>');
+        }); // end each
+
+        /* wrapInner*/
+        $('#outer').wrapInner('<div id="inner"></div>');
+
+        /*.unwrap() simply removes the parent tag surrounding the selection*/
+
+        /* • .empty() removes all of the contents of a selection*/
+
+    </script>
+</head>
+<body>
+<div id="outer">
+    <p>This is the contents of outer</p>
+</div>
+</body>
+</html>

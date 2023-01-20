@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    $('#menu').toggle(
+            function () {
+                $('#submenu').show();
+            },
+            function () {
+                $('#submenu').hide();
+            }
+    );
+
+    //or using named function like this
+
+    function showSubmenu() {
+        $('#submenu').show();
+    }
+    function hideSubMenu() {
+        $('#submenu').hide();
+    }
+    $('#menu').toggle(showSubmenu, hideSubMenu);
+</script>
+</body>
+</html>

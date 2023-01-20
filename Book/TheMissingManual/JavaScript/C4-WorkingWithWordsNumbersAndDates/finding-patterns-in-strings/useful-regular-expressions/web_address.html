@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * The | character between the two groups represents “or”
+     * \b matches the beginning of a word.
+     * s? is an optional s. Since a Web page may be sent via a secure connection
+     * :\/\/ matches ://. Since the forward slash has meaning in regular expressions, you need to precede it by a backslash to match the forward slash character.
+     *  www\. matches www..
+     *\S* matches zero or more nonspace characters.
+     *
+     */
+
+    var webAddress = /((\bhttps?:\/\/)|(\bwww\.))\S*/;
+
+</script>
+</body>
+</html>

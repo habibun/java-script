@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--There are basically five steps, all of which can be accomplished with JavaScript.-->
+<script>
+    /* STEP 1: Create an instance of the XMLHttpRequest object. */
+
+    <!--creating an XMLHttpRequest object in JavaScript looks like this:-->
+    var newXHR = new XMLHttpRequest();
+
+
+    /*STEP 2: Use the XHR’s open( ) method to specify what kind of data you’ll send and
+     where the data will go.*/
+    newXHR.open('GET', 'shop.php?productID=34');
+
+
+    /*STEP 3: Create a function to handle the results.*/
+    /*You also need to tell the XHR object about the callback function with code like
+     the following:*/
+    newXHR.onreadystatechange = myCallbackFunction;
+
+
+    /*STEP 4: Send the request.*/
+    /* If you’re using the GET method, this step is as simple as:*/
+    newXHR.send(null);
+    /*With the POST method,on the other hand, you must provide the data along with the send( ) method like this:*/
+    newXHR.send('q=javascript');
+
+
+    /*STEP 5: Receive the response*/
+            /* ABOUT STATUS */
+    /* status number 404 = it means the file wasn’t found */
+    /* If everything went according to plan, you’ll get a status of 200 or possibly 304 */
+    /* If there was an error processing the page, you’ll get a 500 “Internal Server Error” status report */
+    /* if the file you requested is password protected, you’ll get a 403 “Access Forbidden” error */
+</script>
+</body>
+</html>

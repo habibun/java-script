@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*For example, to center the map at a longitude and latitude of 43/–103, set the map so that’s zoomed in to show details,
+     and hide the jMap icon from the map, you’d initialize the map like this*/
+    $('#map').jmap('init', {
+        mapCenter:[43,-103],
+        mapZoom: 13,
+        mapShowjMapIcon: false
+    });
+
+    /*Remove the jMaps icon*/
+    mapShowjMapIcon: false
+
+    /*• Control the scale of the map. */
+    mapZoom:15
+
+    /*• Set the map controller size*/
+    /*You
+     can set this option like this:*/
+    mapControlSize: 'large'
+
+/*• Add a scale marker*/
+    /*To add a small visual scale marker to the lower
+     left of the map, set the mapEnableScaleControl to true:*/
+    mapEnableScaleControl:true
+
+</script>
+</body>
+</html>

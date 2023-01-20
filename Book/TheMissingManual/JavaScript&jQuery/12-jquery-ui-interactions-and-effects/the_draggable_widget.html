@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../living-examples/_css/jquery-ui.min.css" rel="stylesheet">
+    <link href="../living-examples/_css/site.css" rel="stylesheet">
+    <link href="../living-examples/chapter12/interactions.css" rel="stylesheet">
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script src="../living-examples/_js/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#note').draggable({
+                /*Draggable Widget Options*/
+
+                /* cursor */
+                cursor: 'pointer',
+                /* what will be selection */
+                handle: 'h2',
+                /* limit the movement */
+                axis: 'x',
+                /* this option let you prevent dragging when specific element is clicked */
+                cancel: 'p',
+                /* let's you specify a collection of sortable items that the draggable item can be added to */
+                connectToSortable: '#toDoList',
+                /* keep the draggable item confined to the boundaries of that elements */
+//                containment : '#refrigerator',
+                /* to keep draggable item contained inside its parent element */
+//                containment: 'parent',
+                /* say you wanted to limit dragging to an area that starts
+                 50 pixels from the left and 100 pixels from the top and ends 500 pixels from
+                 the left and 600 pixels from the top*/
+                containment: [50, 100, 500, 600],
+                /* You can control where the cursor appears as the visitor drags the element*/
+                cursorAt: {
+                    left: 5,
+                    top: 5
+                },
+                /* disabled draggable */
+                disabled: false,
+
+                /*You also wanted the element to move in 100 pixel increments when dragged up or down*/
+                grid: [50, 100],
+
+                /* just drag a copy of the picture while leaving the original photo unmoved */
+//                helper : 'clone',
+
+                /* For example,
+                 to display a generic helper div (instead of dragging the actual HTML element),
+                 you could set the helper like this*/
+                helper: function (event) {
+                    return $("<div class='ui-widget-header'>I'm a custom helper</div>");
+                },
+                /* When an element is dragged, you can make its opacity change */
+                opacity: 0.5,
+                /* 'invalid'  makes the dragged item return only if it’s not dropped on a valid droppable item*/
+                revert: 'invalid',
+
+                /* revert duration */
+                revertDuration: 250,
+                /* The scope option lets you group sets of draggable and droppable items */
+                scope: 'calendar',
+                /* You can make a draggable item snap to another page element or another
+                 draggable item */
+                snap: '#photoholder',
+                /* Finally, you can make the dragged item snap to either the outer or inner edges*/
+                snapMode: 'both',
+
+                /*how close the dragged item should be before it snaps
+                 to an element*/
+                snapTolerance: 30,
+
+                /* This option lets you set a z-index for the dragged element*/
+                zIndex: 100
+            });
+
+            /*ui helper property */
+            $('#photo').draggable({
+                start: function (event, ui) {
+                    ui.helper.css('transform', 'scale(2)');
+                }
+            });
+
+            /* drag event */
+            $('#raceCar').draggable({
+                drag: function (event, ui) {
+                    $('#left').text(ui.position.left);
+                    $('#top').text(ui.position.top);
+                }
+            });
+
+            /* stop event */
+            $('#photo').draggable({
+                stop: function (event, ui) {
+                    ui.helper.css('transform', 'scale(1)');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+    </header>
+    <div class="content">
+        <div class="main">
+            <h1>Draggable Note</h1>
+        </div>
+        <div id="note">
+            <h2>You can drag me</h2>
+
+            <p>I'm a note on the page.</p>
+        </div>
+
+        <div id="raceCar">
+            <h2>You can drag me</h2>
+
+            <p>I'm a note on the page.</p>
+        </div>
+    </div>
+    <footer>
+        <p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>.
+            Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+    </footer>
+</div>
+</body>
+</html>

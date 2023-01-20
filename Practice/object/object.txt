@@ -1,0 +1,12 @@
+there are two kind of javascript object:
+1.built-in object
+a.array object
+b.boolean object
+c.date object
+d.math object
+e.number object
+f.string object
+g.RegExp object
+h.global object
+
+2.user-defined object

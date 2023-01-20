@@ -1,0 +1,4 @@
+There are three types of errors in programming:
+a.Syntax Errors
+b.Runtime Errors
+c.Logical Errors

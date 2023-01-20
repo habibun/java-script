@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .progressBar {
+            animation-name: growProgessBar;
+            animation-duration: 10s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        .animateDiv {
+            animation-name: growProgessBar;
+            animation-duration: 10s;
+            animation-fill-mode: forwards;
+        }
+    </style>
+    <script src="../living-examples/_js/jquery.min.js"></script>
+    <script>
+        $('#start').click(function () {
+            $('.progressBar').css('animation-play-state', 'running');
+        });
+
+        $('#start').click(function () {
+            $('.progressBar').addClass('animateDiv');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
