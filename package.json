@@ -1,0 +1,24 @@
+{
+  "name": "javascript",
+  "description": "A programming language that is one of the core technologies of the World Wide Web",
+  "version": "1.0.0",
+  "devDependencies": {
+    "eslint": "^8.32.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/habibun/javascript.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Habibun Noby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/habibun/javascript/issues"
+  },
+  "homepage": "https://github.com/habibun/javascript#readme"
+}
