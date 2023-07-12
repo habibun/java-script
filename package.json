@@ -3,7 +3,9 @@
   "description": "A programming language that is one of the core technologies of the World Wide Web",
   "version": "1.0.0",
   "devDependencies": {
-    "eslint": "^8.32.0"
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
